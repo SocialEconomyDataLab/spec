@@ -3,11 +3,11 @@ Social Finance Data Specification (Alpha)
 
 The Social Finance Data Specification is being developed as a draft data specification for describing social investment. For more information contact jack.lord@opendataservices.coop 
 
+```eval_rst
+.. attention:: 
 
-### Markdown reference links
-
-Link to [a ref](a-ref).
-
+    This documentation site is a work in progress.
+```
 
 ## Contents
 
@@ -15,6 +15,7 @@ Link to [a ref](a-ref).
 .. toctree::
    :maxdepth: 2
 
-   about
+   About
+   schema/index
 
 ```

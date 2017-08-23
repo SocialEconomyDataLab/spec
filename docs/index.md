@@ -15,7 +15,7 @@ The Social Finance Data Specification is being developed as a draft data specifi
 .. toctree::
    :maxdepth: 2
 
-   About
+   getting_started/index
    schema/index
 
 ```

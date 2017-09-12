@@ -5,7 +5,7 @@ The full JSON schema is described below.
 
 ```eval_rst
 
-.. jsonschema:: ../../schema/sampleschema.json
+.. jsonschema:: ../../schema/schema.json
 
 ```
 

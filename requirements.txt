@@ -1,3 +1,4 @@
+setuptools==36.4.0
 alabaster==0.7.10
 Babel==2.4.0
 certifi==2017.4.17

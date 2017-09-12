@@ -1,7 +1,7 @@
 Social Finance Data Specification (Alpha)
 ==============================
 
-The Social Finance Data Specification is being developed as a draft data specification for describing social investment. For more information contact jack.lord@opendataservices.coop 
+The Social Finance Data Specification is being developed as a draft data specification for describing social investment. For more information contact jack.lord@opendataservices.coop or bob.harper@opendataservices.coop
 
 ```eval_rst
 .. attention:: 

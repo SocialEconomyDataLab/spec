@@ -1,0 +1,119 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "title": "Social Finance Data Specification",
+    "description": "A draft schema for describing social finance deals",
+    "type": "object",
+    "properties": {
+        "deal": {
+            "title": "Deal",
+            "description": "A social finance deal",
+            "type": "object",
+            "properties": {
+                "identifier": {
+                    "title": "Identifier",
+                    "description": "Unique internal identifier for the social finance deal.",
+                    "type": "string"
+                },
+                "status": {
+                    "title": "Status",
+                    "description": "Current status of the blended finance deal: in progress, an open investment, closed without funds being drawn down, closed without core funds being approved.",
+                    "type": "string",
+                    "enum": ["Pipeline", "Open Investment","Closed"]
+                },
+                "recipientOrganisation": {
+                    "title": "Recipient Organisation",
+                    "description": "The organisation in receipt of the funds from the social finance deal.",
+                    "$ref": "#/definitions/organisation"
+                },
+                "arrangingOrganisation": {
+                     "title": "Arranging Organisation",
+                    "description": "The organisation arranging the social finance deal.",
+                    "$ref": "#/definitions/organisation"
+                },
+                "investments": {
+                    "title": "Investments",
+                    "type": "object",
+                    "properties": {
+                        "grants": {
+                            "title": "Grants",
+                            "description": "Grants made as part of the social investment deal.",
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/grant"
+                            }
+                        },
+                        "equity": {
+                            "title": "Equity Investments",
+                            "description": "Equity components of the social investment deal.",
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/equity"
+                            }
+                        }
+                    }
+                },
+                "dateModified": {
+                    "title": "Last modified",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        }
+    },
+    "definitions": {
+        "organisation": {
+            "type": "object",
+            "properties": {
+                "identifier": {
+                    "title": "Identifier",
+                    "type": "string"
+                    },
+                "name": {
+                    "title": "Name",
+                    "type": "string"
+                }
+            }
+        },
+        "grant": {
+            "type": "object",
+            "properties": {
+                "identifier": {
+                    "title": "Identifier",
+                    "type": "string"
+                },
+                "currency": {
+                    "title": "Currency",
+                    "type": "string"
+                }
+            }
+        },
+        "loan": {
+            "type": "object",
+            "properties": {
+                "identifier": {
+                    "title": "Identifier",
+                    "type": "string"
+                },
+                "currency": {
+                    "title": "Currency",
+                    "type": "string"
+                }
+            }
+        },
+        "equity": {
+            "type": "object",
+            "title": "Equity",
+            "description": "An equity investment",
+            "properties": {
+                "identifier": {
+                    "title": "Identifier",
+                    "type": "string"
+                },
+                "currency": {
+                    "title": "Currency",
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

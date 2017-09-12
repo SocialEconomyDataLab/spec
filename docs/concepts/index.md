@@ -1,5 +1,5 @@
-Getting Started
-===============
+Concepts
+========
 
 ## Building blocks
 

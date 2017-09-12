@@ -9,13 +9,14 @@ The Social Finance Data Specification is being developed as a draft data specifi
     This documentation site is a work in progress.
 ```
 
+
 ## Contents
 
 ```eval_rst
 .. toctree::
    :maxdepth: 2
 
-   getting_started/index
+   concepts/index
    schema/index
 
 ```

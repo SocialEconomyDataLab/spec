@@ -8,7 +8,7 @@ sphinx-rtd-theme==0.2.4
 flake8==3.3.0
 jsonschema==2.5.1
 jsonpointer==1.10
-## The following requirements were added by pip freeze:
+# The following requirements were added by pip freeze:
 alabaster==0.7.10
 Babel==2.4.0
 certifi==2017.4.17

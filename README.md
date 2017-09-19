@@ -5,7 +5,7 @@ The Social Finance Data Specification is being developed as a draft data specifi
 ## Building the documentation
 
 ### Build the docs locally
-  
+
 Assuming a unix based system:
 
 ```
@@ -19,6 +19,7 @@ python3 -m venv .ve
 source .ve/bin/activate
 # Install requirements
 pip install -r requirements.txt
+python setup.py
 # Build the docs
 cd docs
 make dirhtml

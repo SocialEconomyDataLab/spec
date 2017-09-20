@@ -22,7 +22,7 @@ Deals with multiple elements of repayable and non-repayable finance are sometime
 
   Example 2. A social investment deal worth £35,000 is made up of:  
     * £15,000 of share capital raised by the recipient organisation through equity from a community shares offer; and,
-    * a £15,000 match funded equity invested *pari parsu* in the same community shares offer by the funding organisation.  
+    * a £15,000 match funded equity invested *pari passu* in the same community shares offer by the funding organisation.  
     * a £5,000 business development grant from a funding organisation.  
 
   Example 3. A social investment deal worth £50,000 is made up of:  

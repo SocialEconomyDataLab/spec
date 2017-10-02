@@ -24,9 +24,25 @@ import sys
 import os
 import shlex
 import pathlib
+import json
+from jsonschema import Draft4Validator
 
 from recommonmark.transform import AutoStructify
 from recommonmark.parser import CommonMarkParser
+
+# -- Validating the schema -------------------------------------------
+
+# This makes sure that any schemas use in the documentation are valid
+# according to JSON Schema.
+
+# Paths to any schemas to be validated
+schemas = ['../schema/schema.json']
+
+# An exception will be raised if a schema is invalid
+for schema in schemas:
+    with open(schema) as schema_file:
+        data = json.load(schema_file)
+        Draft4Validator.check_schema(data)
 
 # -- General configuration ------------------------------------------------
 

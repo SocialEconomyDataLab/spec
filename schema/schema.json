@@ -1,5 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
+    "id": "https://github.com/OpenDataServices/social-finance-data-spec/blob/master/schema/schema.json",
     "title": "Social Finance Data Specification",
     "description": "A draft schema for describing social finance deals",
     "type": "object",
@@ -8,17 +9,23 @@
             "title": "Deal",
             "description": "A social finance deal",
             "type": "object",
+            "required": ["identifier","title","recipientOrganisation","arrangingOrganisation"],
             "properties": {
                 "identifier": {
                     "title": "Identifier",
                     "description": "Unique internal identifier for the social finance deal.",
                     "type": "string"
                 },
+                "title": {
+                    "title": "Title",
+                    "description": "A title for the deal. Ideally, this is concise and under 140 characters.",
+                    "type": "string"
+                },
                 "status": {
                     "title": "Status",
                     "description": "Current status of the blended finance deal: in progress, an open investment, closed without funds being drawn down, closed without core funds being approved.",
                     "type": "string",
-                    "enum": ["Pipeline", "Open Investment","Closed"]
+                    "enum": ["Pipeline","Open Investment","Closed"]
                 },
                 "recipientOrganisation": {
                     "title": "Recipient Organisation",
@@ -26,9 +33,15 @@
                     "$ref": "#/definitions/organisation"
                 },
                 "arrangingOrganisation": {
-                     "title": "Arranging Organisation",
+                    "title": "Arranging Organisation",
                     "description": "The organisation arranging the social finance deal.",
                     "$ref": "#/definitions/organisation"
+                },
+                "dealDate": {
+                    "title": "Deal date",
+                    "type": ["string","null"],
+                    "format": "date-time",
+                    "description": "The date that the deal was awarded. Dates should be in yyyy-mm-dd format."
                 },
                 "investments": {
                     "title": "Investments",
@@ -54,8 +67,15 @@
                 },
                 "dateModified": {
                     "title": "Last modified",
-                    "type": "string",
-                    "format": "date-time"
+                    "type": ["string","null"],
+                    "format": "date-time",
+                    "description": "The date and time about when any part of the information for this deal was last updated. Should be in yyyy-mm-ddThh:mm:ssZ format."
+                },
+                "dataSource": {
+                  "title": "Data Source",
+                  "type": ["string","null"],
+                  "format": "uri",
+                  "description": "A web link pointing to the source of this data, such as the actual data file or the publisher's website."
                 }
             }
         }

@@ -1,4 +1,5 @@
 .ve
+env
 *.swp
 *~
 /src

@@ -91,19 +91,8 @@
     "definitions": {
         "Grant": {
             "type": "object",
-            "properties": {
-                "identifier": {
-                    "title": "Identifier",
-                    "type": "string"
-                },
-                "currency": {
-                    "title": "Currency",
-                    "type": "string"
-                }
-            }
-        },
-        "Loan": {
-            "type": "object",
+            "title": "Grant",
+            "description": "A non-repayable award",
             "properties": {
                 "identifier": {
                     "title": "Identifier",
@@ -132,7 +121,7 @@
         },
         "Credit": {
             "type": "object",
-            "title": "Equity",
+            "title": "Credit",
             "description": "A credit-based investment",
             "properties": {
                 "identifier": {

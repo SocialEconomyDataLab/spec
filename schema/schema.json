@@ -101,6 +101,11 @@
                 "currency": {
                     "title": "Currency",
                     "type": "string"
+                },
+                "fundingProgramme": {
+                    "title": "Funding Programme",
+                    "description": "Funding programme that the grant forms a part of.",
+                    "$ref": "#/definitions/FundingProgramme"
                 }
             }
         },
@@ -116,6 +121,11 @@
                 "currency": {
                     "title": "Currency",
                     "type": "string"
+                },
+                "fundingProgramme": {
+                    "title": "Funding Programme",
+                    "description": "Funding programme that the grant forms a part of.",
+                    "$ref": "#/definitions/FundingProgramme"
                 }
             }
         },
@@ -131,6 +141,11 @@
                 "currency": {
                     "title": "Currency",
                     "type": "string"
+                },
+                "fundingProgramme": {
+                    "title": "Funding Programme",
+                    "description": "Funding programme that the grant forms a part of.",
+                    "$ref": "#/definitions/FundingProgramme"
                 }
             }
         },
@@ -289,6 +304,38 @@
                   "format": "date-time",
                   "type": "string",
                   "description": "The date and time when information about this location was last updated.",
+                  "title": "Last modified"
+                }
+            }
+        },
+        "FundingProgramme": {
+            "type": "object",
+            "properties": {
+                "code": {
+                  "type": "string",
+                  "description": "An identifier for this funding programme.",
+                  "title": "Code"
+                },
+                "title": {
+                  "type": ["string","null"],
+                  "description": "The title of this funding programme.",
+                  "title": "Title"
+                },
+                "description": {
+                  "type": ["string","null"],
+                  "description": "A description of this funding programme.",
+                  "title": "Description"
+                },
+                "url": {
+                  "type": ["string","null"],
+                  "format": "uri",
+                  "description": "A web link to more details of this funding programme.",
+                  "title": "URL"
+                },
+                "dateModified": {
+                  "format": "date-time",
+                  "type": "string",
+                  "description": "The date and time when information about this funding programme was last updated.",
                   "title": "Last modified"
                 }
             }

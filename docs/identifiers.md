@@ -30,7 +30,7 @@ But, in preference to internal identifiers are **commonly-used identifiers** fro
 ### Prefixes
 Because more than one publisher may happen to use the same internal identifier to refer to different organisations or deals that they both hold information for, prefixes are important in helping to tell them apart when it comes to joining up datasets from many publishers by adding an extra element of "uniqueness" to an identifier.
 
-So while '10001' is not a particularly unique identifier for a deal, a version which combines a publisher prefix with the internal number is e.g. 'ABC-10001'.
+So while '10001' is not a particularly unique identifier for a deal, a version which combines a publisher prefix with the internal number is e.g. ``ABC-10001``.
 
 ```eval_rst
 .. _deal-identifier:
@@ -52,9 +52,9 @@ There are two parts to an organisation identifier:
 ```eval_rst
 .. admonition:: For example
 
-  A funding organisation registered in England and Wales to the Charity Commission of England and Wales with the charity number '1159982' will use the prefix ``GB-CHC``.
+  A funding organisation registered in England and Wales to the Charity Commission of England and Wales with the charity number ``1159982`` will use the prefix ``GB-CHC``, which is the **list code** for the charity register.
 
-  This gives the unique organisation identifier of ``GB-CHC-1159982``.
+  This gives the unique **organisation identifier** of ``GB-CHC-1159982``. This makes sure it is distinguished from any other list with the same code in it.
 ```
 
 ### Choose the best identifier

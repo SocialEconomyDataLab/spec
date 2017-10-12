@@ -8,6 +8,8 @@ These field names for properties are important for ensuring that data is publish
 
 The [full JSON schema](../_static/docson/index.html#../schema.json) is described below.
 
+<script src="../_static/docson/widget.js" data-schema="../schema.json"> </script>
+
 ```eval_rst
 
 .. jsonschema:: ../../schema/schema.json

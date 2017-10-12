@@ -4,214 +4,211 @@
     "title": "Social Finance Data Specification",
     "description": "A draft schema for describing social finance deals",
     "type": "object",
-    "properties": {
-        "Deal": {
-            "title": "Deal",
-            "description": "A social finance deal",
-            "type": "object",
-            "required": ["identifier","title","recipientOrganization","arrangingOrganization"],
-            "properties": {
-                "identifier": {
-                    "title": "Identifier",
-                    "description": "Unique internal identifier for the social finance deal.",
-                    "type": "string"
-                },
-                "title": {
-                    "title": "Title",
-                    "description": "A title for the deal. Ideally, this is concise and under 140 characters.",
-                    "type": "string"
-                },
-                "status": {
-                    "title": "Status",
-                    "description": "Current status of the blended finance deal: in progress, an open investment, closed without funds being drawn down, closed without core funds being approved.",
-                    "type": "string",
-                    "enum": ["Pipeline","Open Investment","Closed"]
-                },
-                "recipientOrganization": {
-                    "title": "Recipient Organization",
-                    "description": "The Organization in receipt of the funds from the social finance deal.",
-                    "$ref": "#/definitions/Organization"
-                },
-                "arrangingOrganization": {
-                    "title": "Arranging Organization",
-                    "description": "The Organization arranging the social finance deal.",
-                    "$ref": "#/definitions/Organization"
-                },
-                "dealDate": {
-                    "title": "Deal date",
-                    "type": ["string","null"],
-                    "format": "date-time",
-                    "description": "The date that the deal was awarded. Dates should be in yyyy-mm-dd format."
-                },
-                "investments": {
-                    "title": "Investments",
-                    "type": "object",
-                    "properties": {
-                        "grants": {
-                            "title": "Grants",
-                            "description": "Grants made as part of the social investment deal.",
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/definitions/Grant"
-                            }
-                        },
-                        "equity": {
-                            "title": "Equity Investments",
-                            "description": "Equity components of the social investment deal.",
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/definitions/Equity"
-                            }
-                        },
-                        "credit": {
-                            "title": "Credit Investments",
-                            "description": "Loan, bonds and leasing components of the social investment deal.",
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/definitions/Credit"
-                            }
-                        }
-                    }
-                },
-                "projects": {
-                    "title": "Project",
-                    "description": "Projects associated with the deal.",
-                    "type": "array",
-                    "items": {
-                       "$ref": "#/definitions/Project"
-                    }
-                },
-                "dateModified": {
-                    "title": "Last modified",
-                    "type": ["string","null"],
-                    "format": "date-time",
-                    "description": "The date and time about when any part of the information for this deal was last updated. Should be in yyyy-mm-ddThh:mm:ssZ format."
-                },
-                "dataSource": {
-                  "title": "Data Source",
-                  "type": ["string","null"],
-                  "format": "uri",
-                  "description": "A web link pointing to the source of this data, such as the actual data file or the publisher's website."
-                }
-            }
-        }
-    },
     "definitions": {
-        "Grant": {
-            "type": "object",
-            "title": "Grant",
-            "description": "A non-repayable award",
-            "properties": {
-                "identifier": {
-                    "title": "Identifier",
-                    "type": "string"
-                },
-                "currency": {
-                    "title": "Currency",
-                    "type": "string"
-                },
-                "fundingProgramme": {
-                    "title": "Funding Programme",
-                    "description": "Funding programme that the grant forms a part of.",
-                    "$ref": "#/definitions/FundingProgramme"
-                }
-            }
-        },
-        "Equity": {
-            "type": "object",
-            "title": "Equity",
-            "description": "An equity investment",
-            "properties": {
-                "identifier": {
-                    "title": "Identifier",
-                    "type": "string"
-                },
-                "currency": {
-                    "title": "Currency",
-                    "type": "string"
-                },
-                "fundingProgramme": {
-                    "title": "Funding Programme",
-                    "description": "Funding programme that the grant forms a part of.",
-                    "$ref": "#/definitions/FundingProgramme"
-                }
-            }
-        },
-        "Measurement": {
+      "Deal": {
+          "title": "Deal",
+          "description": "A social finance deal",
           "type": "object",
-          "title": "Measurement",
-          "description": "A measurement related to an entity at a point in time.",
+          "required": ["identifier","title","recipientOrganization","arrangingOrganization"],
           "properties": {
-            "identifier": {
-              "title": "Identifier",
-              "description": "A unique identifier for the measurement",
-              "type": "string"
-            },
-            "measuredEntityIdentifier": {
-              "title": "Measured entity identifier",
-              "description": "The unique identifier of the measured entity",
-              "type": "string"
-            },
-            "measure": {
-              "title": "Meausre",
-              "description": "The measure and vocabulary it is drawn from.",
-              "$ref": "/definitions/Classification"
-            },
-            "statistic": {
-              "title": "statistic",
-              "description": "The type of statistic described in the value field",
-              "type": "string",
-              "enum": ["identity", "mean", "median"]
-            },
-            "date": {
-              "title": "Date",
-              "description": "The date, or date range, that this measurement refers to",
-              "$ref": "/definitions/Date"
-            },
-            "value": {
-              "title": "Value",
-              "description": "Value of the measurement",
-              "type": "number"
-            }
+              "identifier": {
+                  "title": "Identifier",
+                  "description": "Unique internal identifier for the social finance deal.",
+                  "type": "string"
+              },
+              "title": {
+                  "title": "Title",
+                  "description": "A title for the deal. Ideally, this is concise and under 140 characters.",
+                  "type": "string"
+              },
+              "status": {
+                  "title": "Status",
+                  "description": "Current status of the blended finance deal: in progress, an open investment, closed without funds being drawn down, closed without core funds being approved.",
+                  "type": "string",
+                  "enum": ["Pipeline","Open Investment","Closed"]
+              },
+              "recipientOrganization": {
+                  "title": "Recipient Organization",
+                  "description": "The Organization in receipt of the funds from the social finance deal.",
+                  "$ref": "#/definitions/Organization"
+              },
+              "arrangingOrganization": {
+                  "title": "Arranging Organization",
+                  "description": "The Organization arranging the social finance deal.",
+                  "$ref": "#/definitions/Organization"
+              },
+              "dealDate": {
+                  "title": "Deal date",
+                  "type": ["string","null"],
+                  "format": "date-time",
+                  "description": "The date that the deal was awarded. Dates should be in yyyy-mm-dd format."
+              },
+              "investments": {
+                  "title": "Investments",
+                  "type": "object",
+                  "properties": {
+                      "grants": {
+                          "title": "Grants",
+                          "description": "Grants made as part of the social investment deal.",
+                          "type": "array",
+                          "items": {
+                              "$ref": "#/definitions/Grant"
+                          }
+                      },
+                      "equity": {
+                          "title": "Equity Investments",
+                          "description": "Equity components of the social investment deal.",
+                          "type": "array",
+                          "items": {
+                              "$ref": "#/definitions/Equity"
+                          }
+                      },
+                      "credit": {
+                          "title": "Credit Investments",
+                          "description": "Loan, bonds and leasing components of the social investment deal.",
+                          "type": "array",
+                          "items": {
+                              "$ref": "#/definitions/Credit"
+                          }
+                      }
+                  }
+              },
+              "projects": {
+                  "title": "Project",
+                  "description": "Projects associated with the deal.",
+                  "type": "array",
+                  "items": {
+                     "$ref": "#/definitions/Project"
+                  }
+              },
+              "dateModified": {
+                  "title": "Last modified",
+                  "type": ["string","null"],
+                  "format": "date-time",
+                  "description": "The date and time about when any part of the information for this deal was last updated. Should be in yyyy-mm-ddThh:mm:ssZ format."
+              },
+              "dataSource": {
+                "title": "Data Source",
+                "type": ["string","null"],
+                "format": "uri",
+                "description": "A web link pointing to the source of this data, such as the actual data file or the publisher's website."
+              }
           }
-
-        },
-        "Classification": {
+      },
+      "Grant": {
           "type": "object",
+          "title": "Grant",
+          "description": "A non-repayable award",
           "properties": {
-            "vocabulary": {
-              "type": "string",
-              "description": "A vocabulary used for this classification.",
-              "title": "Vocabulary"
-            },
-            "code": {
-              "type": "string",
-              "description": "A codelist value in the chosen vocabulary.",
-              "title": "Code"
-            },
-            "title": {
-              "type": ["string","null"],
-              "description": "The title of this classification.",
-              "title": "Title"
-            },
-            "description": {
-              "type": ["string","null"],
-              "description": "A description of this classification.",
-              "title": "Description"
-            },
-            "url": {
-              "type": ["string","null"],
-              "format": "uri",
-              "description": "A web link to more details of this classification.",
-              "title": "URL"
-            },
-            "dateModified": {
-              "format": "date-time",
-              "type": "string",
-              "description": "The date and time when the information was last updated",
-              "title": "Last modified"
-            }
+              "identifier": {
+                  "title": "Identifier",
+                  "type": "string"
+              },
+              "currency": {
+                  "title": "Currency",
+                  "type": "string"
+              },
+              "fundingProgramme": {
+                  "title": "Funding Programme",
+                  "description": "Funding programme that the grant forms a part of.",
+                  "$ref": "#/definitions/FundingProgramme"
+              }
           }
+      },
+      "Equity": {
+          "type": "object",
+          "title": "Equity",
+          "description": "An equity investment",
+          "properties": {
+              "identifier": {
+                  "title": "Identifier",
+                  "type": "string"
+              },
+              "currency": {
+                  "title": "Currency",
+                  "type": "string"
+              },
+              "fundingProgramme": {
+                  "title": "Funding Programme",
+                  "description": "Funding programme that the grant forms a part of.",
+                  "$ref": "#/definitions/FundingProgramme"
+              }
+          }
+      },
+      "Measurement": {
+        "type": "object",
+        "title": "Measurement",
+        "description": "A measurement related to an entity at a point in time.",
+        "properties": {
+          "identifier": {
+            "title": "Identifier",
+            "description": "A unique identifier for the measurement",
+            "type": "string"
+          },
+          "measuredEntityIdentifier": {
+            "title": "Measured entity identifier",
+            "description": "The unique identifier of the measured entity",
+            "type": "string"
+          },
+          "measure": {
+            "title": "Meausre",
+            "description": "The measure and vocabulary it is drawn from.",
+            "$ref": "#/definitions/Classification"
+          },
+          "statistic": {
+            "title": "statistic",
+            "description": "The type of statistic described in the value field",
+            "type": "string",
+            "enum": ["identity", "mean", "median"]
+          },
+          "date": {
+            "title": "Date",
+            "description": "The date, or date range, that this measurement refers to",
+            "$ref": "#/definitions/Date"
+          },
+          "value": {
+            "title": "Value",
+            "description": "Value of the measurement",
+            "type": "number"
+          }
+        }
+      },
+      "Classification": {
+        "type": "object",
+        "properties": {
+          "vocabulary": {
+            "type": "string",
+            "description": "A vocabulary used for this classification.",
+            "title": "Vocabulary"
+          },
+          "code": {
+            "type": "string",
+            "description": "A codelist value in the chosen vocabulary.",
+            "title": "Code"
+          },
+          "title": {
+            "type": ["string","null"],
+            "description": "The title of this classification.",
+            "title": "Title"
+          },
+          "description": {
+            "type": ["string","null"],
+            "description": "A description of this classification.",
+            "title": "Description"
+          },
+          "url": {
+            "type": ["string","null"],
+            "format": "uri",
+            "description": "A web link to more details of this classification.",
+            "title": "URL"
+          },
+          "dateModified": {
+            "format": "date-time",
+            "type": "string",
+            "description": "The date and time when the information was last updated",
+            "title": "Last modified"
+          }
+        }
       },
       "Date": {
         "type": "object",
@@ -226,73 +223,81 @@
           }
         }
       },
-        "Credit": {
-            "type": "object",
-            "title": "Credit",
-            "description": "A credit-based investment",
-            "properties": {
-                "identifier": {
-                    "title": "Identifier",
-                    "type": "string"
+      "Credit": {
+          "type": "object",
+          "title": "Credit",
+          "description": "A credit-based investment",
+          "properties": {
+              "identifier": {
+                  "title": "Identifier",
+                  "type": "string"
+              },
+              "currency": {
+                  "title": "Currency",
+                  "type": "string"
+              },
+              "fundingProgramme": {
+                  "title": "Funding Programme",
+                  "description": "Funding programme that the grant forms a part of.",
+                  "$ref": "#/definitions/FundingProgramme"
+              }
+          }
+      },
+      "Project": {
+          "type": "object",
+          "title": "Project",
+          "description": "A project funded by a social finance investment",
+          "properties": {
+              "identifier": {
+                  "title": "Identifier",
+                  "type": "string"
+              },
+              "title": {
+                  "title": "Title",
+                  "description": "The title of this project",
+                  "type": "string"
+              },
+              "description": {
+                  "title": "Description",
+                  "description": "A description of this project",
+                  "type": "string"
+              },
+              "location": {
+                "items": {
+                  "$ref": "#/definitions/Location"
                 },
-                "currency": {
-                    "title": "Currency",
-                    "type": "string"
-                },
-                "fundingProgramme": {
-                    "title": "Funding Programme",
-                    "description": "Funding programme that the grant forms a part of.",
-                    "$ref": "#/definitions/FundingProgramme"
-                }
+                "type": "array",
+                "description": "Locations address with the project",
+                "title": "Location"
+              },
+              "funding": {
+                  "title": "Funding",
+                  "description": "The funding from the deal associated with this project.",
+                  "type": "object",
+                  "properties": {
+                      "currency": {
+                          "title": "Currency",
+                          "description": "Currency of the deal.",
+                          "type": "string"
+                      },
+                      "funding": {
+                          "title": "Funding",
+                          "description": "Total funding from the deal for this project as a number.",
+                          "type": "number"
+                      }
+                  }
+              },
+            "classifications": {
+              "title": "Classifications",
+              "description": "Classifications associated with this project",
+              "items": {
+                "$ref": "#/definitions/Classification"
+              },
+              "type": "array"
             }
-        },
-        "Project": {
-            "type": "object",
-            "title": "Project",
-            "description": "A project funded by a social finance investment",
-            "properties": {
-                "identifier": {
-                    "title": "Identifier",
-                    "type": "string"
-                },
-                "title": {
-                    "title": "Title",
-                    "description": "The title of this project",
-                    "type": "string"
-                },
-                "description": {
-                    "title": "Description",
-                    "description": "A description of this project",
-                    "type": "string"
-                },
-                "location": {
-                  "items": {
-                    "$ref": "#/definitions/Location"
-                  },
-                  "type": "array",
-                  "description": "Locations address with the project",
-                  "title": "Location"
-                },
-                "funding": {
-                    "title": "Funding",
-                    "description": "The funding from the deal associated with this project.",
-                    "type": "object",
-                    "properties": {
-                        "currency": {
-                            "title": "Currency",
-                            "description": "Currency of the deal.",
-                            "type": "string"
-                        },
-                        "funding": {
-                            "title": "Funding",
-                            "description": "Total funding from the deal for this project as a number.",
-                            "type": "number"
-                        }
-                    }
-                }
-            }
-        },
-        "Organization": {
+        }
+      },
+      "Organization": {
             "type": "object",
               "required":["id","name"],
               "properties": {
@@ -399,7 +404,7 @@
                 }
             }
         },
-        "Location": {
+      "Location": {
             "type": "object",
             "properties": {
                "id": {
@@ -451,37 +456,55 @@
                 }
             }
         },
-        "FundingProgramme": {
-            "type": "object",
-            "properties": {
-                "code": {
-                  "type": "string",
-                  "description": "An identifier for this funding programme.",
-                  "title": "Code"
-                },
-                "title": {
-                  "type": ["string","null"],
-                  "description": "The title of this funding programme.",
-                  "title": "Title"
-                },
-                "description": {
-                  "type": ["string","null"],
-                  "description": "A description of this funding programme.",
-                  "title": "Description"
-                },
-                "url": {
-                  "type": ["string","null"],
-                  "format": "uri",
-                  "description": "A web link to more details of this funding programme.",
-                  "title": "URL"
-                },
-                "dateModified": {
-                  "format": "date-time",
-                  "type": "string",
-                  "description": "The date and time when information about this funding programme was last updated.",
-                  "title": "Last modified"
-                }
-            }
+      "FundingProgramme": {
+          "type": "object",
+          "properties": {
+              "code": {
+                "type": "string",
+                "description": "An identifier for this funding programme.",
+                "title": "Code"
+              },
+              "title": {
+                "type": ["string","null"],
+                "description": "The title of this funding programme.",
+                "title": "Title"
+              },
+              "description": {
+                "type": ["string","null"],
+                "description": "A description of this funding programme.",
+                "title": "Description"
+              },
+              "url": {
+                "type": ["string","null"],
+                "format": "uri",
+                "description": "A web link to more details of this funding programme.",
+                "title": "URL"
+              },
+              "dateModified": {
+                "format": "date-time",
+                "type": "string",
+                "description": "The date and time when information about this funding programme was last updated.",
+                "title": "Last modified"
+              }
+          }
+      }
+    },
+    "properties": {
+      "deals": {
+        "title": "Deals",
+        "description": "Deals",
+        "type":  "array",
+        "items": {
+          "$ref": "#/definitions/Measurement"
         }
-    }
+      },
+      "measurements": {
+        "title": "Measurements",
+        "description": "Measurements",
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Measurement"
+        }
+      }
+  }
 }

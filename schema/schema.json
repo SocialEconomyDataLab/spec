@@ -1,5 +1,5 @@
 {
-    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$schema": "http://json-schema.org/draft-04/schema#",
     "id": "https://github.com/OpenDataServices/social-finance-data-spec/blob/master/schema/schema.json",
     "title": "Social Finance Data Specification",
     "description": "A draft schema for describing social finance deals",
@@ -71,6 +71,14 @@
                                 "$ref": "#/definitions/Credit"
                             }
                         }
+                    }
+                },
+                "projects": {
+                    "title": "Project",
+                    "description": "Projects associated with the deal.",
+                    "type": "array",
+                    "items": {
+                       "$ref": "#/definitions/Project"
                     }
                 },
                 "dateModified": {
@@ -146,6 +154,52 @@
                     "title": "Funding Programme",
                     "description": "Funding programme that the grant forms a part of.",
                     "$ref": "#/definitions/FundingProgramme"
+                }
+            }
+        },
+        "Project": {
+            "type": "object",
+            "title": "Project",
+            "description": "A project funded by a social finance investment",
+            "properties": {
+                "identifier": {
+                    "title": "Identifier",
+                    "type": "string"
+                },
+                "title": {
+                    "title": "Title",
+                    "description": "The title of this project",
+                    "type": "string"
+                },
+                "description": {
+                    "title": "Description",
+                    "description": "A description of this project",
+                    "type": "string"
+                },
+                "location": {
+                  "items": {
+                    "$ref": "#/definitions/Location"
+                  },
+                  "type": "array",
+                  "description": "Locations address with the project",
+                  "title": "Location"
+                },
+                "funding": {
+                    "title": "Funding",
+                    "description": "The funding from the deal associated with this project.",
+                    "type": "object",
+                    "properties": {
+                        "currency": {
+                            "title": "Currency",
+                            "description": "Currency of the deal.",
+                            "type": "string"
+                        },
+                        "funding": {
+                            "title": "Funding",
+                            "description": "Total funding from the deal for this project as a number.",
+                            "type": "number"
+                        }
+                    }
                 }
             }
         },
@@ -245,7 +299,7 @@
                     "$ref": "#/definitions/Location"
                   },
                   "type": "array",
-                  "description": "-",
+                  "description": "Locations associated with the organization",
                   "title": "Location"
                 },
                 "dateModified": {

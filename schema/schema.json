@@ -138,6 +138,95 @@
                 }
             }
         },
+        "Measurement": {
+          "type": "object",
+          "title": "Measurement",
+          "description": "A measurement related to an entity at a point in time.",
+          "properties": {
+            "identifier": {
+              "title": "Identifier",
+              "description": "A unique identifier for the measurement",
+              "type": "string"
+            },
+            "measuredEntityIdentifier": {
+              "title": "Measured entity identifier",
+              "description": "The unique identifier of the measured entity",
+              "type": "string"
+            },
+            "measure": {
+              "title": "Meausre",
+              "description": "The measure and vocabulary it is drawn from.",
+              "$ref": "/definitions/Classification"
+            },
+            "statistic": {
+              "title": "statistic",
+              "description": "The type of statistic described in the value field",
+              "type": "string",
+              "enum": ["identity", "mean", "median"]
+            },
+            "date": {
+              "title": "Date",
+              "description": "The date, or date range, that this measurement refers to",
+              "$ref": "/definitions/Date"
+            },
+            "value": {
+              "title": "Value",
+              "description": "Value of the measurement",
+              "type": "number"
+            }
+          }
+
+        },
+        "Classification": {
+          "type": "object",
+          "properties": {
+            "vocabulary": {
+              "type": "string",
+              "description": "A vocabulary used for this classification.",
+              "title": "Vocabulary"
+            },
+            "code": {
+              "type": "string",
+              "description": "A codelist value in the chosen vocabulary.",
+              "title": "Code"
+            },
+            "title": {
+              "type": ["string","null"],
+              "description": "The title of this classification.",
+              "title": "Title"
+            },
+            "description": {
+              "type": ["string","null"],
+              "description": "A description of this classification.",
+              "title": "Description"
+            },
+            "url": {
+              "type": ["string","null"],
+              "format": "uri",
+              "description": "A web link to more details of this classification.",
+              "title": "URL"
+            },
+            "dateModified": {
+              "format": "date-time",
+              "type": "string",
+              "description": "The date and time when the information was last updated",
+              "title": "Last modified"
+            }
+          }
+      },
+      "Date": {
+        "type": "object",
+        "title": "Date",
+        "description": "A date or range of dates",
+        "properties": {
+          "date": {
+            "title": "Date",
+            "description": "A single date",
+            "format": "date-time",
+            "type": "string"
+          }
+        }
+      },
         "Credit": {
             "type": "object",
             "title": "Equity",

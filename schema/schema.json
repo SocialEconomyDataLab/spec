@@ -173,7 +173,12 @@
                     "type": "string"
                 },
                 "location": {
-                     "$ref": "#/definitions/Location"
+                  "items": {
+                    "$ref": "#/definitions/Location"
+                  },
+                  "type": "array",
+                  "description": "Locations address with the project",
+                  "title": "Location"
                 },
                 "funding": {
                     "title": "Funding",
@@ -290,7 +295,7 @@
                     "$ref": "#/definitions/Location"
                   },
                   "type": "array",
-                  "description": "-",
+                  "description": "Locations associated with the organization",
                   "title": "Location"
                 },
                 "dateModified": {

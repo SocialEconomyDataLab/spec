@@ -34,11 +34,11 @@ Here's an example of a license statement based on our recommended CC BY 4.0 lice
 
 > [Organisation] is committed to transparency and we work with 360Giving to publish information about our grants.
 >
-> Using the Social Investement Data Labs Specification, our social investment deals since [Year] are available as [File Type] here.
+> Using the Social Investment Data Labs Specification, our social investment deals since [Year] are available as [File Type] here.
 >
 > This work is licensed under the Creative Commons Attribution 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/. This means the data is freely accessible to anyone to be used and shared as they wish. The data must be attributed to [Organisation].
 >
-> We believe that with better information, social investors can be more effective and strategic decision makers. The Social Investement Data Labs Specification provides support for investors to publish their grants data openly, to understand their data, and to use the data to create online tools that make social investment more effective. For more information, visit http://www.threesixtygiving.org/ -->
+> We believe that with better information, social investors can be more effective and strategic decision makers. The Social Investment Data Labs Specification provides support for investors to publish their grants data openly, to understand their data, and to use the data to create online tools that make social investment more effective. For more information, visit http://www.threesixtygiving.org/ -->
 
 ### Where can I find more information?
 

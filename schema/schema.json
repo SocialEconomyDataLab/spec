@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "id": "https://github.com/OpenDataServices/social-finance-data-spec/blob/master/schema/schema.json",
-    "title": "Social Investement Data Labs Specification",
+    "title": "Social Investment Data Labs Specification",
     "description": "A draft schema for describing social finance deals",
     "type": "object",
     "properties": {

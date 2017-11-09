@@ -25,7 +25,7 @@ You may already have identifiers in your own data. For example, a number for eac
 
 *However*, because there might be an overlap between the internal identifiers that you use, and the internal identifiers that another funder uses, you will need to add a **prefix** to avoid this possible clash and ensure better interoperability.
 
-But, in preference to internal identifiers are **commonly-used identifiers** from maintained registers (such as Companies House), which provide a ready-made alternative that supports joined-up data and make analysis more complete.
+But, in preference to internal identifiers are **commonly-used identifiers** from maintained registers, which provide a ready-made alternative that supports joined-up data and make analysis more complete. Most organisations will be registered on some sort of official register (such as Companies House) and this makes the job of adding commonly-used unique and persistent identifiers easier.
 
 ### Prefixes
 Because more than one publisher may happen to use the same internal identifier to refer to different organisations or deals that they both hold information for, prefixes are important in helping to tell them apart when it comes to joining up datasets from many publishers by adding an extra element of "uniqueness" to an identifier.
@@ -42,7 +42,7 @@ To create deal identifiers:
 .. _organisation-identifier:
 ```
 ## Organisation identifier
-Most organisations have some sort of official registration number that can be used to uniquely identify them and to look up their details from an official registers or public list.
+Most organisations have some sort of official registration number that can be used to uniquely identify them and to look up their details from an official register or public list.
 
 There are two parts to an organisation identifier:
 
@@ -75,14 +75,15 @@ In these cases, it's important to know which identifier to pick so that users of
 Search on [org-id.guide](http://org-id.guide) for identifier sources for [UK organisations](http://org-id.guide/?structure=&coverage=GB&subnational=&sector=), [UK charities](http://org-id.guide/?structure=charity&coverage=GB&sector=), or [any other organisation type](http://org-id.guide/).
 
 ### Commonly used identifier lists
-The following identifier lists are often used in Social Investment Data Standard publication. They are listed here in rough order of priority (e.g. if you already know the company number, use this in preference to the charity number).
-
-* [GB-COH](http://org-id.guide/list/GB-COH) - UK Company Number
+The following identifier lists are often used in Social Investment Data Standard publication:
+* [GB-COH](http://org-id.guide/list/GB-COH) - Company Number
 * [GB-CHC](http://org-id.guide/list/GB-CHC) (England and Wales), [GB-SC](http://org-id.guide/list/GB-SC) (Scotland), [GB-NIC](http://org-id.guide/list/GB-NIC) (Northern Ireland) - Charity Numbers
-* [GB-EDU](http://org-id.guide/list/GB-EDU) and [GB-UKPRN](http://org-id.guide/list/GB-UKPRN) - Education establishments
+* [GB-MPR](http://org-id.guide/list/GB-MPR) - Mutuals Public Register
 * [GB-LAE](http://org-id.guide/list/GB-LAE) (England), [GB-LAS](http://org-id.guide/list/GB-LAS) (Scotland), [GB-PLA](http://org-id.guide/list/GB-PLA) (Wales)  - Local authorities
 
-If you have a registered number from some other scheme, including overseas registrars, check the [org-id List Locator](http://org-id.guide/) for a code to use. If the code you need is not listed, contact the support team.
+The list is in a general order of priority. If it is possible to use a Company Number, this would be preferred to using a Charity Number. If an organisation appears on the Mutuals Public Register, it is also likely to have a Company Number, which would also be preferred.
+
+If you have a registered number from some other scheme, including overseas registrars, check the [org-id.guide](http://org-id.guide/) for a code to use. If the code you need is not listed, contact the support team.
 
 ### Creating internal identifiers
 If you do not have any commonly used codes for an organisation, then using internal identifiers in such a way that they can be uniquely distinguished from other published data is the way forward.
@@ -91,4 +92,4 @@ If you do not have any commonly used codes for an organisation, then using inter
 
 * If you use a database that records details of organisations in a separate lookup table, this may provide an persistent identifier you can use.
 
-* If you only record data in a spreadsheet, and don't assign organisations an identifier of any sort, you could use a spreadsheet formula to turn the organisation name into an identifier (e.g. removing spaces and lowercasing the name).
+* If you only record data in a spreadsheet, and don't assign organisations an identifier of any sort, you could use a spreadsheet formula to turn the organisation name into an identifier (e.g. removing spaces and lowercasing the name) in the format {publisher prefix}-{internal identifier}, e.g. `ABC-organisationname`.

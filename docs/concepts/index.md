@@ -7,13 +7,13 @@ Social investors usually provide finance to not-for-profit or impact-focused org
 
 Social benefits could include the creation of jobs in an economically disadvantaged area, provision of third-sector healthcare services to those in need, or producing goods with a limited negative impact on the environment. Forms of social finance can include lending, share equity, crowdfunding and social impact bonds.
 
-The Social Finance Data Specification does not strictly define what qualifies as social investment.
+The Social Investement Data Labs Specification does not strictly define what qualifies as social investment.
 
 ## Building blocks
 
-A Social Finance Data Specification document is made up of a number of sections which detail the entities that can be described using the specification, and the properties it recognises.
+A Social Investement Data Labs Specification document is made up of a number of sections which detail the entities that can be described using the specification, and the properties it recognises.
 
-The fundamental building block of the Social Finance Data Specification is a **deal**. Deals have a number of direct properties and a number of related entities, including the organisations involved, classifications, financing and transactions, which in turn have properties.
+The fundamental building block of the Social Investement Data Labs Specification is a **deal**. Deals have a number of direct properties and a number of related entities, including the organisations involved, classifications, financing and transactions, which in turn have properties.
 
 For a full list of properties and entities referred to by the specification, read the Schema.
 

@@ -1,6 +1,6 @@
 Schema Reference
 ================
-The Social Finance Data Standard is maintained using JSON Schema. The Schema is the authoritative source for the specification, and defines the structure of an individual deal so that it can be annotated and validated.
+The Social Investment Data Labs Specification is maintained using JSON Schema. The Schema is the authoritative source for the specification, and defines the structure of an individual deal so that it can be annotated and validated.
 
 When publishing an individual deal or a number of deals, these deals should be packaged into a single, valid JSON file.
 

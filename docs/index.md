@@ -1,20 +1,20 @@
-Social Finance Data Specification: Documentation (Alpha)
+Social Investement Data Labs Specification: Documentation (Alpha)
 ==============================
 ```eval_rst
 .. attention::
     **This documentation site is a work in progress.**
 
-    The Social Finance Data Specification is being developed as a draft data specification to describe social investment. For more information contact jack.lord@opendataservices.coop or bob.harper@opendataservices.coop
+    The Social Investement Data Labs Specification is being developed as a draft data specification to describe social investment. For more information contact jack.lord@opendataservices.coop or bob.harper@opendataservices.coop
 
 ```
 
 For open data to be really useful it has to follow a common data model – a specification – so that data from many publishers can be compared.
 
-We are developing the Social Finance Data Specification for this purpose. This specification ensure that when all your data is made available online, it can be easily transferrable between different applications.
+We are developing the Social Investement Data Labs Specification for this purpose. This specification ensure that when all your data is made available online, it can be easily transferrable between different applications.
 
 This is how we make sure that when you use the data, the results can be compared.
 
-The Social Finance Data Specification is:
+The Social Investement Data Labs Specification is:
 
 * **Open data driven**: providing a common way to share transparent and interoperable information on social investment.
 * **Easy to use**: offering a simple spreadsheet format for publishing and consuming data, backed up by a structured data model, and developer-friendly JSON serialisation.
@@ -33,7 +33,7 @@ The Social Finance Data Specification is:
 
 ```
 ## About
-The Social Finance Data Specification is being developed as a draft data specification to describe social investment.
+The Social Investement Data Labs Specification is being developed as a draft data specification to describe social investment.
 
 ## Support
 For more information contact [jack.lord@opendataservices.coop](mailto:jack.lord@opendataservices.coop) or [bob.harper@opendataservices.coop](mailto:bob.harper@opendataservices.coop)

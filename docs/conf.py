@@ -76,7 +76,7 @@ source_suffix = ['.rst', '.md']
 master_doc = 'index'
 
 # General information about the project.
-project = 'Social Investment Data Labs Specification (Alpha)'
+project = 'Social Investment Data Lab Specification (Alpha)'
 copyright = '2016-2017, Open Data Services'
 author = 'Open Data Services'
 
@@ -295,7 +295,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'sphinx.tex', 'Social Investment Data Labs Specification (Alpha)',
+    (master_doc, 'sphinx.tex', 'Social Investment Data Lab Specification (Alpha)',
      'Open Data Services', 'manual'),
 ]
 
@@ -337,7 +337,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'sphinx', 'Social Investment Data Labs Specification (Alpha)',
+    (master_doc, 'sphinx', 'Social Investment Data Lab Specification (Alpha)',
      [author], 1)
 ]
 
@@ -352,8 +352,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'sphinx', 'Social Investment Data Labs Specification (Alpha)',
-     author, 'sphinx', 'The Social Investment Data Labs Specification is being developed as a draft data specification for describing social investment.',
+    (master_doc, 'sphinx', 'Social Investment Data Lab Specification (Alpha)',
+     author, 'sphinx', 'The Social Investment Data Lab Specification is being developed as a draft data specification for describing social investment.',
      'Miscellaneous'),
 ]
 

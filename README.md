@@ -1,6 +1,6 @@
-# Social Investment Data Labs Specification (Alpha)
+# Social Investment Data Lab Specification (Alpha)
 
-The Social Investment Data Labs Specification is being developed as a draft data specification for describing social investment. For more information contact jack.lord@opendataservices.coop or bob.harper@opendataservices.coop
+The Social Investment Data Lab Specification is being developed as a draft data specification for describing social investment. For more information contact jack.lord@opendataservices.coop or bob.harper@opendataservices.coop
 
 ## Building the documentation
 

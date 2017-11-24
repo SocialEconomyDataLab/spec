@@ -18,8 +18,8 @@ python3 -m venv .ve
 # Enter the venv, needs to be run for every new shell
 source .ve/bin/activate
 # Install requirements
+pip install -r pre_requirements.txt
 pip install -r requirements.txt
-python setup.py
 # Build the docs
 cd docs
 make dirhtml

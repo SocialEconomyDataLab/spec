@@ -4,6 +4,13 @@ The Social Investment Data Lab Specification is being developed as a draft data 
 
 ## Building the documentation
 
+### Initiate submodules
+After cloning:
+```
+git submodule init
+git submodule update
+```
+
 ### Build the docs locally
 
 Assuming a unix based system:

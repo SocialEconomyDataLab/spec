@@ -6,10 +6,11 @@ When publishing an individual deal or a number of deals, these deals should be p
 
 These field names for properties are important for ensuring that data is published in a machine-readable format. The title gives a human-readable form, with information about each of the properties included in description.
 
-The [full JSON schema](../_static/docson/index.html#../schema.json) is described below.<script src="../_static/docson/widget.js" data-schema="../schema.json"> </script>
+The [full JSON schema](../_static/docson/index.html#../schema.json$$expand) is described below.<script src="../_static/docson/widget.js" data-schema="../schema.json"> </script>
 
 ```eval_rst
 
-.. jsonschema:: ../../schema/schema.json
+.. jsonschema:: ../schema/schema.json
 
 ```
+

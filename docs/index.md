@@ -26,9 +26,9 @@ The Social Investment Data Lab Specification is:
 .. toctree::
    :maxdepth: 2
 
-   concepts/index
+   concepts
    identifiers
-   schema/index
+   schema
    licensing
 
 ```

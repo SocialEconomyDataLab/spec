@@ -10,6 +10,7 @@ The [full JSON schema](../_static/docson/index.html#../schema.json$$expand) is d
 
 ```eval_rst
 
-.. jsonschema:: ../../schema/schema.json
+.. jsonschema:: ../schema/schema.json
 
 ```
+

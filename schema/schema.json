@@ -209,7 +209,7 @@
               "properties": {
                 "id": {
                   "type": "string",
-                  "description": "A globally unique identifier for this Organization. This is important to enable data on funders and recipients to be linked up across different grant-makers. The [Organization Identifier Standard](http://www.threesixtygiving.org/standard/identifiers/#toc-Organization-identifier) guidance explains how to create this ID, based either on the known company or charity number, or upon identifiers held in the grant-maker's internal systems.",
+                  "description": "A globally unique identifier for this Organization. This enables data on funders and recipients to be linked up across different datasets. [Org-id.guide](http://org-id.guide) links to a number of official registers that can be used to generate identifiers in a common way (e.g. using UK Company or Charity number). Alternatively, unique identifiers from the publisher's internal systems can be used.",
                   "title": "Identifier"
                 },
                 "name": {

@@ -100,9 +100,10 @@
         "Grant": {
             "type": "object",
             "title": "Grant",
-            "description": "A non-repayable award",
+            "description": "A non-repayable award of money.",
+            "required": ["id"],
             "properties": {
-                "identifier": {
+                "id": {
                     "title": "Identifier",
                     "type": "string"
                 },
@@ -110,9 +111,14 @@
                     "title": "Currency",
                     "type": "string"
                 },
+                "amountAwarded": {
+                    "title": "Amount Awarded",
+                    "description": "The value of the grant.",
+                    "type": "number"
+                },
                 "fundingProgramme": {
                     "title": "Funding Programme",
-                    "description": "Funding programme that the grant forms a part of.",
+                    "description": "Funding programme that the finance forms a part of.",
                     "$ref": "#/definitions/FundingProgramme"
                 }
             }
@@ -121,8 +127,9 @@
             "type": "object",
             "title": "Equity",
             "description": "An equity investment",
+            "required": ["id"],
             "properties": {
-                "identifier": {
+                "id": {
                     "title": "Identifier",
                     "type": "string"
                 },
@@ -132,7 +139,7 @@
                 },
                 "fundingProgramme": {
                     "title": "Funding Programme",
-                    "description": "Funding programme that the grant forms a part of.",
+                    "description": "Funding programme that the finance forms a part of.",
                     "$ref": "#/definitions/FundingProgramme"
                 }
             }
@@ -141,8 +148,9 @@
             "type": "object",
             "title": "Credit",
             "description": "A credit-based investment",
+            "required": ["id"],
             "properties": {
-                "identifier": {
+                "id": {
                     "title": "Identifier",
                     "type": "string"
                 },
@@ -152,7 +160,48 @@
                 },
                 "fundingProgramme": {
                     "title": "Funding Programme",
-                    "description": "Funding programme that the grant forms a part of.",
+                    "description": "Funding programme that the finance forms a part of.",
+                    "$ref": "#/definitions/FundingProgramme"
+                }
+            }
+        },
+        "SocialImpactBond" : {
+            "type": "object",
+            "title": "Social Impact Bond",
+            "description": "A performance-based contract ('payment by results') which raises capital to pay for improved social outcomes and returns money to investors depending on outcome success.",
+            "required": ["id"],
+            "properties": {
+                "id": {
+                    "title": "Identifier",
+                    "type": "string"
+                },
+                "currency": {
+                    "title": "Currency",
+                    "type": "string"
+                },
+                "capital": {
+                    "title": "Initial Capital",
+                    "description": "The amount of capital provided upfront to service providers by investors.",
+                    "type": "number"
+                },
+                "maximumPayment": {
+                    "title": "Maximum Return",
+                    "description": "The total amount of return that can be repaid to investors covering all outcomes.",
+                    "type": "number"
+                },
+                "deliveryAgency": {
+                    "title": "Delivery Agency",
+                    "description": "The contractor who ",
+                    "$ref": "#/definitions/Organization"
+                },
+                "commissioner": {
+                    "title": "Commissioner",
+                    "description": "The organisation (e.g. government body) making payments based on measured outcomes.",
+                    "$ref": "#/definitions/Organization"
+                },
+                "fundingProgramme": {
+                    "title": "Funding Programme",
+                    "description": "Funding programme that the finance forms a part of.",
                     "$ref": "#/definitions/FundingProgramme"
                 }
             }
@@ -161,8 +210,9 @@
             "type": "object",
             "title": "Project",
             "description": "A project funded by a social finance investment",
+            "required": ["id"],
             "properties": {
-                "identifier": {
+                "id": {
                     "title": "Identifier",
                     "type": "string"
                 },

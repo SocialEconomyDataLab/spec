@@ -70,6 +70,14 @@
                             "items": {
                                 "$ref": "#/definitions/Credit"
                             }
+                        },
+                        "socialImpactBond": {
+                            "title": "Social Impact Bond investments",
+                            "description": "Social Impact Bonds developed to finance the activity",
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/SocialImpactBond"
+                            }
                         }
                     }
                 },
@@ -191,7 +199,7 @@
                 },
                 "deliveryAgency": {
                     "title": "Delivery Agency",
-                    "description": "The contractor who ",
+                    "description": "The contractor who delivers the Social Impact Bond (e.g. a Special Purpose Vehicle).",
                     "$ref": "#/definitions/Organization"
                 },
                 "commissioner": {

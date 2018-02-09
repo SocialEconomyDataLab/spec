@@ -2,10 +2,10 @@
     white-space: normal !important;
 }
 .wy-side-nav-search {
-    background: #9b59b6;
+    background: linear-gradient(-39deg, #09bcc6 0%, #1fc8db 51%, #2cb5e8 75%);
 }
 .wy-side-nav-search input[type=text] {
-    border-color: #9b59b6;
+    border-color: #2cb5e8;
 }
 
 .admonition {

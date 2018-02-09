@@ -1,13 +1,36 @@
 Getting Started
 ========
-## What is social investment?
-Broadly, it is the investment of money with the aim of providing a social benefit as well as an economic return.
+The Social Investment Data Lab Specification defines the definitions, data models and guidance required to make data on social investment interoperable.
 
-Social investors usually provide finance to not-for-profit or impact-focused organisations, such as charities, social enterprises, community businesses and co-operatives.
+The Specification is being designed to help people and organisations who want to:
+* Encourage **increased transparency** and **sharing of data** on social investment
+* Support **mass collaboration** around data
+* Make two different systems **talk to one another**
+* **Collect and analyse** data from many different places
 
-Social benefits could include the creation of jobs in an economically disadvantaged area, provision of third-sector healthcare services to those in need, or producing goods with a limited negative impact on the environment. Forms of social finance can include lending, share equity, crowdfunding and social impact bonds.
+The Specification comprises:
+* **This Documentation**, which describes the elements of the Specification, and gives guidance on how data can be published in the correct format.
+* **The** [Schema](schema), which is a technical description of the fields that are included in the Specification, and is a developer-friendly structure for working with published data based on JSON Schema.
+* **Codelists**: lists of classifications used to categorise data.
 
-The Social Investment Data Lab Specification does not strictly define what qualifies as social investment.
+## What qualifies as social investment?
+The Social Investment Data Lab Specification doesn’t seek to impose a strict definition of social investment that published data should meet. That decision can be made by the data holders themselves.
+
+Participants in the social investment market may have different concepts of what can be considered as social investment, or ‘true’ social investment.
+
+A broad understanding is, however, useful as a point of reference. The suggested definition is agnostic about who the investing and recipient organisations are, with the focus instead being on the purpose of the investment itself.
+
+```eval_rst
+
+.. admonition:: Social Investment
+
+  The **investment** of money with the expectation that a **social benefit** as well as an **economic return** will be gained.
+
+```
+
+This differs from conventional investment in that it is anticipated that a social benefit will be realised through the use of the money. It also differs from philanthropically-motivated grantmaking as an economic return is expected. The economic return does not necessarily have to be profitable, and could be simply expected to cover the cost of the initial outlay.
+
+Social investment, therefore, does not have to be socially-motivated. It may be the case that the investor’s motivation is simply to gain an economic return (e.g. in the case of mainstream financial institutions), with the investee’s motivation in accessing the finance being guided by the aim of delivering a social benefit. 
 
 ## Building blocks
 
@@ -15,7 +38,7 @@ A Social Investment Data Lab Specification document is made up of a number of se
 
 The fundamental building block of the Social Investment Data Lab Specification is a **deal**. Deals have a number of direct properties and a number of related entities, including the organisations involved, classifications, financing and transactions, which in turn have properties.
 
-For a full list of properties and entities referred to by the specification, read the Schema.
+For a full list of properties and entities referred to by the specification, read the [Schema](schema).
 
 ### Financial elements
 Deals may comprise one or more forms of finance, typically a **grant**, a **loan**, and/or **equity**.

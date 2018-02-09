@@ -35,5 +35,7 @@ The Social Investment Data Lab Specification is:
 ## About
 The Social Investment Data Lab Specification is being developed as a draft data specification to describe social investment.
 
+It is an open specification, and you can contribute to its development by participating in the [issue tracker (Github)](https://github.com/SocialInvestmentDataLab/spec/issues), or by getting in contact using the details below.
+
 ## Support
 For more information contact [jack.lord@opendataservices.coop](mailto:jack.lord@opendataservices.coop) or [bob.harper@opendataservices.coop](mailto:bob.harper@opendataservices.coop)

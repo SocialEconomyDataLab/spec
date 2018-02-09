@@ -2,6 +2,15 @@
 
 {% set css_files = css_files + ["_static/basic.css"] %}
 
+{% block sidebartitle %}
+<a href="{{ pathto(master_doc) }}">
+<img src="https://raw.githubusercontent.com/SocialInvestmentDataLab/socialinvestmentdatalab.github.io/master/img/logos/sfdl_logo_nobkgd.png" class="logo" />
+Social Investment Data Lab Specification
+</a>
+
+{% include "searchbox.html" %}
+{% endblock %}
+
 {% block footer %}
 <!-- Piwik -->
 <script type="text/javascript">

@@ -17,7 +17,7 @@ The Social Investment Data Specification asks you to give identifiers to:
 
 * [Deals](deal-identifier);  
 * [Organisations](organisation-identifier);  
-* Transactions;  
+<!-- * Transactions; -->
 * and other unique elements in your data.  
 
 ## Identifier basics

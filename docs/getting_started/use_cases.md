@@ -26,6 +26,12 @@ Linked social investment data can help investors to identify organisations that 
 
 Data can also help to highlight local areas and services where investments have not performed well in the past, or do not exist currently, and develop innovative approaches to these problems.
 
+```eval_rst
+.. admonition:: For example
+
+  As a social entrepreneur, I want to point to where social investment has been used successfully before, so that I have evidence to support my application for a loan
+```
+
 ### 2. Monitoring the market
 
 Relatively little is known about the overall size, make-up and growth of the social investment market.
@@ -36,6 +42,12 @@ While there are many large institutions who provide bank lending or specialist s
 
 An improved understanding of the range of finance options for social enterprises and community businesses builds on the existing knowledge of the social investment market.
 
+```eval_rst
+.. admonition:: For example
+
+  As an analyst, I want to be able to compare the impact of social investments across a number of deals, so that I can make a judgment on what works well in a particular section of the market
+```
+
 ### 3. Improving efficiency in social investment finance institutions
 
 Many social investment finance institutions (SIFIs) have come into existence only in recent years. As they cope with the task of putting in place new systems and processes, there is a risk that a lot of trial and error, and duplication of effort, is created.
@@ -44,6 +56,12 @@ A data specification can only help to address some of these inefficiencies, but 
 
 Machine-readable data can also help in the automation of many of the monitoring and reporting processes that social investment intermediaries undertake.
 
+```eval_rst
+.. admonition:: For example
+
+  As a fund manager, I want to be able to benchmark our investments against others using data, so that I can report the impact of our funding to the board
+```
+
 ### 4. Promoting transparency and shared learning
 
 Social investment is a very different business to traditional banking and investing.
@@ -51,3 +69,9 @@ Social investment is a very different business to traditional banking and invest
 For many social lenders, demonstrating the transparency of their decision-making is an important value. Being able to show to that they are making the best use of their endowment can be a motivation factor, especially when sums of public money are involved.
 
 As an innovative and relatively new way of making a social impact, transparency is also an important step in sharing learning and experience between investors. A data standard allows information to be shared in non-discriminatory way.
+
+```eval_rst
+.. admonition:: For example
+
+  As someone working in government policy, I want to know which options for increasing the amount of social investment will work best, so I can make recommendations underpinned by evidence
+```

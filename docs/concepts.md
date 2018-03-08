@@ -30,7 +30,7 @@ A broad understanding is, however, useful as a point of reference. The suggested
 
 This differs from conventional investment in that it is anticipated that a social benefit will be realised through the use of the money. It also differs from philanthropically-motivated grantmaking as an economic return is expected. The economic return does not necessarily have to be profitable, and could be simply expected to cover the cost of the initial outlay.
 
-Social investment, therefore, does not have to be socially-motivated. It may be the case that the investor’s motivation is simply to gain an economic return (e.g. in the case of mainstream financial institutions), with the investee’s motivation in accessing the finance being guided by the aim of delivering a social benefit. 
+Social investment, therefore, does not have to be socially-motivated. It may be the case that the investor’s motivation is simply to gain an economic return (e.g. in the case of mainstream financial institutions), with the investee’s motivation in accessing the finance being guided by the aim of delivering a social benefit.
 
 ## Building blocks
 
@@ -52,11 +52,11 @@ Deals with multiple elements of repayable and non-repayable finance are sometime
 .. admonition:: For example
 
   Example 1. A social investment deal worth £20,000 made up of one element:  
-    * A £20,000 loan from a funding organsiation, to be repaid over 10 years at 4.5% interest.
+    * A £20,000 loan from a funding organisation, to be repaid over 10 years at 4.5% interest.
 
   Example 2. A social investment deal worth £35,000 is made up of:  
     * £15,000 of share capital raised by the recipient organisation through equity from a community shares offer; and,
-    * a £15,000 match funded equity invested *pari passu* in the same community shares offer by the funding organisation.  
+    * a £15,000 match funded equity invested _pari passu_ in the same community shares offer by the funding organisation.  
     * a £5,000 business development grant from a funding organisation.  
 
   Example 3. A social investment deal worth £50,000 is made up of:  

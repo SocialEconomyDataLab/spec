@@ -30,16 +30,18 @@ Deals with multiple elements of repayable and non-repayable finance are sometime
     * a £40,000 **loan** from Funder B, repaid over 5 years at 3% interest.  
 
 ```
-### Organisations, people and beneficiaries  
+### Organisations
 
-A deal is entered into by a number of parties, typically the **funding** organisation (or organisations, one of whom is the **arranging** organisation) and the **recipient** organisation (or organisations).
+A deal is entered into by a number of parties, typically the **funding** organisation (or organisations, one of whom may be an **arranging** organisation) and the **recipient** organisation (or organisations).
 
-Each of the funding organisations provide one or more elements of the deal's financal elements. The equity element may be provided by a large number of organisations and individual **people** (for example, a community shares issue).
+Each of the funding organisations provide one or more elements of the deal's financial elements. The equity element may be provided by a number of different organisations. Some deals may have a principal partner who takes the role of arranging the deal.
 
-While it is possible to uniquely [identify](../identifiers) most organisations, identifying individual people who have made investments would run up against the issue of data privacy laws (not to mention the amount of effort it would take to do so).
+Recipient organisations receive the finance and are typically responsible for ensuring that any terms (such as repayment) are met, though it may be backed by another party.
 
 ### Purpose
 
+Recipient organisations have at their core a social mission. They make use of social investment, and other forms of finance, to ensure that they are able to carry out activities that serve this mission.
 
+Usually, in seeking a social investment deal, recipients have a **purpose** in mind. It may be that they are a community business requiring significant equity capital in order to purchase premises in order to start trading, or it may be that they require loan financing in order to pay suppliers and ensure that they are able to grow.
 
 ### Transactions

@@ -1,7 +1,5 @@
 # Licensing
 
-## A Guide to Open Data Licensing
-
 ### About this Guide
 
 This guide is for organisations publishing social investment deal information to the Social Investment Data Standard format. We assume that you have permission to publish the information if you are not the primary owner. For example, if the information was collected or published by donors, subsidiaries or other third parties.

@@ -1,10 +1,13 @@
 # Identifiers
 
+Identifiers are an important part of any dataset. They let a computer uniquely identify and refer to specific deals, organisations, geographical areas and so on.
+
+<!--- TODO:
+Ultimately, change the organisation in the example below to the Social Economy Civic Data Trust
+--->
 ```eval_rst
 
 .. admonition:: Why identifiers matter
-
-  Identifiers are an important part of any dataset. They let a computer uniquely identify and refer to specific deals, organisations, geographical areas and so-on.
 
   While a human being may be good at recognising that "POWER TO CHANGE", "Power to Change", and "power-to-change" all refer to the same organisation, computers find this a lot trickier. Machine-readability requires using a common marker to refer to the same entity and distinguish it from others, called an **identifier**.
 
@@ -76,7 +79,7 @@ Search on [org-id.guide](http://org-id.guide) for identifier sources for [UK org
 
 ### Commonly used identifier lists
 The following identifier lists are often used in Social Investment Data Standard publication:
-* [GB-COH](http://org-id.guide/list/GB-COH) - Company Number
+* [GB-COH](http://org-id.guide/list/GB-COH) - UK Company Number
 * [GB-CHC](http://org-id.guide/list/GB-CHC) (England and Wales), [GB-SC](http://org-id.guide/list/GB-SC) (Scotland), [GB-NIC](http://org-id.guide/list/GB-NIC) (Northern Ireland) - Charity Numbers
 * [GB-MPR](http://org-id.guide/list/GB-MPR) - Mutuals Public Register
 * [GB-LAE](http://org-id.guide/list/GB-LAE) (England), [GB-LAS](http://org-id.guide/list/GB-LAS) (Scotland), [GB-PLA](http://org-id.guide/list/GB-PLA) (Wales)  - Local authorities

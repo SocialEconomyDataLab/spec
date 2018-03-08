@@ -1,5 +1,5 @@
-Social Investment Data Lab Specification: Documentation (Alpha)
-==============================
+# Social Investment Data Lab Specification: Documentation (Alpha)
+
 ```eval_rst
 .. attention::
     **This documentation site is a work in progress.**
@@ -15,7 +15,7 @@ We are developing the Social Investment Data Lab Specification for this purpose.
 
 This is how we make sure that when you use the data, the results can be compared.
 
-See the [Getting Started](concepts) page for more information.
+See the [Getting Started](getting_started/index) page for more information.
 
 <!--
 Social Investment Data Lab Specification is:
@@ -29,12 +29,12 @@ Social Investment Data Lab Specification is:
 
 ```eval_rst
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
+   :glob:
 
-   concepts
-   identifiers
-   schema
-   licensing
+   getting_started/index
+   schema_reference/index
+   licensing/index
 
 ```
 ## About

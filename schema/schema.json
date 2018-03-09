@@ -120,10 +120,10 @@
                     "description": "Organisation providing the grant",
                     "$ref": "#/definitions/Organization"
                 },
-                "fundingProgramme": {
-                    "title": "Funding Programme",
-                    "description": "Funding programme that the grant forms a part of.",
-                    "$ref": "#/definitions/FundingProgramme"
+                "fund": {
+                    "title": "Fund",
+                    "description": "Fund that the grant forms a part of.",
+                    "$ref": "#/definitions/Fund"
                 }
             }
         },
@@ -150,10 +150,10 @@
                     "description": "Organisation providing the equity",
                     "$ref": "#/definitions/Organization"
                 },
-                "fundingProgramme": {
-                    "title": "Funding Programme",
-                    "description": "Funding programme that the grant forms a part of.",
-                    "$ref": "#/definitions/FundingProgramme"
+                "fund": {
+                    "title": "Fund",
+                    "description": "Fund that the grant forms a part of.",
+                    "$ref": "#/definitions/Fund"
                 }
             }
         },
@@ -180,10 +180,10 @@
                     "description": "Organisation providing the credit",
                     "$ref": "#/definitions/Organization"
                 },
-                "fundingProgramme": {
-                    "title": "Funding Programme",
-                    "description": "Funding programme that the grant forms a part of.",
-                    "$ref": "#/definitions/FundingProgramme"
+                "fund": {
+                    "title": "Fund",
+                    "description": "Fund that the grant forms a part of.",
+                    "$ref": "#/definitions/Fund"
                 }
             }
         },
@@ -392,34 +392,34 @@
                 }
             }
         },
-        "FundingProgramme": {
+        "Fund": {
             "type": "object",
             "properties": {
                 "code": {
                   "type": "string",
-                  "description": "An identifier for this funding programme.",
+                  "description": "An identifier for this fund.",
                   "title": "Code"
                 },
                 "title": {
                   "type": ["string","null"],
-                  "description": "The title of this funding programme.",
+                  "description": "The title of this fund.",
                   "title": "Title"
                 },
                 "description": {
                   "type": ["string","null"],
-                  "description": "A description of this funding programme.",
+                  "description": "A description of this fund.",
                   "title": "Description"
                 },
                 "url": {
                   "type": ["string","null"],
                   "format": "uri",
-                  "description": "A web link to more details of this funding programme.",
+                  "description": "A web link to more details of this fund.",
                   "title": "URL"
                 },
                 "dateModified": {
                   "format": "date-time",
                   "type": "string",
-                  "description": "The date and time when information about this funding programme was last updated.",
+                  "description": "The date and time when information about this fund was last updated.",
                   "title": "Last modified"
                 }
             }

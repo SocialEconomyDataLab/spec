@@ -25,16 +25,16 @@
                     "title": "Status",
                     "description": "Current status of the social investment deal: in progress, an open investment, closed without funds being drawn down, closed without core funds being approved.",
                     "type": "string",
-                    "enum": ["Pipeline","Open Investment","Closed"]
+                    "enum": ["Pipeline","Open","Closed"]
                 },
                 "recipientOrganization": {
                     "title": "Recipient Organization",
-                    "description": "The Organization in receipt of the funds from the social investment deal.",
+                    "description": "The Organization in receipt of the finances from the social investment deal.",
                     "$ref": "#/definitions/Organization"
                 },
                 "arrangingOrganization": {
                     "title": "Arranging Organization",
-                    "description": "The Organization arranging the social investment deal.",
+                    "description": "The lead Organization arranging the social investment deal.",
                     "$ref": "#/definitions/Organization"
                 },
                 "dealDate": {
@@ -45,6 +45,7 @@
                 },
                 "investments": {
                     "title": "Investments",
+                    "description": "The financial components of the deal.",
                     "type": "object",
                     "properties": {
                         "grants": {
@@ -211,7 +212,7 @@
                     "$ref": "#/definitions/Location"
                   },
                   "type": "array",
-                  "description": "Locations address with the project",
+                  "description": "Information on locations associated with the project.",
                   "title": "Location"
                 },
                 "funding": {
@@ -302,7 +303,7 @@
                   "description": "An alternative name for this Organization (e.g. trading name)",
                   "title": "Alternate Name"
                 },
-              "email": {
+                "email": {
                   "type": "string",
                   "description": "The email address for this Organization.",
                   "title": "Email"
@@ -312,7 +313,7 @@
                   "description": "A short description of this Organization and its area of work",
                   "title": "Description"
                 },
-                "OrganizationType": {
+                "organizationType": {
                   "type": ["string","null"],
                   "description": "A description of this Organization",
                   "enum":["Registered Charity","Registered Company","Community Group","List to be updated"],

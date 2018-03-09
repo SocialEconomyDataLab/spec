@@ -34,14 +34,16 @@ Deals with multiple elements of repayable and non-repayable finance are sometime
 
 A deal is entered into by a number of parties, typically the **funding** organisation (or organisations, one of whom may be an **arranging** organisation) and the **recipient** organisation (or organisations).
 
-Each of the funding organisations provide one or more elements of the deal's financial elements. The equity element may be provided by a number of different organisations. Some deals may have a principal partner who takes the role of arranging the deal.
+Each of the funding organisations provide one or more elements of the financial elements of the deal. A single financial element may be provided by one or a number of different organisations.
+
+Some deals may have a principal partner who takes the role of arranging the deal.
 
 Recipient organisations receive the finance and are typically responsible for ensuring that any terms (such as repayment) are met, though it may be backed by another party.
 
-### Purpose
+### Purpose and activities
 
-Recipient organisations have at their core a social mission. They make use of social investment, and other forms of finance, to ensure that they are able to carry out activities that serve this mission.
+Recipient organisations have at their core a social mission. They make use of social investment, and other forms of finance, to ensure that they are able to carry out **activities** that serve this mission. For example, they could be providing affordable housing to people at risk of homelessness, or they could be a community-owned shop selling locally-grown produce.
 
-Usually, in seeking a social investment deal, recipients have a **purpose** in mind. It may be that they are a community business requiring significant equity capital in order to purchase premises in order to start trading, or it may be that they require loan financing in order to pay suppliers and ensure that they are able to grow.
+Usually, in seeking a social investment deal, recipients have a **purpose** in mind for making use of the finance, and the deal may well be contingent on demonstrating this purpose to investors (amongst other things). It may be that they are a community business requiring significant equity capital in order to purchase premises so that they can start trading, or it may be that they require loan financing in order to pay suppliers and ensure that they are able to grow.
 
 ### Transactions

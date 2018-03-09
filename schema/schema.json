@@ -9,7 +9,7 @@
             "title": "Deal",
             "description": "A social investment deal",
             "type": "object",
-            "required": ["identifier","title","recipientOrganization","arrangingOrganization"],
+            "required": ["identifier","title","recipientOrganization","arrangingOrganization","investments","dealDate"],
             "properties": {
                 "identifier": {
                     "title": "Identifier",
@@ -41,7 +41,7 @@
                     "title": "Deal date",
                     "type": ["string","null"],
                     "format": "date-time",
-                    "description": "The date that the deal was awarded. Dates should be in yyyy-mm-dd format."
+                    "description": "The date that the deal was agreed. Dates should be in yyyy-mm-dd format."
                 },
                 "investments": {
                     "title": "Investments",
@@ -128,6 +128,12 @@
                     "title": "Fund",
                     "description": "Fund that the grant forms a part of.",
                     "$ref": "#/definitions/Fund"
+                },
+                "dateAgreed": {
+                    "title": "Date Agreed",
+                    "description": "The date that the financing was agreed as part of the Deal.",
+                    "type": "string",
+                    "format": "date-time"
                 }
             }
         },
@@ -161,6 +167,12 @@
                     "title": "Fund",
                     "description": "Fund that the grant forms a part of.",
                     "$ref": "#/definitions/Fund"
+                },
+                "dateAgreed": {
+                    "title": "Date Agreed",
+                    "description": "The date that the financing was agreed as part of the Deal.",
+                    "type": "string",
+                    "format": "date-time"
                 }
             }
         },
@@ -194,6 +206,12 @@
                     "title": "Fund",
                     "description": "Fund that the grant forms a part of.",
                     "$ref": "#/definitions/Fund"
+                },
+                "dateAgreed": {
+                    "title": "Date Agreed",
+                    "description": "The date that the financing was agreed as part of the Deal.",
+                    "type": "string",
+                    "format": "date-time"
                 }
             }
         },

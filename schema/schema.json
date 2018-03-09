@@ -2,18 +2,18 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "id": "https://github.com/OpenDataServices/social-finance-data-spec/blob/master/schema/schema.json",
     "title": "Social Investment Data Lab Specification",
-    "description": "A draft schema for describing social finance deals",
+    "description": "A draft schema for describing social investment deals",
     "type": "object",
     "properties": {
         "Deal": {
             "title": "Deal",
-            "description": "A social finance deal",
+            "description": "A social investment deal",
             "type": "object",
             "required": ["identifier","title","recipientOrganization","arrangingOrganization"],
             "properties": {
                 "identifier": {
                     "title": "Identifier",
-                    "description": "Unique internal identifier for the social finance deal.",
+                    "description": "Unique internal identifier for the social investment deal.",
                     "type": "string"
                 },
                 "title": {
@@ -23,18 +23,18 @@
                 },
                 "status": {
                     "title": "Status",
-                    "description": "Current status of the blended finance deal: in progress, an open investment, closed without funds being drawn down, closed without core funds being approved.",
+                    "description": "Current status of the social investment deal: in progress, an open investment, closed without funds being drawn down, closed without core funds being approved.",
                     "type": "string",
                     "enum": ["Pipeline","Open Investment","Closed"]
                 },
                 "recipientOrganization": {
                     "title": "Recipient Organization",
-                    "description": "The Organization in receipt of the funds from the social finance deal.",
+                    "description": "The Organization in receipt of the funds from the social investment deal.",
                     "$ref": "#/definitions/Organization"
                 },
                 "arrangingOrganization": {
                     "title": "Arranging Organization",
-                    "description": "The Organization arranging the social finance deal.",
+                    "description": "The Organization arranging the social investment deal.",
                     "$ref": "#/definitions/Organization"
                 },
                 "dealDate": {
@@ -190,7 +190,7 @@
         "Project": {
             "type": "object",
             "title": "Project",
-            "description": "A project funded by a social finance investment",
+            "description": "A project funded by a social investment",
             "properties": {
                 "identifier": {
                     "title": "Identifier",

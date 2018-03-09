@@ -4,7 +4,7 @@ A Social Investment Data Lab Specification document is made up of a number of se
 
 The fundamental building block of the Social Investment Data Lab Specification is a **deal**. Deals have a number of direct properties and a number of related entities, including the organisations involved, classifications, financing and transactions, which in turn have properties.
 
-For a full list of properties and entities referred to by the specification, read the [Schema](schema).
+For a full list of properties and entities referred to by the Specification, refer to the [Schema](../../schema_reference/).
 
 ### Financial elements
 Deals may comprise one or more forms of finance, typically a **grant**, a **loan**, and/or **equity**.

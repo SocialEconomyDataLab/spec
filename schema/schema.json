@@ -110,6 +110,16 @@
                     "title": "Currency",
                     "type": "string"
                 },
+                "value": {
+                    "title": "Value",
+                    "type": "number",
+                    "description": "The total value of the grant provided"
+                },
+                "fundingOrganization": {
+                    "title": "Funding Organisation",
+                    "description": "Organisation providing the grant",
+                    "$ref": "#/definitions/Organization"
+                },
                 "fundingProgramme": {
                     "title": "Funding Programme",
                     "description": "Funding programme that the grant forms a part of.",
@@ -130,6 +140,16 @@
                     "title": "Currency",
                     "type": "string"
                 },
+                "value": {
+                    "title": "Value",
+                    "type": "number",
+                    "description": "The total value of the equity provided"
+                },
+                "fundingOrganization": {
+                    "title": "Funding Organisation",
+                    "description": "Organisation providing the equity",
+                    "$ref": "#/definitions/Organization"
+                },
                 "fundingProgramme": {
                     "title": "Funding Programme",
                     "description": "Funding programme that the grant forms a part of.",
@@ -149,6 +169,16 @@
                 "currency": {
                     "title": "Currency",
                     "type": "string"
+                },
+                "value": {
+                    "title": "Value",
+                    "type": "number",
+                    "description": "The total value of the credit provided"
+                },
+                "fundingOrganization": {
+                    "title": "Funding Organisation",
+                    "description": "Organisation providing the credit",
+                    "$ref": "#/definitions/Organization"
                 },
                 "fundingProgramme": {
                     "title": "Funding Programme",

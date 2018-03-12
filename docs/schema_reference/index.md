@@ -20,6 +20,7 @@ The [full JSON schema](../_static/docson/index.html#../../_static/schema.json$$e
    :maxdepth: 2
    :glob:
 
+   codelists
    identifiers
 
 ```

@@ -239,16 +239,23 @@
                     "type": "string"
                 },
                 "activities": {
-                  "description": "The activities that the funded project will support.",
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/definitions/Activity"
-                  }
+                    "description": "An activity is carried out by an enterprise to support their mission, drawn from the [activity codelist](http://spec.socialeconomydatalab.org/en/latest/schema_reference/codelists/#activity).",
+                    "type": ["array", "null"],
+                    "items": {
+                      "type": "string"
+                    },
+                    "codelist": "activity.csv",
+                    "openCodelist": true
                 },
                 "purpose": {
                     "title": "Purpose",
                     "description": "Describes how the investment will be used by the recipient organisation, based on the [purpose codelist](http://spec.socialeconomydatalab.org/en/latest/schema_reference/codelists/#purpose).",
-                    "enum": ["adaptation", "bridging", "entrepreneurial", "growth", "impact", "purchase", "readiness", null]
+                    "type": ["array", "null"],
+                    "items": {
+                      "type": "string"
+                    },
+                    "codelist": "purpose.csv",
+                    "openCodelist": true
                 },
                 "location": {
                   "items": {
@@ -449,11 +456,6 @@
                   "title": "Last modified"
                 }
             }
-        },
-        "Activity": {
-            "description": "An activity is carried out by an enterprise to support their mission, drawn from the [activity codelist](http://spec.socialeconomydatalab.org/en/latest/schema_reference/codelists/#activity).",
-            "title": "Activity",
-            "enum": ["agriculture", "arts", "businessServices", "childcare", "construction", "employment", "energy", "events", "financial", "food", "health", "housing", "manufacturing", "retail", "sports", "technology", "tourism", "transport", "utilities", "wholesale", null]
         }
     }
 }

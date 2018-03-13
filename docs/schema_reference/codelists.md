@@ -55,7 +55,7 @@ Describes the type of loan that forms part of a deal.
    :file: ../../schema/codelists/loanType.csv
 ```
 
-### Organisation Type
+### Organization Type
 An organisation may be classified according to its type, which usually relates to its legal status. Some organisations may be registered with Companies House or with the Financial Conduct Authority, which would indicate their legal status.
 
 ```eval_rst

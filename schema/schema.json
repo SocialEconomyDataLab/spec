@@ -340,10 +340,9 @@
                   "title": "Description"
                 },
                 "organizationType": {
-                  "type": ["string","null"],
-                  "description": "A description of this Organization",
-                  "enum":["Registered Charity","Registered Company","Community Group","List to be updated"],
-                  "title": "Organization Type"
+                  "title": "Organization Type",
+                  "description": "The type of Organization, , drawn from the [organizationType codelist](http://spec.socialeconomydatalab.org/en/latest/schema_reference/codelists/#organization-type.",
+                  "enum": ["bencom", "charity", "cic", "cio", "clg", "cls", "coop", "llp", "mutual", "other", "partnershipLtd", "trust", "unincorp", "untld", null]
                 },
                 "url": {
                   "type": "string",
@@ -356,7 +355,7 @@
                     "$ref": "#/definitions/Location"
                   },
                   "type": "array",
-                  "description": "Locations associated with the organization",
+                  "description": "Locations associated with the Organization",
                   "title": "Location"
                 },
                 "dateModified": {

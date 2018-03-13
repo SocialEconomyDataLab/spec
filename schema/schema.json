@@ -102,7 +102,7 @@
         "Grant": {
             "type": "object",
             "title": "Grant",
-            "description": "A non-repayable award",
+            "description": "A non-repayable award.",
             "properties": {
                 "identifier": {
                     "title": "Identifier",
@@ -115,24 +115,24 @@
                 "value": {
                     "title": "Value",
                     "type": "number",
-                    "description": "The total value of the grant provided"
+                    "description": "The total value of the grant provided."
                 },
                 "fundingOrganizations": {
                     "title": "Funding Organization",
                     "type": "array",
-                    "description": "Organizations providing the equity",
+                    "description": "Organizations providing the equity.",
                     "items": {
                       "$ref": "#/definitions/Organization"
                     }
                 },
                 "fund": {
                     "title": "Fund",
-                    "description": "Fund that the grant forms a part of.",
+                    "description": "Fund that the investment forms a part of.",
                     "$ref": "#/definitions/Fund"
                 },
                 "dateAgreed": {
                     "title": "Date Agreed",
-                    "description": "The date that the financing was agreed as part of the Deal.",
+                    "description": "The date that the investment was agreed as part of the Deal.",
                     "type": "string",
                     "format": "date-time"
                 }
@@ -141,7 +141,7 @@
         "Equity": {
             "type": "object",
             "title": "Equity",
-            "description": "An equity investment",
+            "description": "An equity investment.",
             "properties": {
                 "identifier": {
                     "title": "Identifier",
@@ -154,24 +154,24 @@
                 "value": {
                     "title": "Value",
                     "type": "number",
-                    "description": "The total value of the equity provided"
+                    "description": "The total value of the equity provided."
                 },
                 "fundingOrganizations": {
                     "title": "Funding Organization",
                     "type": "array",
-                    "description": "Organizations providing the equity",
+                    "description": "Organizations providing the equity.",
                     "items": {
                       "$ref": "#/definitions/Organization"
                     }
                 },
                 "fund": {
                     "title": "Fund",
-                    "description": "Fund that the grant forms a part of.",
+                    "description": "Fund that the investment forms a part of.",
                     "$ref": "#/definitions/Fund"
                 },
                 "dateAgreed": {
                     "title": "Date Agreed",
-                    "description": "The date that the financing was agreed as part of the Deal.",
+                    "description": "The date that the investment was agreed as part of the Deal.",
                     "type": "string",
                     "format": "date-time"
                 }
@@ -193,7 +193,7 @@
                 "value": {
                     "title": "Value",
                     "type": "number",
-                    "description": "The total value of the credit provided"
+                    "description": "The total value of the credit provided."
                 },
                 "loanType": {
                      "title": "Loan Type",
@@ -205,19 +205,19 @@
                 "fundingOrganizations": {
                     "title": "Funding Organization",
                     "type": "array",
-                    "description": "Organizations providing the equity",
+                    "description": "Organizations providing the equity.",
                     "items": {
                       "$ref": "#/definitions/Organization"
                     }
                 },
                 "fund": {
                     "title": "Fund",
-                    "description": "Fund that the grant forms a part of.",
+                    "description": "Fund that the investment forms a part of.",
                     "$ref": "#/definitions/Fund"
                 },
                 "dateAgreed": {
                     "title": "Date Agreed",
-                    "description": "The date that the financing was agreed as part of the Deal.",
+                    "description": "The date that the investment was agreed as part of the Deal.",
                     "type": "string",
                     "format": "date-time"
                 }

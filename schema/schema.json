@@ -233,6 +233,11 @@
                     "description": "A description of this project",
                     "type": "string"
                 },
+                "purpose": {
+                    "title": "Purpose",
+                    "description": "Describes how the investment will be used by the recipient organisation, based on the [purpose codelist](http://spec.socialeconomydatalab.org/en/latest/schema_reference/codelists/#purpose).",
+                    "enum": ["adaptation", "bridging", "entrepreneurial", "growth", "impact", "purchase", "readiness", null]
+                },
                 "location": {
                   "items": {
                     "$ref": "#/definitions/Location"

@@ -24,8 +24,7 @@
                 "status": {
                     "title": "Status",
                     "description": "Current status of the social investment deal: in progress, an open investment, closed without funds being drawn down, closed without core funds being approved.",
-                    "type": "string",
-                    "enum": ["Pipeline","Open","Closed"]
+                    "enum": ["open", "withdrawn", "completed", "pipeline", null]
                 },
                 "recipientOrganization": {
                     "title": "Recipient Organization",

@@ -37,6 +37,15 @@ An asset lock is a legal clause that ensures that an organisations assets (retai
    :file: ../../schema/codelists/assetLock.csv
 ```
 
+### Loan Type
+Describes the type of loan that forms part of a deal.
+
+```eval_rst
+.. csv-table::
+   :header-rows: 1
+   :file: ../../schema/codelists/loanType.csv
+```
+
 ### Organisation Type
 An organisation may be classified according to its type, which usually relates to its legal status. Some organisations may be registered with Companies House or with the Financial Conduct Authority, which would indicate their legal status.
 
@@ -44,4 +53,13 @@ An organisation may be classified according to its type, which usually relates t
 .. csv-table::
    :header-rows: 1
    :file: ../../schema/codelists/organizationType.csv
+```
+
+### Status
+Describes the status of an investment.
+
+```eval_rst
+.. csv-table::
+   :header-rows: 1
+   :file: ../../schema/codelists/status.csv
 ```

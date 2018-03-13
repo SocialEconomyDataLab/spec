@@ -23,7 +23,7 @@
                 },
                 "status": {
                     "title": "Status",
-                    "description": "Current status of the social investment deal: in progress, an open investment, closed without funds being drawn down, closed without core funds being approved.",
+                    "description": "Current status of the social investment deal based on the [dealStatus codelist](http://spec.socialeconomydatalab.org/en/latest/schema_reference/codelists/#deal-status).",
                     "enum": ["open", "withdrawn", "completed", "pipeline", null]
                 },
                 "recipientOrganization": {

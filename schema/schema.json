@@ -178,7 +178,7 @@
         "Credit": {
             "type": "object",
             "title": "Credit",
-            "description": "A credit-based investment",
+            "description": "A credit-based investment.",
             "properties": {
                 "identifier": {
                     "title": "Identifier",
@@ -192,6 +192,11 @@
                     "title": "Value",
                     "type": "number",
                     "description": "The total value of the credit provided"
+                },
+                "loanType": {
+                     "title": "Loan Type",
+                     "description": "The type of loan that forms part of the investment, drawn from the [loanType codelist](http://spec.socialeconomydatalab.org/en/latest/schema_reference/codelists/#loan-type.",
+                     "enum": ["hirePurchase", "secured", "unsecured", null]
                 },
                 "fundingOrganizations": {
                     "title": "Funding Organization",

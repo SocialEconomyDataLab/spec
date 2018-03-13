@@ -268,10 +268,15 @@
                   "description": "The contact person at this Organization.",
                   "title": "Contact Name"
                 },
+                "charitableStatus": {
+                  "title": "Charitable Status",
+                  "description": "Is the organisation a registered charity?",
+                  "type": "boolean"
+                },
                 "charityNumber": {
-                      "type": "string",
-                      "description": "Registered charity number, if applicable.",
-                      "title": "Charity Number"
+                  "type": "string",
+                  "description": "Registered charity number, if applicable.",
+                  "title": "Charity Number"
                 },
                 "companyNumber": {
                   "type": "string",

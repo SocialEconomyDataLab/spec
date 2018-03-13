@@ -1,4 +1,4 @@
 Code,Title,Description
-voluntary,Voluntary,"The organisation has a clause in its governing document which limits passing assets on dissolution to another organisation with a suitable asset lock, but this clause could be removed by members or shareholders."
-statutory,Statutory,"The organisation is limited to passing assets on dissolution to another organisation with a statutory asset lock, and only with reference to a financial regulator. "
 none,None,The organisation does not have an asset lock.
+statutory,Statutory,"The organisation is limited to passing assets on dissolution to another organisation with a statutory asset lock, and only with reference to a financial regulator. "
+voluntary,Voluntary,"The organisation has a clause in its governing document which limits passing assets on dissolution to another organisation with a suitable asset lock, but this clause could be removed by members or shareholders."

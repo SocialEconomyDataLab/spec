@@ -195,7 +195,7 @@
                 },
                 "loanType": {
                      "title": "Loan Type",
-                     "description": "The type of loan that forms part of the investment, drawn from the [loanType codelist](http://spec.socialeconomydatalab.org/en/latest/schema_reference/codelists/#loan-type.",
+                     "description": "The type of loan that forms part of the investment, drawn from the [loanType codelist](http://spec.socialeconomydatalab.org/en/latest/schema_reference/codelists/#loan-type).",
                      "enum": ["hirePurchase", "secured", "unsecured", null]
                 },
                 "fundingOrganizations": {
@@ -341,7 +341,7 @@
                 },
                 "organizationType": {
                   "title": "Organization Type",
-                  "description": "The type of Organization, , drawn from the [organizationType codelist](http://spec.socialeconomydatalab.org/en/latest/schema_reference/codelists/#organization-type.",
+                  "description": "The type of Organization, , drawn from the [organizationType codelist](http://spec.socialeconomydatalab.org/en/latest/schema_reference/codelists/#organization-type).",
                   "enum": ["bencom", "charity", "cic", "cio", "clg", "cls", "coop", "llp", "mutual", "other", "partnershipLtd", "trust", "unincorp", "untld", null]
                 },
                 "url": {
@@ -451,7 +451,7 @@
             }
         },
         "Activity": {
-            "description": "An activity is carried out by an enterprise to support their mission, drawn from the [activity codelist](http://spec.socialeconomydatalab.org/en/latest/schema_reference/codelists/#activity",
+            "description": "An activity is carried out by an enterprise to support their mission, drawn from the [activity codelist](http://spec.socialeconomydatalab.org/en/latest/schema_reference/codelists/#activity).",
             "title": "Activity",
             "enum": ["agriculture", "arts", "businessServices", "childcare", "construction", "employment", "energy", "events", "financial", "food", "health", "housing", "manufacturing", "retail", "sports", "technology", "tourism", "transport", "utilities", "wholesale", null]
         }

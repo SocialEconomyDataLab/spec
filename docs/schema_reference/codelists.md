@@ -15,7 +15,7 @@ Describes the activities that an organisation undertakes, for example, the type 
 ```eval_rst
 .. csv-table::
    :header-rows: 1
-   :file: ../../schema/codelists/activities.csv
+   :file: ../../schema/codelists/activity.csv
 ```
 
 ### Purpose

@@ -21,7 +21,7 @@ Codelist values (codes) are case sensitive strings with matching titles. A publi
        :header-rows: 1
        :file: ../../schema/codelists/assetLock.csv
 
-  A publisher might have more detailed information on an organisation's asset lock beyond the general groupings of 'statutory' or 'voluntary' (or 'none'). For example, they might have a value "Community . However, they should be able to map the values that they have to the codes in this codelist, and publish these in the organisation's ```assetLock``` value.
+  A publisher might have more detailed information on an organisation's asset lock beyond the general groupings of 'statutory' or 'voluntary' (or 'none'), or they may record other information that could be used. For example, they might record the organisation's legal type as a "Community Benefit Society". As these types of organisation have a statutory asset lock, they should be able to map the values that they have to the codes in this codelist, and publish these in the organisation's ```assetLock``` field.
 
     .. code-block:: json
 

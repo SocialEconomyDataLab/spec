@@ -14,10 +14,11 @@ The Specification is being designed to help people and organisations who want to
 
   The Specification comprises:
 
-  * **This Documentation**, which describes the elements of the Specification, and gives guidance on how data can be published in the correct format.
-  * **The** `Schema`__, which is a technical description of the fields that are included in the Specification, and is a developer-friendly structure for working with published data based on JSON Schema.
-  * **Codelists**: lists of classifications used to categorise data.
+  * This Documentation, which describes the elements of the Specification, and gives guidance on how data can be published in the correct format.
+  * The `Schema`__, which is a technical description of the fields that are included in the Specification, and is a developer-friendly structure for working with published data based on JSON Schema.
+  * `Codelists`__: lists of classifications used to categorise data.
 .. __: /schema_reference
+.. __: /schema_reference/codelists
 ```
 
 ```eval_rst

@@ -7,6 +7,32 @@ There are two approaches to the use of codelists within the Specification: **ope
 * Open codelists provide a number of **suggested** values that will find matched usage across a wide range of publishers, but are ultimately not exhaustible. These codelists can therefore be extended by a publisher (or group of publishers) as needed by providing additional codes and titles.
 * Closed codelists **limit** usage to those codes and titles in the pre-defined list. Though a closed codelist can be changed in future versions to include more codes, publishers can use only those values presented in the current version.
 
+Codelist values (codes) are case sensitive strings with matching titles. A publisher's own classifications can be mapped as closely as possible to the codelists provided, and in the case of open codelists, extra values can be used.
+
+
+```eval_rst
+.. admonition:: For example
+
+  An organization can have a asset lock, which limits how its assets can be used. These can be given a number of names depending on how the asset lock is enacted, but they can broadly be voluntary or statutory.
+
+  The asset lock codelist is a closed codelist which provides these choices:
+
+    .. csv-table::
+       :header-rows: 1
+       :file: ../../schema/codelists/assetLock.csv
+
+  A publisher might have more detailed information on an organisation's asset lock beyond the general groupings of 'statutory' or 'voluntary' (or 'none'). For example, they might have a value "Community . However, they should be able to map the values that they have to the codes in this codelist, and publish these in the organisation's ```assetLock``` value.
+
+    .. code-block:: json
+
+       {
+         "id": "GB-COH-09175609",
+         "name": "Local Charity Organisation",
+         "assetLock": "statutory"
+       }
+
+```
+
 ## Open codelists
 
 ### Activities

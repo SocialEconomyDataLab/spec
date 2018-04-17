@@ -15,7 +15,7 @@ Ultimately, change the organisation in the example below to the Social Economy C
 
 While it is possible to uniquely identify most organisations, identifying individual people who have made investments would run up against the issue of data privacy laws.
 
-The Social Investment Data Specification asks you to give identifiers to:
+The Social Economy Data Lab Specification asks you to give identifiers to:
 
 * [Deals](deal-identifier);  
 * [Organisations](organisation-identifier);  

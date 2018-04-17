@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "id": "https://github.com/SocialEconomyDataLab/spec/blob/master/schema/schema.json",
-    "title": "Social Economy Data Lab Specification",
+    "title": "Social Investment Data Lab Specification",
     "description": "A draft schema for describing social investment deals",
     "type": "object",
     "properties": {

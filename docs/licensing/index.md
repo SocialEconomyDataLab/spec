@@ -2,7 +2,7 @@
 
 ### About this Guide
 
-This guide is for organisations publishing social investment deal information to the Social Investment Data Standard format. We assume that you have permission to publish the information if you are not the primary owner. For example, if the information was collected or published by donors, subsidiaries or other third parties.
+This guide is for organisations publishing social investment deal information to the Social Economy Data Lab Specification format. We assume that you have permission to publish the information if you are not the primary owner. For example, if the information was collected or published by donors, subsidiaries or other third parties.
 
 ### What is open data?
 
@@ -10,7 +10,7 @@ Open data is data available to everyone to use and share without restrictions. O
 
 You are probably using open data without realising it. An example could be getting around London with real-time travel updates thanks to [CityMapper](https://citymapper.com "Citymapper - The Ultimate Transport App"), which uses open data from Transport for London and OpenStreetMaps amongst others. Or it could be getting up-to-date with the state of the voluntary sector with the [NCVO Almanac](https://data.ncvo.org.uk/ "NCVO UK Civil Society Almanac") which uses open data from the Charity Commission and Companies House.
 
-### Why license Social Investment Data Standard data?
+### Why license Social Economy Data Lab Specification data?
 
 Without a license, data isn't open data and potential users wouldn't know what they are allowed to do with it. We believe that with better information, social investors can be more effective and strategic decision makers. To achieve this, we recommend using an open license which removes restrictions on anyone interested in using, sharing and understanding the grants landscape.
 
@@ -24,7 +24,7 @@ If you are a UK public sector organisation, we encourage you to use the [Open Go
 
 <!-- ### Where to display the license?
 
-As part of publishing to the Social Investment data standard, we encourage publishers to register with our helpdesk, produce, then upload files to their websites. To make the data easy to discover, you can add a page or section to your website that links to the files. This is the best place to display your chosen license. Don't forget to pop our helpdesk a note so we know your data is published and under what license. -->
+As part of publishing to the Social Economy Data Lab Specification, we encourage publishers to register with our helpdesk, produce, then upload files to their websites. To make the data easy to discover, you can add a page or section to your website that links to the files. This is the best place to display your chosen license. Don't forget to pop our helpdesk a note so we know your data is published and under what license. -->
 
 <!-- ### Is there an example of a license statement?
 

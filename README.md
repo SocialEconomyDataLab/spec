@@ -1,6 +1,6 @@
-# Social Investment Data Lab Specification (Alpha)
+# Social Economy Data Lab Specification (Alpha)
 
-The Social Investment Data Lab Specification is being developed as a draft data specification for describing social investment by the [Social Economy Data Lab](http://socialeconomydatalab.org). For more information please [contact the Data Lab](http://socialeconomydatalab.org/contact).
+The Social Economy Data Lab Specification is being developed as a draft data specification for describing social investment by the [Social Economy Data Lab](http://socialeconomydatalab.org). For more information please [contact the Data Lab](http://socialeconomydatalab.org/contact).
 
 ## Building the documentation
 

@@ -1,6 +1,6 @@
 # What is social investment?
 
-The Social Investment Data Lab Specification doesn’t seek to impose a strict definition of social investment that published data should meet. That decision can be made by the data holders themselves.
+The Social Economy Data Lab Specification doesn’t seek to impose a strict definition of social investment that published data should meet. That decision can be made by the data holders themselves.
 
 Participants in the social investment market may have different concepts of what can be considered as social investment, or ‘true’ social investment.
 

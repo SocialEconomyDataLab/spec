@@ -1,8 +1,8 @@
 # Building blocks
 
-A Social Investment Data Lab Specification document is made up of a number of sections which detail the entities that can be described using the specification, and the properties it recognises.
+A Social Economy Data Lab Specification document is made up of a number of sections which detail the entities that can be described using the specification, and the properties it recognises.
 
-The fundamental building block of the Social Investment Data Lab Specification is a **deal**. Deals have a number of direct properties and a number of related entities, including the organisations involved, classifications, financing and transactions, which in turn have properties.
+The fundamental building block of the Social Economy Data Lab Specification is a **deal**. Deals have a number of direct properties and a number of related entities, including the organisations involved, classifications, financing and transactions, which in turn have properties.
 
 For a full list of properties and entities referred to by the Specification, refer to the [Schema](../../schema_reference/).
 

@@ -1,6 +1,6 @@
 # Schema Reference
 
-The Social Investment Data Lab Specification is maintained using [JSON Schema](http://json-schema.org). The Schema is the authoritative source for the specification, and defines the structure of an individual deal so that it can be annotated and validated.
+The Social Economy Data Lab Specification is maintained using [JSON Schema](http://json-schema.org). The Schema is the authoritative source for the specification, and defines the structure of an individual deal so that it can be annotated and validated.
 
 When publishing an individual deal or a number of deals, these deals should be packaged into a single, valid JSON file.
 

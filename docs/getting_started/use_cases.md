@@ -14,7 +14,7 @@ We will draw on use cases to:
 
 ## Use Cases
 
-The four use cases below provide examples of how user needs can be met by the Social Investment Data Lab Specification. Not all user needs can be met by the Specification and the data itself, but by tools and processes built around the Specification.
+The four use cases below provide examples of how user needs can be met by the Social Economy Data Lab Specification. Not all user needs can be met by the Specification and the data itself, but by tools and processes built around the Specification.
 
 ### 1. Maximising the social impact of investment
 

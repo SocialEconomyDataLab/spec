@@ -1,6 +1,6 @@
 # Getting Started
 
-The Social Investment Data Lab Specification defines the definitions, data models and guidance required to make data on social investment interoperable.
+The Social Economy Data Lab Specification defines the definitions, data models and guidance required to make data on social investment interoperable.
 
 The Specification is being designed to help people and organisations who want to:
 * Encourage **increased transparency** and **sharing of data** on social investment

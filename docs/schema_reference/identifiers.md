@@ -15,7 +15,7 @@ Ultimately, change the organisation in the example below to the Social Economy C
 
 While it is possible to uniquely identify most organisations, identifying individual people who have made investments would run up against the issue of data privacy laws.
 
-The Social Investment Data Specification asks you to give identifiers to:
+The Social Economy Data Lab Specification asks you to give identifiers to:
 
 * [Deals](deal-identifier);  
 * [Organisations](organisation-identifier);  
@@ -80,7 +80,7 @@ In these cases, it's important to know which identifier to pick so that users of
 Search on [org-id.guide](http://org-id.guide) for identifier sources for [UK organisations](http://org-id.guide/?structure=&coverage=GB&subnational=&sector=), [UK charities](http://org-id.guide/?structure=charity&coverage=GB&sector=), or [any other organisation type](http://org-id.guide/).
 
 ### Commonly used identifier lists
-The following identifier lists are often used in Social Investment Data Standard publication:
+The following identifier lists are often used in Social Economy Data Lab Specification publication:
 * [GB-COH](http://org-id.guide/list/GB-COH) - UK Company Number
 * [GB-CHC](http://org-id.guide/list/GB-CHC) (England and Wales), [GB-SC](http://org-id.guide/list/GB-SC) (Scotland), [GB-NIC](http://org-id.guide/list/GB-NIC) (Northern Ireland) - Charity Numbers
 * [GB-MPR](http://org-id.guide/list/GB-MPR) - Mutuals Public Register

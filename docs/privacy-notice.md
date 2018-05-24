@@ -8,7 +8,7 @@ Social Economy Data Lab is committed to ensuring that your privacy is protected.
 We may change this notice from time to time by updating this page. This notice is effective from 24th May 2018.
 
 Data controller: <br/>
-Social Economy Data Lab, c/o Power to Change Trustee Limited<br/>
+Social Economy Data Lab, c/o Power to Change Trustee Limited, [admin@socialeconomydatalab.org](mailto:admin@socialeconomydatalab.org)<br/>
 Contact us if would like a copy of the information held on you or if you believe that any information we are holding on you is incorrect or incomplete.
 
 You have the following rights concerning this data:

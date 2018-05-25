@@ -1,0 +1,15 @@
+Code,Title,Description
+cio,Charitable Incorporated Organization,CIOs register with the Charity Commission as an incorporated form of charity which is not a company under the Charities Act 2006.
+bencom,Community Benefit Society,"Community Benefit Societies (or combens) trade for the benefit of the community, prohibiting any distribution of assets or profits to members. They are regulated by the Financial Conduct Authority under the Co-operative and Community Benefit Societies Act 2014"
+cic,Community Interest Company,"CICs are businesses with a social benefit objective and whose surpluses are reinvested for the benefit of the community. A CIC cannot be a charity, an IPS or an unincorporated organisation under the Companies (Audit, Investigations and Community Enterprise) Act 2004."
+clg,Company Limited by Guarantee,"A business incorporated at Companies House which does not usually have share capital, but can distribute profits to its members under its Articles of Association."
+cls,Company Limited by Shares,A business incorporated at Companies House where the liability of investors is limited to the shares invested.
+coop,Co-operative Society,Cooperatives trade for the mutual benefit of their members and are regulated by the Financial Conduct Authority under the Co-operative and Community Benefit Societies Act 2014 with reference to their co-operative principles.
+llp,Limited Liability Partnership,A business incorporated at Companies House where the partners have limited financial liability.
+partnershipLtd,Limited Partnership,A business incorporated at Companies House where at least one partner has general liability and at least one partner has limited liability.
+mutual,Mutual Society,A registered mutual society other than a Co-operative Society or a Community Benefit Society.
+other,Other,An organisation that is not covered in other options in the codelist.
+charity,Registered Charity,"Charities are registered with and regulated by the Charity Commission for England and Wales, The Charity Commission for Northern Ireland, or the Office of the Scottish Charity Regulator."
+trust,Charitable Trust,An express trust dedicated to charitable goals and administered by trustees.
+unincorp,Unincorporated,An organisation set up through an agreement between a group of people who come together for a reason other than to make a profit.
+untld,Unlimited,An incorporated company or partnership where legal liability of members or shareholders is not limited.

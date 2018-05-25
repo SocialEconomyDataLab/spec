@@ -1,0 +1,5 @@
+Code,Title,Description
+completed,Completed,The investment deal has completed its term.
+open,Open,The investment deal has been agreed and is presently being funded.
+pipeline,Pipeline,The investment deal has not been agreed but is under discussion.
+withdrawn,Withdrawn,The investment deal has been withdrawn after agreement.

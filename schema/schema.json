@@ -23,9 +23,10 @@
                 },
                 "status": {
                     "title": "Status",
-                    "description": "Current status of the social investment deal: in progress, an open investment, closed without funds being drawn down, closed without core funds being approved.",
-                    "type": "string",
-                    "enum": ["Pipeline","Open","Closed"]
+                    "description": "Current status of the social investment deal based on the [dealStatus codelist](http://spec.socialeconomydatalab.org/en/latest/schema_reference/codelists/#deal-status).",
+                    "enum": ["open", "withdrawn", "completed", "pipeline", null],
+                    "codelist": "dealStatus.csv",
+                    "openCodelist": false
                 },
                 "recipientOrganization": {
                     "title": "Recipient Organization",
@@ -194,6 +195,13 @@
                     "type": "number",
                     "description": "The total value of the credit provided."
                 },
+                "loanType": {
+                     "title": "Loan Type",
+                     "description": "The type of loan that forms part of the investment, drawn from the [loanType codelist](http://spec.socialeconomydatalab.org/en/latest/schema_reference/codelists/#loan-type).",
+                     "enum": ["hirePurchase", "secured", "unsecured", null],
+                     "codelist": "loanType.csv",
+                     "openCodelist": false
+                },
                 "fundingOrganizations": {
                     "title": "Funding Organization",
                     "type": "array",
@@ -233,6 +241,25 @@
                     "title": "Description",
                     "description": "A description of this project",
                     "type": "string"
+                },
+                "activities": {
+                    "description": "An activity is carried out by an enterprise to support their mission, drawn from the [activity codelist](http://spec.socialeconomydatalab.org/en/latest/schema_reference/codelists/#activity).",
+                    "type": ["array", "null"],
+                    "items": {
+                      "type": "string"
+                    },
+                    "codelist": "activity.csv",
+                    "openCodelist": true
+                },
+                "purpose": {
+                    "title": "Purpose",
+                    "description": "Describes how the investment will be used by the recipient organisation, based on the [purpose codelist](http://spec.socialeconomydatalab.org/en/latest/schema_reference/codelists/#purpose).",
+                    "type": ["array", "null"],
+                    "items": {
+                      "type": "string"
+                    },
+                    "codelist": "purpose.csv",
+                    "openCodelist": true
                 },
                 "location": {
                   "items": {
@@ -323,11 +350,19 @@
                   "description": "A short description of this Organization and its area of work",
                   "title": "Description"
                 },
+                "assetLock": {
+                  "title": "Asset Lock",
+                  "description": "The type of asset lock that this Organization has (at the time of the deal), drawn from the [assetLock codelist](http://spec.socialeconomydatalab.org/en/latest/schema_reference/codelists/#asset-lock).",
+                  "enum": ["voluntary", "statutory", "none", null],
+                  "codelist": "assetLock.csv",
+                  "openCodelist": false
+                },
                 "organizationType": {
-                  "type": ["string","null"],
-                  "description": "A description of this Organization",
-                  "enum":["Registered Charity","Registered Company","Community Group","List to be updated"],
-                  "title": "Organization Type"
+                  "title": "Organization Type",
+                  "description": "The type of Organization, , drawn from the [organizationType codelist](http://spec.socialeconomydatalab.org/en/latest/schema_reference/codelists/#organization-type).",
+                  "enum": ["bencom", "charity", "cic", "cio", "clg", "cls", "coop", "llp", "mutual", "other", "partnershipLtd", "trust", "unincorp", "untld", null],
+                  "codelist": "organizationType.csv",
+                  "openCodelist": false
                 },
                 "url": {
                   "type": "string",
@@ -340,7 +375,7 @@
                     "$ref": "#/definitions/Location"
                   },
                   "type": "array",
-                  "description": "Locations associated with the organization",
+                  "description": "Locations associated with the Organization",
                   "title": "Location"
                 },
                 "dateModified": {

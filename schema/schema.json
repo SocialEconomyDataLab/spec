@@ -169,6 +169,22 @@
       "title": "Project",
       "description": "Projects associated with the deal.",
       "type": "array",
+      "rollUp": [
+        "identifier",
+        "title",
+        "description",
+        "classification/0/scheme",
+        "classification/0/code",
+        "classification/0/title",
+        "locations/0/id",
+        "locations/0/name",
+        "locations/0/description",
+        "locations/0/countryCode",
+        "locations/0/latitude",
+        "locations/0/longitude",
+        "locations/0/geoCode",
+        "locations/0/geoCodeType"
+      ],
       "items": {
         "$ref": "#/definitions/Project"
       }
@@ -435,6 +451,7 @@
           "title": "Classification",
           "description": "Project classification",
           "type": "array",
+          "rollUp":["scheme","code","title"],
           "items": {
             "title": "Classification",
             "description": "A project classification.",
@@ -452,7 +469,19 @@
             }
           }
         },
-        "location": {
+        "locations": {
+            "title":"Project locations",
+            "description":"Details of where this project is taking place",
+            "rollUp": [
+                "id",
+                "name",
+                "description",
+                "countryCode",
+                "latitude",
+                "longitude",
+                "geoCode",
+                "geoCodeType"
+              ],
           "items": {
             "$ref": "#/definitions/Location"
           },
@@ -567,9 +596,9 @@
           "title": "Web Address"
         },
         "location": {
-          "title":"Location",
-          "description":"The geographical location(s) of this organization.",
-          "rollUp":[
+          "title": "Location",
+          "description": "Locations associated with the organization",
+          "rollUp": [
             "id",
             "name",
             "description",
@@ -582,9 +611,7 @@
           "items": {
             "$ref": "#/definitions/Location"
           },
-          "type": "array",
-          "description": "Locations associated with the organization",
-          "title": "Location"
+          "type": "array"
         },
         "dateModified": {
           "format": "date-time",
@@ -893,7 +920,6 @@
           "description": "The longitude of a point location",
           "title": "Longitude"
         },
-        
         "geoCode": {
           "type": [
             "string",

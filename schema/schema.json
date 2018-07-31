@@ -9,7 +9,7 @@
             "title": "Deal",
             "description": "A social investment deal",
             "type": "object",
-            "required": ["identifier","title","recipientOrganization","arrangingOrganization","investments","dealDate"],
+            "required": ["identifier","title","recipientOrganization","arrangingOrganization","dealDate"],
             "properties": {
                 "identifier": {
                     "title": "Identifier",
@@ -52,6 +52,7 @@
                             "title": "Grants",
                             "description": "Grants made as part of the social investment deal.",
                             "type": "array",
+                            "rollUp":["identifier","fundingOrganization","description","dateAgreed","currency","amountRequested","amountCommitted","amountDisbursed"],
                             "items": {
                                 "$ref": "#/definitions/Grant"
                             }
@@ -60,6 +61,7 @@
                             "title": "Equity Investments",
                             "description": "Equity components of the social investment deal.",
                             "type": "array",
+                            "rollUp":["identifier","fundingOrganizations","description","dateAgreed","currency","value","fund"],
                             "items": {
                                 "$ref": "#/definitions/Equity"
                             }
@@ -68,6 +70,7 @@
                             "title": "Credit Investments",
                             "description": "Loan, bonds and leasing components of the social investment deal.",
                             "type": "array",
+                            "rollUp":["identifier","fundingOrganization","description","dateAgreed","currency","value","durationInMonths","initialRepaymentHoliday","interestRate","interestPayable"],
                             "items": {
                                 "$ref": "#/definitions/Credit"
                             }
@@ -105,36 +108,47 @@
             "properties": {
                 "identifier": {
                     "title": "Identifier",
-                    "type": "string"
+                    "type": "string",
+                    "description":"A unique identifier for this grant."
+                },
+                "fundingOrganization": {
+                    "title": "Funding Organization",
+                    "type": "object",
+                    "description": "Details of the organization making this grant.",
+                    "$ref": "#/definitions/Organization"
+                },
+                "description":{
+                    "title":"Description",
+                    "description":"A description of the purpose of this grant.",
+                    "type":"string"
+                },
+                               "dateAgreed": {
+                    "title": "Date Agreed",
+                    "description": "The date that the grant was agreed.",
+                    "type": "string",
+                    "format": "date-time"
                 },
                 "currency": {
                     "title": "Currency",
-                    "type": "string"
-                },
-                "value": {
-                    "title": "Value",
-                    "type": "number",
-                    "description": "The total value of the grant provided."
-                },
-                "fundingOrganizations": {
-                    "title": "Funding Organization",
-                    "type": "array",
-                    "description": "Organizations providing the equity.",
-                    "items": {
-                      "$ref": "#/definitions/Organization"
-                    }
-                },
-                "fund": {
-                    "title": "Fund",
-                    "description": "Fund that the investment forms a part of.",
-                    "$ref": "#/definitions/Fund"
-                },
-                "dateAgreed": {
-                    "title": "Date Agreed",
-                    "description": "The date that the investment was agreed as part of the Deal.",
                     "type": "string",
-                    "format": "date-time"
+                    "description":"The ISO 4217 three-digit country code (e.g. GBP for £)."
+                },
+                "amountRequested": {
+                    "title": "Amount requested",
+                    "type": "number",
+                    "description": "The total amount requested/applied for from this grant source."
+                },
+                "amountCommitted": {
+                    "title": "Amount committed",
+                    "type": "number",
+                    "description": "The total committed value of this grant."
+                },
+                "amountDisbursed": {
+                    "title": "Amount disbursed",
+                    "type": "number",
+                    "description": "The total committed disbursed from this grant."
                 }
+ 
             }
         },
         "Equity": {
@@ -144,74 +158,152 @@
             "properties": {
                 "identifier": {
                     "title": "Identifier",
-                    "type": "string"
+                    "type": "string",
+                    "description":"A unique identifier for this equity investment"
+                },
+                "fundingOrganizations": {
+                    "title": "Funding Organization",
+                    "type": "array",
+                    "description": "The organization(s) providing this equity investment.",
+                    "rollUp":["id","name"],
+                    "items": {
+                      "$ref": "#/definitions/Organization"
+                    }
+                },
+                "description":{
+                    "title":"Description",
+                    "description":"A description of this equity investment",
+                    "type":"string"
+                },
+                "dateAgreed": {
+                    "title": "Date Agreed",
+                    "description": "The date that the investment was agreed as part of the deal.",
+                    "type": "string",
+                    "format": "date-time"
                 },
                 "currency": {
                     "title": "Currency",
-                    "type": "string"
+                    "type": "string",
+                    "description":"The ISO 4217 three-digit country code (e.g. GBP for £)."
                 },
                 "value": {
                     "title": "Value",
                     "type": "number",
                     "description": "The total value of the equity provided."
                 },
-                "fundingOrganizations": {
-                    "title": "Funding Organization",
-                    "type": "array",
-                    "description": "Organizations providing the equity.",
-                    "items": {
-                      "$ref": "#/definitions/Organization"
-                    }
-                },
+                
                 "fund": {
                     "title": "Fund",
-                    "description": "Fund that the investment forms a part of.",
+                    "description": "The fund that the investment forms a part of.",
                     "$ref": "#/definitions/Fund"
-                },
-                "dateAgreed": {
-                    "title": "Date Agreed",
-                    "description": "The date that the investment was agreed as part of the Deal.",
-                    "type": "string",
-                    "format": "date-time"
                 }
+
             }
         },
         "Credit": {
             "type": "object",
-            "title": "Credit",
-            "description": "A credit-based investment.",
+            "title": "Loan/credit",
+            "description": "Credit or loan based financing.",
             "properties": {
                 "identifier": {
                     "title": "Identifier",
-                    "type": "string"
+                    "type": "string",
+                    "description":"A unique identifier for this loan"
                 },
-                "currency": {
-                    "title": "Currency",
-                    "type": "string"
-                },
-                "value": {
-                    "title": "Value",
-                    "type": "number",
-                    "description": "The total value of the credit provided."
-                },
-                "fundingOrganizations": {
+                "fundingOrganization": {
                     "title": "Funding Organization",
-                    "type": "array",
-                    "description": "Organizations providing the equity.",
-                    "items": {
-                      "$ref": "#/definitions/Organization"
-                    }
+                    "type": "object",
+                    "description": "Organization providing this credit or loan.",
+                    "$ref": "#/definitions/Organization"
                 },
-                "fund": {
-                    "title": "Fund",
-                    "description": "Fund that the investment forms a part of.",
-                    "$ref": "#/definitions/Fund"
+                "description":{
+                    "type":"Description",
+                    "description":"A description of this loan/credit funding",
+                    "type":"string"
                 },
                 "dateAgreed": {
                     "title": "Date Agreed",
                     "description": "The date that the investment was agreed as part of the Deal.",
                     "type": "string",
                     "format": "date-time"
+                },
+                "currency": {
+                    "title": "Currency",
+                    "type": "string",
+                    "description":"The ISO 4217 three-digit country code (e.g. GBP for £)."
+                },
+                "value": {
+                    "title": "Value",
+                    "type": "number",
+                    "description": "The total value of the credit or loan provided."
+                },
+                "durationInMonths":{
+                    "title":"Term (months)",
+                    "description":"The term of this credit/loan in months",
+                    "type":"number"
+                },
+                "initialRepaymentHoliday":{
+                    "title":"Initial repayment holiday (months)",
+                    "description":"If this loan or credit comes with an initial repayment holiday, enter the period in months here",
+                    "type":"number"
+                },
+                "interestRate":{
+                    "title":"Interest rate",
+                    "description":"The interest rate. Expressed as a value between 0 and 1 (e.g. 6.5% interest  = 0.065) ",
+                    "type":"number",
+                    "min":0,
+                    "max":1
+                },
+                "interestPayable":{
+                    "title":"Interest payable",
+                    "description":"The total interest payable over the duration of the credit/loan.",
+                    "type":"number"
+                },
+                "variations":{
+                  "title":"Variations",
+                  "description":"Each planned or enacted variation to the credit/loan arrangements should be documented.",
+                  "type":"array",
+                  "items":{
+                    "type":"object",
+                    "title":"Variation",
+                    "description":"A variation",
+                    "properties":{
+                      "date":{
+                        "title":"Date",
+                        "description":"The date of the variation",
+                        "type":"string",
+                        "format":"date"
+                      },
+                      "description":{
+                        "title":"Description",
+                        "description":"Note on this variation",
+                        "type":"string"
+                      },
+                      "durationInMonths":{
+                          "title":"Term (months) (after variation)",
+                          "description":"The term of this credit/loan in months after the variation",
+                          "type":"number"
+                      },
+                      "repaymentHoliday":{
+                          "title":"Repayment holiday",
+                          "description":"The duration in months of an **additional** repayment holiday introduced by this variation.",
+                          "type":"number"
+                      },
+                      "interestPayable":{
+                           "title":"Interest payable (after variation)",
+                           "description":"The total interest payable over the duration of the credit/loan, after the variation.",
+                           "type":"number"
+                      },
+                       "interestRate":{
+                          "title":"Interest rate (after variation)",
+                          "description":"The interest rate in force after variation. Expressed as a value between 0 and 1 (e.g. 6.5% interest  = 0.065) ",
+                          "type":"number",
+                          "min":0,
+                          "max":1
+                      }
+
+                    }
+                  }
                 }
             }
         },
@@ -234,6 +326,27 @@
                     "description": "A description of this project",
                     "type": "string"
                 },
+                "classification":{
+                    "title":"Classification",
+                    "description":"Project classification",
+                    "type":"array",
+                    "items":{
+                        "title":"Classification",
+                        "description":"A project classification.",
+                        "type":"object",
+                        "properties":{
+                          "scheme":{
+                              "type":"string"
+                          },  
+                          "code":{
+                              "type":"string"
+                          },
+                          "title":{
+                              "type":"string"
+                          }
+                        }
+                    }
+                },
                 "location": {
                   "items": {
                     "$ref": "#/definitions/Location"
@@ -246,7 +359,7 @@
         },
         "Organization": {
             "type": "object",
-              "required":["id","name"],
+              "required":["id","name","charityNumber","companyNumber"],
               "properties": {
                 "id": {
                   "type": "string",
@@ -405,6 +518,8 @@
         },
         "Fund": {
             "type": "object",
+            "title":"Fund",
+            "description":"Investments and grants are often made from specific funding schemes. This provides space to detail the particular funding scheme with which finance is associated.",
             "properties": {
                 "code": {
                   "type": "string",

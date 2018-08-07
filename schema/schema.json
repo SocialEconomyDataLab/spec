@@ -83,6 +83,7 @@
             "fundingOrganization/organizationType",
             "fundingOrganization/url",
             "description",
+            "dateOffered",
             "dateAgreed",
             "currency",
             "amountRequested",
@@ -117,6 +118,7 @@
             "fundingOrganizations/0/organizationType",
             "fundingOrganizations/0/url",
             "description",
+            "dateOffered",
             "dateAgreed",
             "currency",
             "value",
@@ -151,6 +153,7 @@
             "fundingOrganization/organizationType",
             "fundingOrganization/url",
             "description",
+            "dateOffered",
             "dateAgreed",
             "currency",
             "value",
@@ -219,16 +222,16 @@
           "type": "string",
           "description": "A unique identifier for this grant."
         },
-        "fundingOrganization": {
-          "title": "Funding Organization",
-          "type": "object",
-          "description": "Details of the organization making this grant.",
-          "$ref": "#/definitions/Organization"
-        },
         "description": {
           "title": "Description",
           "description": "A description of the purpose of this grant.",
           "type": "string"
+        },
+        "dateOffered": {
+          "title": "Date Offered",
+          "description": "The date that the grant was offered.",
+          "type": "string",
+          "format": "date-time"
         },
         "dateAgreed": {
           "title": "Date Agreed",
@@ -255,7 +258,13 @@
           "title": "Amount disbursed",
           "type": "number",
           "description": "The total committed disbursed from this grant."
-        }
+        },
+         "fundingOrganization": {
+          "title": "Funding Organization",
+          "type": "object",
+          "description": "Details of the organization making this grant.",
+          "$ref": "#/definitions/Organization"
+        },
       }
     },
     "Equity": {
@@ -268,6 +277,50 @@
           "type": "string",
           "description": "A unique identifier for this equity investment"
         },
+        "description": {
+          "title": "Description",
+          "description": "A description of this equity investment",
+          "type": "string"
+        },
+        "dateOffered": {
+          "title": "Date Offered",
+          "description": "The date that the investment was offered.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "dateAgreed": {
+          "title": "Date Agreed",
+          "description": "The date that the investment was agreed as part of the deal.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "currency": {
+          "title": "Currency",
+          "type": "string",
+          "description": "The ISO 4217 three-digit country code (e.g. GBP for £)."
+        },
+        "value": {
+          "title": "Value",
+          "type": "number",
+          "description": "The total value of the equity provided."
+        },
+        "shareClass":{
+            "title":"Share class",
+            "description":"The class of shares provided in return for this investment",
+            "type":"string"
+        },
+        "shareCapitalIssued":{
+            "title":"Share capital issued",
+            "description":"The percentage of the share class issued in return for this investment. Expressed as a value between 0 and 1.",
+            "type":"number",
+            "min":0,
+            "max":1
+        },
+        "shareRights":{
+            "title":"Share rights",
+            "description":"The rights associated with this class of share.",
+            "type":"string"
+        }
         "fundingOrganizations": {
           "title": "Funding Organization",
           "type": "array",
@@ -295,27 +348,6 @@
             "$ref": "#/definitions/Organization"
           }
         },
-        "description": {
-          "title": "Description",
-          "description": "A description of this equity investment",
-          "type": "string"
-        },
-        "dateAgreed": {
-          "title": "Date Agreed",
-          "description": "The date that the investment was agreed as part of the deal.",
-          "type": "string",
-          "format": "date-time"
-        },
-        "currency": {
-          "title": "Currency",
-          "type": "string",
-          "description": "The ISO 4217 three-digit country code (e.g. GBP for £)."
-        },
-        "value": {
-          "title": "Value",
-          "type": "number",
-          "description": "The total value of the equity provided."
-        },
         "fund": {
           "title": "Fund",
           "description": "The fund that the investment forms a part of.",
@@ -333,19 +365,19 @@
           "type": "string",
           "description": "A unique identifier for this loan"
         },
-        "fundingOrganization": {
-          "title": "Funding Organization",
-          "type": "object",
-          "description": "Organization providing this credit or loan.",
-          "$ref": "#/definitions/Organization"
-        },
         "description": {
           "type": "string",
           "description": "A description of this loan/credit funding"
         },
+        "dateOffered": {
+          "title": "Date Offered",
+          "description": "The date that the loan was offered.",
+          "type": "string",
+          "format": "date-time"
+        },
         "dateAgreed": {
           "title": "Date Agreed",
-          "description": "The date that the investment was agreed as part of the Deal.",
+          "description": "The date that the loan was agreed as part of the Deal.",
           "type": "string",
           "format": "date-time"
         },
@@ -425,7 +457,13 @@
               }
             }
           }
-        }
+        },
+         "fundingOrganization": {
+          "title": "Funding Organization",
+          "type": "object",
+          "description": "Organization providing this credit or loan.",
+          "$ref": "#/definitions/Organization"
+        },
       }
     },
     "Project": {
@@ -505,6 +543,16 @@
           "description": "A globally unique identifier for this Organization. This enables data on funders and recipients to be linked up across different datasets. [Org-id.guide](http://org-id.guide) links to a number of official registers that can be used to generate identifiers in a common way (e.g. using UK Company or Charity number). Alternatively, unique identifiers from the publisher's internal systems can be used.",
           "title": "Identifier"
         },
+        "charityNumber": {
+          "type": "string",
+          "description": "Registered charity number, if applicable.",
+          "title": "Charity Number"
+        },
+        "companyNumber": {
+          "type": "string",
+          "description": "Registered UK company number, if applicable.",
+          "title": "Company Number"
+        },
         "name": {
           "type": "string",
           "description": "Organization name",
@@ -519,16 +567,6 @@
           "type": "string",
           "description": "The contact person at this Organization.",
           "title": "Contact Name"
-        },
-        "charityNumber": {
-          "type": "string",
-          "description": "Registered charity number, if applicable.",
-          "title": "Charity Number"
-        },
-        "companyNumber": {
-          "type": "string",
-          "description": "Registered UK company number, if applicable.",
-          "title": "Company Number"
         },
         "streetAddress": {
           "type": "string",
@@ -904,22 +942,6 @@
           "description": "The ISO Country Code of the location of this activity.",
           "title": "Country Code"
         },
-        "latitude": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "The latitude of a point location",
-          "title": "Latitude"
-        },
-        "longitude": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "The longitude of a point location",
-          "title": "Longitude"
-        },
         "geoCode": {
           "type": [
             "string",
@@ -935,6 +957,22 @@
           ],
           "description": "The type of Geographic Code (geoCode) used (e.g. Ward, Parliamentary Constituency etc.). This value for this field should be drawn from the [codelist of geographic code types](https://github.com/ThreeSixtyGiving/standard/tree/master/codelists/geoCodeType.csv).",
           "title": "Geographic Code Type"
+        },
+        "latitude": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The latitude of a point location",
+          "title": "Latitude"
+        },
+        "longitude": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The longitude of a point location",
+          "title": "Longitude"
         }
       }
     },

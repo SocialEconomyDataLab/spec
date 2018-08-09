@@ -264,7 +264,7 @@
           "type": "object",
           "description": "Details of the organization making this grant.",
           "$ref": "#/definitions/Organization"
-        },
+        }
       }
     },
     "Equity": {
@@ -320,7 +320,7 @@
             "title":"Share rights",
             "description":"The rights associated with this class of share.",
             "type":"string"
-        }
+        },
         "fundingOrganizations": {
           "title": "Funding Organization",
           "type": "array",
@@ -463,7 +463,7 @@
           "type": "object",
           "description": "Organization providing this credit or loan.",
           "$ref": "#/definitions/Organization"
-        },
+        }
       }
     },
     "Project": {

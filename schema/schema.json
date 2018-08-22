@@ -30,16 +30,6 @@
         "Closed"
       ]
     },
-    "recipientOrganization": {
-      "title": "Recipient Organization",
-      "description": "The Organization in receipt of the finances from the social investment deal.",
-      "$ref": "#/definitions/Organization"
-    },
-    "arrangingOrganization": {
-      "title": "Arranging Organization",
-      "description": "The lead Organization arranging the social investment deal.",
-      "$ref": "#/definitions/Organization"
-    },
     "dealDate": {
       "title": "Deal date",
       "type": [
@@ -58,7 +48,17 @@
     "value": {
       "title": "Deal value",
       "description": "The total value of this deal.",
-      "type": "string"
+      "type": "number"
+    },
+    "recipientOrganization": {
+      "title": "Recipient Organization",
+      "description": "The Organization in receipt of the finances from the social investment deal.",
+      "$ref": "#/definitions/Organization"
+    },
+    "arrangingOrganization": {
+      "title": "Arranging Organization",
+      "description": "The lead Organization arranging the social investment deal.",
+      "$ref": "#/definitions/Organization"
     },
     "offers": {
       "title": "Offers",
@@ -101,6 +101,11 @@
       "description": "The financial components of the deal.",
       "type": "object",
       "properties": {
+        "summary":{
+          "title":"Summary",
+          "description":"A free text summary of the investment structure of this deal.",
+          "type":"string"
+        },
         "grants": {
           "title": "Grants",
           "description": "Grants made as part of the social investment deal.",
@@ -384,7 +389,8 @@
             },
             "details": {
               "title": "Details",
-              "description": "Details should be provided here of any match funding conditions for this offer, or any match funding secured."
+              "description": "Details should be provided here of any match funding conditions for this offer, or any match funding secured.",
+              "type":"string"
             }
           }
         },
@@ -861,11 +867,14 @@
       "type": "object",
       "required": [
         "id",
-        "name",
-        "charityNumber",
-        "companyNumber"
+        "name"
       ],
       "properties": {
+        "name": {
+          "type": "string",
+          "description": "Organization name",
+          "title": "Name"
+        },
         "id": {
           "type": "string",
           "description": "A globally unique identifier for this Organization. This enables data on funders and recipients to be linked up across different datasets. [Org-id.guide](http://org-id.guide) links to a number of official registers that can be used to generate identifiers in a common way (e.g. using UK Company or Charity number). Alternatively, unique identifiers from the publisher's internal systems can be used.",
@@ -880,11 +889,6 @@
           "type": "string",
           "description": "Registered UK company number, if applicable.",
           "title": "Company Number"
-        },
-        "name": {
-          "type": "string",
-          "description": "Organization name",
-          "title": "Name"
         },
         "department": {
           "type": "string",

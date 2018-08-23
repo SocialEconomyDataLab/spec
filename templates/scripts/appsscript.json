@@ -1,0 +1,19 @@
+{
+  "timeZone": "Europe/London",
+  "dependencies": {
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "sheets": {
+    "macros": [
+      {
+      "menuName": "Start Variation",
+      "functionName": "startVariation",
+      "defaultShortcut": "Ctrl+Alt+Shift+1"
+    },
+     {
+      "menuName": "End Variation",
+      "functionName": "endVariation",
+      "defaultShortcut": "Ctrl+Alt+Shift+2"
+    }]
+  }
+}

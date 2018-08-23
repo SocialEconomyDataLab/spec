@@ -1,0 +1,264 @@
+{
+    "deals": [
+        {
+            "id": ".",
+            "title": ".",
+            "status": ".",
+            "dealDate": ".",
+            "currency": ".",
+            "value": ".",
+            "recipientOrganization": {
+                "name": ".",
+                "id": ".",
+                "charityNumber": ".",
+                "companyNumber": ".",
+                "department": ".",
+                "contactName": ".",
+                "streetAddress": ".",
+                "addressLocality": ".",
+                "addressRegion": ".",
+                "addressCountry": ".",
+                "postalCode": ".",
+                "telephone": ".",
+                "alternateName": ".",
+                "email": ".",
+                "description": ".",
+                "organizationType": ".",
+                "url": ".",
+                "location": [
+                    {
+                        "id": ".",
+                        "name": ".",
+                        "description": ".",
+                        "countryCode": ".",
+                        "geoCode": ".",
+                        "geoCodeType": ".",
+                        "latitude": ".",
+                        "longitude": "."
+                    }
+                ],
+                "dateModified": "."
+            },
+            "arrangingOrganization": {
+                "name": ".",
+                "id": ".",
+                "charityNumber": ".",
+                "companyNumber": ".",
+                "department": ".",
+                "contactName": ".",
+                "streetAddress": ".",
+                "addressLocality": ".",
+                "addressRegion": ".",
+                "addressCountry": ".",
+                "postalCode": ".",
+                "telephone": ".",
+                "alternateName": ".",
+                "email": ".",
+                "description": ".",
+                "organizationType": ".",
+                "url": ".",
+                "location": [
+                    {
+                        "id": ".",
+                        "name": ".",
+                        "description": ".",
+                        "countryCode": ".",
+                        "geoCode": ".",
+                        "geoCodeType": ".",
+                        "latitude": ".",
+                        "longitude": "."
+                    }
+                ],
+                "dateModified": "."
+            },
+            "offers": [
+                {
+                    "id": ".",
+                    "type": ".",
+                    "url": ".",
+                    "offerDocumentUrl": ".",
+                    "startDate": ".",
+                    "endDate": ".",
+                    "minimumInvestmentTarget": ".",
+                    "investmentTarget": ".",
+                    "maximumInvestmentTarget": ".",
+                    "minimumIndividualInvestment": ".",
+                    "maximumIndividualInvestment": ".",
+                    "interestRate": {
+                        "base": ".",
+                        "margin": ".",
+                        "effectiveRate": ".",
+                        "details": "."
+                    },
+                    "matchFunding": {
+                        "status": ".",
+                        "details": "."
+                    },
+                    "withdrawals": [
+                        {
+                            "start": ".",
+                            "description": ".",
+                            "capitalLimit": "."
+                        }
+                    ],
+                    "taxReliefs": [
+                        {
+                            "type": ".",
+                            "status": "."
+                        }
+                    ],
+                    "csuStandardMark": {
+                        "awarded": ".",
+                        "practitioner": "."
+                    },
+                    "crowdfunding": {
+                        "platform": ".",
+                        "url": "."
+                    }
+                }
+            ],
+            "investments": {
+                "summary": ".",
+                "grants": [
+                    {
+                        "id": ".",
+                        "description": ".",
+                        "dateOffered": ".",
+                        "dateAgreed": ".",
+                        "currency": ".",
+                        "amountRequested": ".",
+                        "amountCommitted": ".",
+                        "amountDisbursed": ".",
+                        "fundingOrganization": {
+                            "name": ".",
+                            "id": ".",
+                            "charityNumber": ".",
+                            "companyNumber": ".",
+                            "department": ".",
+                            "contactName": ".",
+                            "streetAddress": ".",
+                            "addressLocality": ".",
+                            "addressRegion": ".",
+                            "addressCountry": ".",
+                            "postalCode": ".",
+                            "telephone": ".",
+                            "alternateName": ".",
+                            "email": ".",
+                            "description": ".",
+                            "organizationType": ".",
+                            "url": "."
+                        }
+                    }
+                ],
+                "equity": [
+                    {
+                        "id": ".",
+                        "description": ".",
+                        "dateOffered": ".",
+                        "dateAgreed": ".",
+                        "currency": ".",
+                        "value": ".",
+                        "fundingOrganizations": [
+                            {
+                                "name": ".",
+                                "id": ".",
+                                "charityNumber": ".",
+                                "companyNumber": ".",
+                                "department": ".",
+                                "contactName": ".",
+                                "streetAddress": ".",
+                                "addressLocality": ".",
+                                "addressRegion": ".",
+                                "addressCountry": ".",
+                                "postalCode": ".",
+                                "telephone": ".",
+                                "alternateName": ".",
+                                "email": ".",
+                                "description": ".",
+                                "organizationType": ".",
+                                "url": "."
+                            }
+                        ],
+                        "fund": {
+                            "code": ".",
+                            "title": "."
+                        }
+                    }
+                ],
+                "credit": [
+                    {
+                        "id": ".",
+                        "description": ".",
+                        "dateOffered": ".",
+                        "dateAgreed": ".",
+                        "currency": ".",
+                        "value": ".",
+                        "durationInMonths": ".",
+                        "initialRepaymentHoliday": ".",
+                        "interestRate": ".",
+                        "interestPayable": ".",
+                        "fundingOrganization": {
+                            "name": ".",
+                            "id": ".",
+                            "charityNumber": ".",
+                            "companyNumber": ".",
+                            "department": ".",
+                            "contactName": ".",
+                            "streetAddress": ".",
+                            "addressLocality": ".",
+                            "addressRegion": ".",
+                            "addressCountry": ".",
+                            "postalCode": ".",
+                            "telephone": ".",
+                            "alternateName": ".",
+                            "email": ".",
+                            "description": ".",
+                            "organizationType": ".",
+                            "url": "."
+                        }
+                    }
+                ]
+            },
+            "projects": [
+                {
+                    "id": ".",
+                    "title": ".",
+                    "description": ".",
+                    "classification": [
+                        {
+                            "scheme": ".",
+                            "code": ".",
+                            "title": "."
+                        }
+                    ],
+                    "locations": [
+                        {
+                            "id": ".",
+                            "name": ".",
+                            "description": ".",
+                            "countryCode": ".",
+                            "geoCode": ".",
+                            "geoCodeType": ".",
+                            "latitude": ".",
+                            "longitude": "."
+                        }
+                    ],
+                    "assets": [
+                        {
+                            "id": ".",
+                            "description": ".",
+                            "type": ".",
+                            "status": ".",
+                            "quantity": ".",
+                            "totalValue": ".",
+                            "isSecurity": ".",
+                            "referenceNumbers": "."
+                        }
+                    ]
+                }
+            ],
+            "dateModified": ".",
+            "dataSource": "."
+        }
+    ]
+}

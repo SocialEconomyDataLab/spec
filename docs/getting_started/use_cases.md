@@ -4,7 +4,7 @@ Social investment has many stakeholders. They may have many different informatio
 
 Use cases provide a way to identify particular users, and user stories help to describe their information and data needs.
 
-We will draw on use cases to:
+We have drawn on use cases to:
 
 * Develop and check our understanding of what different stakeholders want to do with social investment information and data.
 

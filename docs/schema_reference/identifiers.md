@@ -19,10 +19,10 @@ The Social Economy Data Lab Specification asks you to give identifiers to:
 
 * [Deals](deal-identifier);  
 * [Organisations](organisation-identifier);  
-<!-- * Transactions; -->
 * and other unique elements in your data.  
 
 ## Identifier basics
+
 ### What is an identifier?
 For identifiers to be useful, they should aim to be **unique** and **persistent**, so that they don't become confused with other identifiers and don't change unexpectedly.
 
@@ -37,15 +37,7 @@ Because more than one publisher may happen to use the same internal identifier t
 
 So while '10001' is not a particularly unique identifier for a deal, a version which combines a publisher prefix with the internal number is e.g. ``ABC-10001``.
 
-```eval_rst
-.. _deal-identifier:
-```
-## Deal identifier
-To create deal identifiers:
 
-```eval_rst
-.. _organisation-identifier:
-```
 ## Organisation identifier
 Most organisations have some sort of official registration number that can be used to uniquely identify them and to look up their details from an official register or public list.
 

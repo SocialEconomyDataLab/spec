@@ -29,5 +29,7 @@ The Specification is being designed to help people and organisations who want to
    what_is_social_investment
    use_cases
    building_blocks
+   flat-and-structured
+   datatemplate
 
 ```

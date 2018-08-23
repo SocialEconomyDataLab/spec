@@ -7,6 +7,7 @@ The fundamental building block of the Social Economy Data Lab Specification is a
 For a full list of properties and entities referred to by the Specification, refer to the [Schema](../../schema_reference/).
 
 ### Financial elements
+
 Deals may comprise one or more forms of finance, typically a **grant**, a **loan**, and/or **equity**.
 
 Grants are a form of non-repayable finance, while loans and equity are usually paid back by the recipient, often with interest and/or dividends.
@@ -30,6 +31,11 @@ Deals with multiple elements of repayable and non-repayable finance are sometime
     * a £40,000 **loan** from Funder B, repaid over 5 years at 3% interest.  
 
 ```
+
+### Offers
+
+Where a deal involves shares or some form of crowdfunding, an organisation may issue an offer document, in order to describe their fundraising targets and the goals of their project.
+
 ### Organisations
 
 A deal is entered into by a number of parties, typically the **funding** organisation (or organisations, one of whom may be an **arranging** organisation) and the **recipient** organisation (or organisations).
@@ -40,10 +46,10 @@ Some deals may have a principal partner who takes the role of arranging the deal
 
 Recipient organisations receive the finance and are typically responsible for ensuring that any terms (such as repayment) are met, though it may be backed by another party.
 
-### Purpose and activities
+### Projects
 
-Recipient organisations have at their core a social mission. They make use of social investment, and other forms of finance, to ensure that they are able to carry out **activities** that serve this mission. For example, they could be providing affordable housing to people at risk of homelessness, or they could be a community-owned shop selling locally-grown produce.
+Recipient organisations have at their core a social mission. They make use of social investment, and other forms of finance, to ensure that they are able to carry out **projects** that serve this mission. For example, they could be providing affordable housing to people at risk of homelessness, or they could be a community-owned shop selling locally-grown produce.
 
-Usually, in seeking a social investment deal, recipients have a **purpose** in mind for making use of the finance, and the deal may well be contingent on demonstrating this purpose to investors (amongst other things). It may be that they are a community business requiring significant equity capital in order to purchase premises so that they can start trading, or it may be that they require loan financing in order to pay suppliers and ensure that they are able to grow.
+Usually, in seeking a social investment deal, recipients have a **project** in mind for making use of the finance, and the deal may well be contingent on demonstrating this purpose to investors (amongst other things). It may be that they are a community business requiring significant equity capital in order to purchase premises so that they can start trading, or it may be that they require loan financing in order to pay suppliers and ensure that they are able to grow.
 
-### Transactions
+

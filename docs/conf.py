@@ -53,7 +53,7 @@ for schema in schemas:
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinxcontrib.jsonschema']
+extensions = ['sphinxcontrib.jsonschema','sphinxcontrib.opendataservices']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -377,8 +377,48 @@ texinfo_documents = [
 locale_dirs = ['locale/']   # path is example but recommended.
 gettext_compact = False     # optional.
 
+# Adapted from https://github.com/OpenDataServices/sphinxcontrib-opendataservices/blob/master/sphinxcontrib/opendataservices.py#L50
+# Should eventually move into there
+from sphinx.directives.code import LiteralInclude
+from docutils.parsers.rst import directives, Directive
+import os
+import json
+from collections import OrderedDict
+from jsonpointer import resolve_pointer
+from docutils import nodes
+
+class JSONValue(LiteralInclude):
+    option_spec = {
+        'pointer': directives.unchanged,
+    }
+
+    def run(self):
+        env = self.state.document.settings.env
+        dirname = os.path.dirname(env.doc2path(env.docname, base=None))
+        relpath = os.path.join(dirname, self.arguments[0])
+        abspath = os.path.join(env.srcdir, relpath)
+        if not os.access(abspath, os.R_OK):
+            raise self.warning('JSON file not readable: %s' %
+                               self.arguments[0])
+
+        with open(abspath) as fp:
+            json_obj = json.load(fp, object_pairs_hook=OrderedDict)
+        filename = str(self.arguments[0]).split("/")[-1].replace(".json", "")
+        try:
+            title = self.options['title']
+        except KeyError as e:
+            title = filename
+        pointed = resolve_pointer(json_obj, self.options['pointer'])
+     
+        string = json.dumps(pointed, indent='    ')
+        if string.startswith('"') and string.endswith('"'):
+            string = string[1:-1]
+        return [nodes.paragraph(string,string)]
+
+
 
 def setup(app):
+    app.add_directive('json-value', JSONValue)
     app.add_config_value('recommonmark_config', {
         #'url_resolver': lambda url: github_doc_root + url,
         'auto_toc_tree_section': 'Contents',

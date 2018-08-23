@@ -34,7 +34,9 @@ Social Economy Data Lab Specification is:
 
    getting_started/index
    schema_reference/index
+   roadmap
    licensing/index
+   privacy-notice
 
 ```
 ## About

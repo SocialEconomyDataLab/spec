@@ -39,11 +39,15 @@
       "format": "date-time",
       "description": "The date that the deal was agreed. Dates should be in yyyy-mm-dd format."
     },
-    "currency":{
-      "title":"Currency",
-      "description":"The default currency for the deal. All values within the deal are assumed to be in this currency unless otherwise stated. Use GBP for £",
-      "type":"string",
-      "enum":["GBP","EUR","USD"]
+    "currency": {
+      "title": "Currency",
+      "description": "The default currency for the deal. All values within the deal are assumed to be in this currency unless otherwise stated. Use GBP for £",
+      "type": "string",
+      "enum": [
+        "GBP",
+        "EUR",
+        "USD"
+      ]
     },
     "value": {
       "title": "Deal value",
@@ -93,7 +97,7 @@
         "crowdfunding/url"
       ],
       "items": {
-        "$ref": "#definitions/Offer"
+        "$ref": "#/definitions/Offer"
       }
     },
     "investments": {
@@ -101,10 +105,10 @@
       "description": "The financial components of the deal.",
       "type": "object",
       "properties": {
-        "summary":{
-          "title":"Summary",
-          "description":"A free text summary of the investment structure of this deal.",
-          "type":"string"
+        "summary": {
+          "title": "Summary",
+          "description": "A free text summary of the investment structure of this deal.",
+          "type": "string"
         },
         "grants": {
           "title": "Grants",
@@ -206,7 +210,10 @@
             "value",
             "durationInMonths",
             "initialRepaymentHoliday",
-            "interestRate",
+            "interestRate/base",
+            "interestRate/margin",
+            "interestRate/effectiveRate",
+            "interestRate/details",
             "interestPayable"
           ],
           "items": {
@@ -339,38 +346,7 @@
         "interestRate": {
           "title": "Interest rate",
           "description": "The interest rate specified in the offer.",
-          "type": "object",
-          "properties": {
-            "base": {
-              "title": "Base",
-              "description": "If this interest rate is based on a formula with a base rate + a percentage (e.g. Bank of England rate + 35) then a codelist entry to describe the base rate is given here. Where no recognised codelist value exists, a short clear string should be used that can be easily interpreted by a data user to identify the base rate uses. Where this is no base rate, and the margin specifies the full exchange rate, base should be left blank.",
-              "type": "string",
-              "enum": [
-                null,
-                "BofE",
-                "LIBOR"
-              ]
-            },
-            "margin": {
-              "title": "Margin",
-              "description": "The rate of interest charged above the base rate, as a value between 0 and 1 (e.g. 1% - 0.01).",
-              "type": "number",
-              "minimum": 0,
-              "maximum": 1
-            },
-            "effectiveRate": {
-              "title": "Effective rate",
-              "description": "In cases where a variable base and margin are used, or where the interest payments have a complex profile (e.g. changing rates over the period of the investment; or effects of compound interest) then the effective rate should provide a figure that represents either (a) the value of the base and margin at the time of the offer; or (b) the average effective rate for the anticipated duration of an investment (Note: this is not the same as a Mortgage Effective Interest Rate).",
-              "type": "number",
-              "minimum": 0,
-              "maximum": 1
-            },
-            "details": {
-              "title": "Details",
-              "description": "A description of the interest rate, and any specific conditions that apply, such as interest payment delays (e.g. interest is only paid from year 3 onwards), or other conditions on interest payments.",
-              "type": "string"
-            }
-          }
+          "$ref":"#/definitions/InterestRate"
         },
         "matchFunding": {
           "title": "Match funding",
@@ -390,7 +366,7 @@
             "details": {
               "title": "Details",
               "description": "Details should be provided here of any match funding conditions for this offer, or any match funding secured.",
-              "type":"string"
+              "type": "string"
             }
           }
         },
@@ -398,7 +374,11 @@
           "title": "Withdrawal",
           "description": "Can investors withdraw their investments? Each condition under which withdrawal can be made should be specified here.",
           "type": "array",
-          "rollUp":["start","description","capitalLimit"],
+          "rollUp": [
+            "start",
+            "description",
+            "capitalLimit"
+          ],
           "items": {
             "title": "Condition",
             "description": "A description of the conditions under which investment withdrawal may take place",
@@ -426,7 +406,10 @@
           "title": "Tax relief",
           "description": "Details of the tax relief available for this offer",
           "type": "array",
-          "rollUp":["type","status"],
+          "rollUp": [
+            "type",
+            "status"
+          ],
           "items": {
             "type": "object",
             "title": "Tax relief",
@@ -708,60 +691,13 @@
         },
         "interestRate": {
           "title": "Interest rate",
-          "description": "The interest rate. Expressed as a value between 0 and 1 (e.g. 6.5% interest  = 0.065) ",
-          "type": "number",
-          "min": 0,
-          "max": 1
+          "description": "The interest rate.",
+          "$ref": "#/definitions/InterestRate"
         },
         "interestPayable": {
           "title": "Interest payable",
           "description": "The total interest payable over the duration of the credit/loan.",
           "type": "number"
-        },
-        "variations": {
-          "title": "Variations",
-          "description": "Each planned or enacted variation to the credit/loan arrangements should be documented.",
-          "type": "array",
-          "items": {
-            "type": "object",
-            "title": "Variation",
-            "description": "A variation",
-            "properties": {
-              "date": {
-                "title": "Date",
-                "description": "The date of the variation",
-                "type": "string",
-                "format": "date"
-              },
-              "description": {
-                "title": "Description",
-                "description": "Note on this variation",
-                "type": "string"
-              },
-              "durationInMonths": {
-                "title": "Term (months) (after variation)",
-                "description": "The term of this credit/loan in months after the variation",
-                "type": "number"
-              },
-              "repaymentHoliday": {
-                "title": "Repayment holiday",
-                "description": "The duration in months of an **additional** repayment holiday introduced by this variation.",
-                "type": "number"
-              },
-              "interestPayable": {
-                "title": "Interest payable (after variation)",
-                "description": "The total interest payable over the duration of the credit/loan, after the variation.",
-                "type": "number"
-              },
-              "interestRate": {
-                "title": "Interest rate (after variation)",
-                "description": "The interest rate in force after variation. Expressed as a value between 0 and 1 (e.g. 6.5% interest  = 0.065) ",
-                "type": "number",
-                "min": 0,
-                "max": 1
-              }
-            }
-          }
         },
         "fundingOrganization": {
           "title": "Funding Organization",
@@ -856,7 +792,16 @@
           "title": "Assets",
           "description": "If this project involves the purchase of assets details of those assets should be provided here.",
           "type": "array",
-          "rollUp":["id","description","type","status","quantity","totalValue","isSecurity","referenceNumbers"],
+          "rollUp": [
+            "id",
+            "description",
+            "type",
+            "status",
+            "quantity",
+            "totalValue",
+            "isSecurity",
+            "referenceNumbers"
+          ],
           "items": {
             "$ref": "#/definitions/Asset"
           }
@@ -950,7 +895,7 @@
             "string",
             "null"
           ],
-          "description": "A description of this Organization",
+          "description": "A value from the Organization Type codelist describing the nature of this organization.",
           "enum": [
             "Registered Charity",
             "Registered Company",
@@ -1412,6 +1357,42 @@
           "items": {
             "type": "string"
           }
+        }
+      }
+    },
+    "InterestRate": {
+      "title": "Interest rate",
+      "description": "An interest rate.",
+      "type": "object",
+      "properties": {
+        "base": {
+          "title": "Base",
+          "description": "If this interest rate is based on a formula with a base rate + a percentage (e.g. Bank of England rate + 35) then a codelist entry to describe the base rate is given here. Where no recognised codelist value exists, a short clear string should be used that can be easily interpreted by a data user to identify the base rate uses. Where this is no base rate, and the margin specifies the full exchange rate, base should be left blank.",
+          "type": "string",
+          "enum": [
+            null,
+            "BofE",
+            "LIBOR"
+          ]
+        },
+        "margin": {
+          "title": "Margin",
+          "description": "The rate of interest charged above the base rate, as a value between 0 and 1 (e.g. 1% - 0.01).",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "effectiveRate": {
+          "title": "Effective rate",
+          "description": "In cases where a variable base and margin are used, or where the interest payments have a complex profile (e.g. changing rates over the period of the investment; or effects of compound interest) then the effective rate should provide a figure that represents either (a) the value of the base and margin at the time of the offer; or (b) the average effective rate for the anticipated duration of an investment (Note: this is not the same as a Mortgage Effective Interest Rate).",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "details": {
+          "title": "Details",
+          "description": "A description of the interest rate, and any specific conditions that apply, such as interest payment delays (e.g. interest is only paid from year 3 onwards), or other conditions on interest payments.",
+          "type": "string"
         }
       }
     }

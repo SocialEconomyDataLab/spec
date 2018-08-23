@@ -432,7 +432,10 @@
                 "description": "The status of this tax relief",
                 "type": "string",
                 "enum": [
-                  "codelist-under-development"
+                  "advanceAssuranceAppliedFor",
+                  "advanceAssuranceReceived",
+                  "fullTaxReliefApproval",
+                  "applicationRejected"
                 ]
               }
             }

@@ -197,6 +197,9 @@
             "dateAgreed",
             "currency",
             "value",
+            "withdrawals",
+            "taxReliefs/0/type",
+            "taxReliefs/0/status",
             "fund/code",
             "fund/title",
             "isMatchFunding",
@@ -462,7 +465,7 @@
             "status"
           ],
           "items": {
-            "$ref":"#/definitions/TaxRelief"
+            "$ref": "#/definitions/TaxRelief"
           }
         },
         "csuStandardMark": {
@@ -645,6 +648,18 @@
           "title": "Share rights",
           "description": "The rights associated with this class of share.",
           "type": "string"
+        },
+        "taxReliefs": {
+          "title": "Tax relief",
+          "description": "Details of the tax relief available for this investment.",
+          "type": "array",
+          "rollUp": [
+            "type",
+            "status"
+          ],
+          "items": {
+            "$ref": "#/definitions/TaxRelief"
+          }
         },
         "fundingOrganizations": {
           "title": "Funding Organization",
@@ -1486,12 +1501,13 @@
             "applicationRejected",
             "notAppliedFor"
           ],
-          "enum_titles":[
+          "enum_titles": [
             "Advance assurance applied for",
             "Advance assurance received",
             "Full tax relief approval",
             "Application rejected",
-            "Relief not applied for"]
+            "Relief not applied for"
+          ]
         }
       }
     }

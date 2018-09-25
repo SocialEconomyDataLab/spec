@@ -27,16 +27,16 @@
       "enum": [
         "Pipeline",
         "Live",
-        "Did_Not_Proceeed"
+        "Did_Not_Proceeed",
         "Closed"
       ],
-      "enum_titles":[
+      "enum_titles": [
         "Pipeline",
         "Live",
         "Did not proceed",
         "Closed"
       ],
-      "enum_descriptions":[
+      "enum_descriptions": [
         "The deal is anticipated or under development.",
         "Investments can be made into this deal.",
         "The deal did not proceed.",
@@ -49,7 +49,7 @@
       "type": [
         "string"
       ],
-      "pattern":"^(([0-9]{4})+(-(0[1-9]|1[0-2])(-(0[1-9]|[12]\\d|3[01]))?)?)$"
+      "pattern": "^(([0-9]{4})+(-(0[1-9]|1[0-2])(-(0[1-9]|[12]\\d|3[01]))?)?)$"
     },
     "currency": {
       "title": "Currency",
@@ -308,16 +308,16 @@
           "enum": [
             "open",
             "timeBound",
-            "targetBound"
+            "targetBound",
             "pioneer"
           ],
-          "enum_titles":[
+          "enum_titles": [
             "Open",
             "Time bound",
             "Target bound",
             "Pioneer"
           ],
-          "enum_descriptions":[
+          "enum_descriptions": [
             "The offer remains open, with new participants investing at any time.",
             "The offer closes after a specified period.",
             "The offer closes after a specified target is met.",
@@ -379,10 +379,13 @@
           "description": "The maximum investment amount that an individual investor may provide in response to this offer.",
           "type": "number"
         },
-        "interestRate": {
+        "interestRates": {
           "title": "Interest rate",
           "description": "The interest rate specified in the offer.",
-          "$ref":"#/definitions/InterestRate"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/InterestRate"
+          }
         },
         "matchFunding": {
           "title": "Match funding",
@@ -1427,6 +1430,16 @@
           "type": "number",
           "minimum": 0,
           "maximum": 1
+        },
+        "isConditional": {
+          "title": "Is conditional?",
+          "description": "If true, the payment of interest may be subject to certain conditions. The conditions may be described in the details.",
+          "type": "boolean"
+        },
+        "isVariable": {
+          "title": "Is variable?",
+          "description": "If true, the rate of interest paid may vary based on time or performance of the related offer, deal or project. The rate recorded should be the initial anticipated rate. Any basis for variations may be explained in details.",
+          "type": "boolean"
         },
         "details": {
           "title": "Details",

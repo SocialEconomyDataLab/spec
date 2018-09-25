@@ -26,8 +26,21 @@
       "type": "string",
       "enum": [
         "Pipeline",
-        "Open",
+        "Live",
+        "Did_Not_Proceeed"
         "Closed"
+      ],
+      "enum_titles":[
+        "Pipeline",
+        "Live",
+        "Did not proceed",
+        "Closed"
+      ],
+      "enum_descriptions":[
+        "The deal is anticipated or under development.",
+        "Investments can be made into this deal.",
+        "The deal did not proceed.",
+        "No new investments can be made, but the project funded by the deal may be ongoing."
       ]
     },
     "dealDate": {

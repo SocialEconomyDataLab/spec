@@ -348,6 +348,12 @@
           "type": "string",
           "format": "date-time"
         },
+        "extensionDate": {
+          "title": "Extension date",
+          "description": "If an offer has been extended, the updated closing date should be provided here.",
+          "type": "string",
+          "format": "date-time"
+        },
         "minimumInvestmentTarget": {
           "title": "Minimum investment target",
           "description": "The minimum investment target. In many offers, if this is not reached, the offer will be cancelled.",

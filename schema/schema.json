@@ -120,6 +120,38 @@
         "$ref": "#/definitions/Offer"
       }
     },
+    "projects": {
+      "title": "Project",
+      "description": "Projects associated with the deal.",
+      "type": "array",
+      "rollUp": [
+        "id",
+        "title",
+        "description",
+        "classification/0/scheme",
+        "classification/0/code",
+        "classification/0/title",
+        "locations/0/id",
+        "locations/0/name",
+        "locations/0/description",
+        "locations/0/countryCode",
+        "locations/0/latitude",
+        "locations/0/longitude",
+        "locations/0/geoCode",
+        "locations/0/geoCodeType",
+        "assets/0/id",
+        "assets/0/description",
+        "assets/0/type",
+        "assets/0/status",
+        "assets/0/quantity",
+        "assets/0/totalValue",
+        "assets/0/isSecurity",
+        "assets/0/referenceNumbers"
+      ],
+      "items": {
+        "$ref": "#/definitions/Project"
+      }
+    },
     "investments": {
       "title": "Investments",
       "description": "The financial components of the deal.",
@@ -136,6 +168,7 @@
           "type": "array",
           "rollUp": [
             "id",
+            "status",
             "fundingOrganization/id",
             "fundingOrganization/name",
             "fundingOrganization/department",
@@ -173,6 +206,7 @@
           "type": "array",
           "rollUp": [
             "id",
+            "status",
             "fundingOrganizations/0/id",
             "fundingOrganizations/0/name",
             "fundingOrganizations/0/department",
@@ -215,6 +249,7 @@
           "type": "array",
           "rollUp": [
             "id",
+            "status",
             "fundingOrganization/id",
             "fundingOrganization/name",
             "fundingOrganization/department",
@@ -252,38 +287,6 @@
             "$ref": "#/definitions/Credit"
           }
         }
-      }
-    },
-    "projects": {
-      "title": "Project",
-      "description": "Projects associated with the deal.",
-      "type": "array",
-      "rollUp": [
-        "id",
-        "title",
-        "description",
-        "classification/0/scheme",
-        "classification/0/code",
-        "classification/0/title",
-        "locations/0/id",
-        "locations/0/name",
-        "locations/0/description",
-        "locations/0/countryCode",
-        "locations/0/latitude",
-        "locations/0/longitude",
-        "locations/0/geoCode",
-        "locations/0/geoCodeType",
-        "assets/0/id",
-        "assets/0/description",
-        "assets/0/type",
-        "assets/0/status",
-        "assets/0/quantity",
-        "assets/0/totalValue",
-        "assets/0/isSecurity",
-        "assets/0/referenceNumbers"
-      ],
-      "items": {
-        "$ref": "#/definitions/Project"
       }
     },
     "dateModified": {
@@ -515,6 +518,9 @@
           "type": "string",
           "description": "A unique identifier for this grant."
         },
+        "status": {
+          "$ref": "#/definitions/InvestmentStatus"
+        },
         "description": {
           "title": "Description",
           "description": "A description of the purpose of this grant.",
@@ -580,6 +586,15 @@
           "type": "string",
           "description": "A unique identifier for this equity investment"
         },
+        "status": {
+          "title": "Status",
+          "description": "The current status of this investment (offered or secured).",
+          "type": "string",
+          "enum": [
+            "offered",
+            "secured"
+          ]
+        },
         "description": {
           "title": "Description",
           "description": "A description of this equity investment",
@@ -600,15 +615,6 @@
           "description": "Where this entry represents the total equity held by more than one party, enter the number of investors the entry describes here. In other cases, enter 1.",
           "type": "number",
           "minimum": 1
-        },
-        "status": {
-          "title": "Status",
-          "description": "The current status of this investment (offered or secured).",
-          "type": "string",
-          "enum": [
-            "offered",
-            "secured"
-          ]
         },
         "dateOffered": {
           "title": "Date Offered",
@@ -714,6 +720,9 @@
           "title": "Identifier",
           "type": "string",
           "description": "A unique identifier for this loan"
+        },
+        "status": {
+          "$ref": "#/definitions/InvestmentStatus"
         },
         "description": {
           "type": "string",
@@ -1510,6 +1519,17 @@
           ]
         }
       }
+    },
+    "InvestmentStatus": {
+      "title": "Status",
+      "description": "The status of this investment",
+      "type": "string",
+      "enum": [
+        "requested",
+        "expected",
+        "confirmed",
+        "cancelled"
+      ]
     }
   }
 }

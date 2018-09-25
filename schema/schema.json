@@ -100,6 +100,8 @@
         "interestRate/base",
         "interestRate/margin",
         "interestRate/effectiveRate",
+        "interestRate/isConditional",
+        "interestRate/isVariable",
         "interestRate/details",
         "matchFunding/status",
         "matchFunding/details",
@@ -230,6 +232,8 @@
             "interestRate/base",
             "interestRate/margin",
             "interestRate/effectiveRate",
+            "interestRate/isConditional",
+            "interestRate/isVariable",
             "interestRate/details",
             "interestPayable"
           ],

@@ -61,9 +61,14 @@
         "USD"
       ]
     },
+    "estimatedValue": {
+      "title": "Estimated deal value",
+      "description": "The total estimated value of this deal. This should be based on the **optimum** fund raising targets where these are available. In cases where a range if presented, the mid-point should be used. The estimated deal value may be based on documents, and does not necessarily match the sum of the values of the investments components of this deal recorded in this dataset. ",
+      "type": "number"
+    },
     "value": {
-      "title": "Deal value",
-      "description": "The total value of this deal.",
+      "title": "Confirmed deal value",
+      "description": "The total value of this deal based on confirmed funds raised.",
       "type": "number"
     },
     "recipientOrganization": {

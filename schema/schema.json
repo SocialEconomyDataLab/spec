@@ -242,7 +242,8 @@
             "interestRate/isConditional",
             "interestRate/isVariable",
             "interestRate/details",
-            "interestPayable"
+            "interestPayable",
+            "notes"
           ],
           "items": {
             "$ref": "#/definitions/Credit"
@@ -777,6 +778,11 @@
           "type": "object",
           "description": "Organization providing this credit or loan.",
           "$ref": "#/definitions/Organization"
+        },
+        "notes":{
+          "title":"Notes",
+          "description":"Notes related to this deal which cannot otherwise be captured as structured data may be entered here. Any information which can be provide using a structured data field MUST NOT be included in the notes, but should instead be represented as structured data.",
+          "type":"string"
         }
       }
     },

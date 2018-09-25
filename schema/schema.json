@@ -32,12 +32,11 @@
     },
     "dealDate": {
       "title": "Deal date",
+      "description": "The year (YYYY) or year-month (YYYY-MM) combination in which this deal should be counted. For a blended finance deal this should be the date of [financial close](http://www.businessdictionary.com/definition/financial-close.html). For other deals, this should be the date at which the most significant component was confirmed. Data analysts should be aware that components of a deal may each have their own significant dates.",
       "type": [
-        "string",
-        "null"
+        "string"
       ],
-      "format": "date-time",
-      "description": "The date that the deal was agreed. Dates should be in yyyy-mm-dd format."
+      "pattern":"^(([0-9]{4})+(-(0[1-9]|1[0-2])(-(0[1-9]|[12]\\d|3[01]))?)?)$"
     },
     "currency": {
       "title": "Currency",

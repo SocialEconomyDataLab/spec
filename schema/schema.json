@@ -307,8 +307,21 @@
           "type": "string",
           "enum": [
             "open",
-            "timeLimited",
-            null
+            "timeBound",
+            "targetBound"
+            "pioneer"
+          ],
+          "enum_titles":[
+            "Open",
+            "Time bound",
+            "Target bound",
+            "Pioneer"
+          ],
+          "enum_descriptions":[
+            "The offer remains open, with new participants investing at any time.",
+            "The offer closes after a specified period.",
+            "The offer closes after a specified target is met.",
+            "The offer is targeted specifically at existing supporters. It is a way of accessing high-risk capital at a very early stage in a project and to get ‘investment-ready’."
           ]
         },
         "url": {

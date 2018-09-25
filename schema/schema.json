@@ -462,34 +462,7 @@
             "status"
           ],
           "items": {
-            "type": "object",
-            "title": "Tax relief",
-            "description": "A tax relief",
-            "properties": {
-              "type": {
-                "title": "Type",
-                "description": "A code describing the type of tax relief available",
-                "type": "string",
-                "enum": [
-                  null,
-                  "SEIS",
-                  "EIS",
-                  "SITR",
-                  "CITR"
-                ]
-              },
-              "status": {
-                "title": "Status",
-                "description": "The status of this tax relief",
-                "type": "string",
-                "enum": [
-                  "advanceAssuranceAppliedFor",
-                  "advanceAssuranceReceived",
-                  "fullTaxReliefApproval",
-                  "applicationRejected"
-                ]
-              }
-            }
+            "$ref":"#/definitions/TaxRelief"
           }
         },
         "csuStandardMark": {
@@ -779,10 +752,10 @@
           "description": "Organization providing this credit or loan.",
           "$ref": "#/definitions/Organization"
         },
-        "notes":{
-          "title":"Notes",
-          "description":"Notes related to this deal which cannot otherwise be captured as structured data may be entered here. Any information which can be provide using a structured data field MUST NOT be included in the notes, but should instead be represented as structured data.",
-          "type":"string"
+        "notes": {
+          "title": "Notes",
+          "description": "Notes related to this deal which cannot otherwise be captured as structured data may be entered here. Any information which can be provide using a structured data field MUST NOT be included in the notes, but should instead be represented as structured data.",
+          "type": "string"
         }
       }
     },
@@ -1482,6 +1455,43 @@
           "title": "Details",
           "description": "A description of the interest rate, and any specific conditions that apply, such as interest payment delays (e.g. interest is only paid from year 3 onwards), or other conditions on interest payments.",
           "type": "string"
+        }
+      }
+    },
+    "TaxRelief": {
+      "title": "Tax relief",
+      "description": "A tax relief that may be applied to an offer or investment.",
+      "type": "object",
+      "properties": {
+        "type": {
+          "title": "Type",
+          "description": "A code describing the type of tax relief available",
+          "type": "string",
+          "enum": [
+            "Other",
+            "SEIS",
+            "EIS",
+            "SITR",
+            "CITR"
+          ]
+        },
+        "status": {
+          "title": "Status",
+          "description": "The status of this tax relief",
+          "type": "string",
+          "enum": [
+            "advanceAssuranceAppliedFor",
+            "advanceAssuranceReceived",
+            "fullTaxReliefApproval",
+            "applicationRejected",
+            "notAppliedFor"
+          ],
+          "enum_titles":[
+            "Advance assurance applied for",
+            "Advance assurance received",
+            "Full tax relief approval",
+            "Application rejected",
+            "Relief not applied for"]
         }
       }
     }

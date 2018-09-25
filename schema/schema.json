@@ -92,6 +92,7 @@
         "offerDocumentUrl",
         "startDate",
         "endDate",
+        "extensionDatee",
         "minimumInvestmentTarget",
         "investmentTarget",
         "maximumInvestmentTarget",
@@ -158,7 +159,9 @@
             "currency",
             "amountRequested",
             "amountCommitted",
-            "amountDisbursed"
+            "amountDisbursed",
+            "isMatchFunding",
+            "notes"
           ],
           "items": {
             "$ref": "#/definitions/Grant"
@@ -187,13 +190,17 @@
             "fundingOrganizations/0/description",
             "fundingOrganizations/0/organizationType",
             "fundingOrganizations/0/url",
+            "type",
+            "numberOfInvestors",
             "description",
             "dateOffered",
             "dateAgreed",
             "currency",
             "value",
             "fund/code",
-            "fund/title"
+            "fund/title",
+            "isMatchFunding",
+            "notes"
           ],
           "items": {
             "$ref": "#/definitions/Equity"
@@ -573,6 +580,16 @@
           "type": "object",
           "description": "Details of the organization making this grant.",
           "$ref": "#/definitions/Organization"
+        },
+        "isMatchFunding": {
+          "title": "Is match funding?",
+          "description": "If true, this investment, or proportion of it, is counted towards certain match funding requirements of this deal. More details may be given in the notes.",
+          "type": "boolean"
+        },
+        "notes": {
+          "title": "Notes",
+          "description": "Notes related to this deal which cannot otherwise be captured as structured data may be entered here. Any information which can be provide using a structured data field MUST NOT be included in the notes, but should instead be represented as structured data.",
+          "type": "string"
         }
       }
     },
@@ -686,6 +703,16 @@
           "title": "Fund",
           "description": "The fund that the investment forms a part of.",
           "$ref": "#/definitions/Fund"
+        },
+        "isMatchFunding": {
+          "title": "Is match funding?",
+          "description": "If true, this investment, or proportion of it, is counted towards certain match funding requirements of this deal. More details may be given in the notes.",
+          "type": "boolean"
+        },
+        "notes": {
+          "title": "Notes",
+          "description": "Notes related to this deal which cannot otherwise be captured as structured data may be entered here. Any information which can be provide using a structured data field MUST NOT be included in the notes, but should instead be represented as structured data.",
+          "type": "string"
         }
       }
     },

@@ -204,15 +204,15 @@
             "id",
             "status",
             "purpose",
-            "fundingOrganization/name",
-            "fundingOrganization/id",
-            "fundingOrganization/charityNumber",
-            "fundingOrganization/companyNumber",
-            "fundingOrganization/streetAddress",
-            "fundingOrganization/addressLocality",
-            "fundingOrganization/postalCode",
-            "fundingOrganization/organizationType",
-            "fundingOrganization/url",
+            "fundingOrganizations/0/name",
+            "fundingOrganizations/0/id",
+            "fundingOrganizations/0/charityNumber",
+            "fundingOrganizations/0/companyNumber",
+            "fundingOrganizations/0/streetAddress",
+            "fundingOrganizations/0/addressLocality",
+            "fundingOrganizations/0/postalCode",
+            "fundingOrganizations/0/organizationType",
+            "fundingOrganizations/0/url",
             "type",
             "numberOfInvestors",
             "description",
@@ -375,10 +375,10 @@
           "description": "The maximum investment amount that an individual investor may provide in response to this offer.",
           "type": "number"
         },
-        "investmentFeatures":{
-          "title":"Investment features",
-          "description":"Any notable features of the investment criteria, such as variable minimum for particular geographical areas, or use of a subscription model.",
-          "type":"string"
+        "investmentFeatures": {
+          "title": "Investment features",
+          "description": "Any notable features of the investment criteria, such as variable minimum for particular geographical areas, or use of a subscription model.",
+          "type": "string"
         },
         "interestRates": {
           "title": "Interest rate",
@@ -401,11 +401,11 @@
           "description": "If this offer has a match funding component, this is described here.",
           "type": "object",
           "properties": {
-            "required":{
-              "title":"Required?",
-              "description":"Is match funding required by this offer?",
-              "type":"boolean"
-            },  
+            "required": {
+              "title": "Required?",
+              "description": "Is match funding required by this offer?",
+              "type": "boolean"
+            },
             "status": {
               "title": "Status",
               "description": "Has match funding been applied for or secured?",
@@ -803,13 +803,7 @@
         "purposeOfFinance": {
           "title": "Purpose of finance",
           "description": "A description of the role of finance in this project.",
-          "type": "array",
-          "items": {
-            "type": "string",
-            "enum": [
-              "KEY-FUND-CODELIST-TO-ADD"
-            ]
-          }
+          "$ref": "#/definitions/InvestmentPurpose"
         },
         "classification": {
           "title": "Classification",
@@ -829,12 +823,12 @@
                 "title": "Scheme",
                 "description": "A code describing the classification scheme in use.",
                 "type": "string",
-                "enum":[
+                "enum": [
                   "ptcCommunityBusiness",
                   "bscOutcome",
                   "bscBeneficiary"
                 ],
-                "enum_titles":[
+                "enum_titles": [
                   "Power to Change: Community Business Classification",
                   "Big Society Capital: Outcome areas",
                   "Big Society Capital: Beneficiary groups"

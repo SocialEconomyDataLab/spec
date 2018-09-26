@@ -98,6 +98,7 @@
         "maximumInvestmentTarget",
         "minimumIndividualInvestment",
         "maximumIndividualInvestment",
+        "investmentFeatures",
         "interestRates/0/base",
         "interestRates/0/margin",
         "interestRates/0/effectiveRate",
@@ -401,6 +402,11 @@
           "description": "The maximum investment amount that an individual investor may provide in response to this offer.",
           "type": "number"
         },
+        "investmentFeatures":{
+          "title":"Investment features",
+          "description":"Any notable features of the investment criteria, such as variable minimum for particular geographical areas, or use of a subscription model.",
+          "type":"string"
+        },
         "interestRates": {
           "title": "Interest rate",
           "description": "The interest rate specified in the offer.",
@@ -427,7 +433,7 @@
               "description": "Is match funding required or secured?",
               "type": "string",
               "enum": [
-                null,
+                "notRequired",
                 "required",
                 "secured"
               ]
@@ -449,7 +455,7 @@
             "capitalLimit"
           ],
           "items": {
-            "title": "Condition",
+            "title": "Withdrawal conditions",
             "description": "A description of the conditions under which investment withdrawal may take place",
             "type": "object",
             "properties": {
@@ -834,8 +840,8 @@
           "type": "array",
           "rollUp": [
             "scheme",
-            "code",
-            "title"
+            "title",
+            "code"
           ],
           "items": {
             "title": "Classification",
@@ -845,7 +851,17 @@
               "scheme": {
                 "title": "Scheme",
                 "description": "A code describing the classification scheme in use.",
-                "type": "string"
+                "type": "string",
+                "enum":[
+                  "ptcCommunityBusiness",
+                  "bscOutcome",
+                  "bscBeneficiary"
+                ],
+                "enum_titles":[
+                  "Power to Change: Community Business Classification",
+                  "Big Society Capital: Outcome areas",
+                  "Big Society Capital: Beneficiary groups"
+                ]
               },
               "code": {
                 "title": "Code",

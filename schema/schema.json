@@ -1574,22 +1574,34 @@
       "items": {
         "type": "string",
         "enum": [
-          "assetPurchase",
-          "refurbishment",
-          "extension",
-          "businessDevelopmentAndGrowth",
-          "otherCapitalCosts",
-          "staffCosts",
+          "acquisition",
+          "asset",
+          "bridgingLoan",
+          "capital",
+          "developmentCapital",
+          "growthFinance",
+          "multiple",
+          "property",
+          "propertyRefurbishment",
+          "other",
+          "restructuringFinance",
+          "startupCosts",
           "workingCapital"
         ],
         "enum_titles": [
-          "Asset purchase",
-          "Refurbishment",
-          "Extension",
-          "Business development and growth",
-          "Other capital costs",
-          "Staff costs",
-          "Working capital"
+          "Acquisition",
+          "Asset",
+          "Bridging loan",
+          "Capital",
+          "Development Capital",
+          "Growth Finance",
+          "Multiple",
+          "Property",
+          "Property refurbishment",
+          "Other",
+          "Restructuring Finance",
+          "Start up costs",
+          "Working Capital"
         ]
       }
     }

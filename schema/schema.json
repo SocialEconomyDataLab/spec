@@ -401,13 +401,17 @@
           "description": "If this offer has a match funding component, this is described here.",
           "type": "object",
           "properties": {
+            "required":{
+              "title":"Required?",
+              "description":"Is match funding required by this offer?",
+              "type":"boolean"
+            },  
             "status": {
               "title": "Status",
-              "description": "Is match funding required or secured?",
+              "description": "Has match funding been applied for or secured?",
               "type": "string",
               "enum": [
-                "notRequired",
-                "required",
+                "appliedFor",
                 "secured"
               ]
             },

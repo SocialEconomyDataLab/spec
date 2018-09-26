@@ -1429,10 +1429,28 @@
           "description": "What is the estimated or actual quantity of these assets to be purchased.",
           "type": "number"
         },
+        "purchasePrice":{
+          "title":"Purchase price",
+          "description":"What was/is the purchase price of this/these assets? This must be given in the default currency of this deal.",
+          "type":"number"
+        },
         "totalValue": {
           "title": "Total value",
-          "description": "What is the total value of this/these asset(s)?",
+          "description": "What is the total value given to this/these asset(s)? This must be given in the default currency of this deal.",
           "type": "number"
+        },
+        "valuationMethod":{
+          "title":"Valuation method",
+          "description":"How has the value in 'total value' been arrived at?",
+          "type":"string",
+          "enum":[
+            "estimated",
+            "actual"
+          ],
+          "enum_titles":[
+            "Estimated",
+            "Actual"
+          ]
         },
         "isSecurity": {
           "title": "Is this asset security?",

@@ -144,7 +144,9 @@
         "assets/0/type",
         "assets/0/status",
         "assets/0/quantity",
+        "assets/0/purchasePrice",
         "assets/0/totalValue",
+        "assets/0/valuationMethod",
         "assets/0/isSecurity",
         "assets/0/referenceNumbers"
       ],
@@ -887,7 +889,9 @@
             "type",
             "status",
             "quantity",
+            "purchasePrice",
             "totalValue",
+            "valuationMethod",
             "isSecurity",
             "referenceNumbers"
           ],
@@ -1429,25 +1433,25 @@
           "description": "What is the estimated or actual quantity of these assets to be purchased.",
           "type": "number"
         },
-        "purchasePrice":{
-          "title":"Purchase price",
-          "description":"What was/is the purchase price of this/these assets? This must be given in the default currency of this deal.",
-          "type":"number"
+        "purchasePrice": {
+          "title": "Purchase price",
+          "description": "What was/is the purchase price of this/these assets? This must be given in the default currency of this deal.",
+          "type": "number"
         },
         "totalValue": {
           "title": "Total value",
           "description": "What is the total value given to this/these asset(s)? This must be given in the default currency of this deal.",
           "type": "number"
         },
-        "valuationMethod":{
-          "title":"Valuation method",
-          "description":"How has the value in 'total value' been arrived at?",
-          "type":"string",
-          "enum":[
+        "valuationMethod": {
+          "title": "Valuation method",
+          "description": "How has the value in 'total value' been arrived at?",
+          "type": "string",
+          "enum": [
             "estimated",
             "actual"
           ],
-          "enum_titles":[
+          "enum_titles": [
             "Estimated",
             "Actual"
           ]

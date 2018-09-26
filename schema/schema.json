@@ -169,6 +169,7 @@
           "rollUp": [
             "id",
             "status",
+            "purpose",
             "fundingOrganization/id",
             "fundingOrganization/name",
             "fundingOrganization/department",
@@ -207,6 +208,7 @@
           "rollUp": [
             "id",
             "status",
+            "purpose",
             "fundingOrganizations/0/id",
             "fundingOrganizations/0/name",
             "fundingOrganizations/0/department",
@@ -249,6 +251,7 @@
           "rollUp": [
             "id",
             "status",
+            "purpose",
             "fundingOrganization/id",
             "fundingOrganization/name",
             "fundingOrganization/department",
@@ -528,6 +531,9 @@
         "status": {
           "$ref": "#/definitions/InvestmentStatus"
         },
+        "purpose": {
+          "$ref": "#/definitions/InvestmentPurpose"
+        },
         "description": {
           "title": "Description",
           "description": "A description of the purpose of this grant.",
@@ -594,13 +600,10 @@
           "description": "A unique identifier for this equity investment"
         },
         "status": {
-          "title": "Status",
-          "description": "The current status of this investment (offered or secured).",
-          "type": "string",
-          "enum": [
-            "offered",
-            "secured"
-          ]
+          "$ref": "#/definitions/InvestmentStatus"
+        },
+        "purpose": {
+          "$ref": "#/definitions/InvestmentPurpose"
         },
         "description": {
           "title": "Description",
@@ -730,6 +733,9 @@
         },
         "status": {
           "$ref": "#/definitions/InvestmentStatus"
+        },
+        "purpose": {
+          "$ref": "#/definitions/InvestmentPurpose"
         },
         "description": {
           "type": "string",
@@ -1533,10 +1539,37 @@
       "type": "string",
       "enum": [
         "requested",
+        "offered",
         "expected",
         "confirmed",
         "cancelled"
       ]
+    },
+    "InvestmentPurpose": {
+      "title": "Purpose",
+      "description": "The purpose(s) of this investment into the related organisation or project.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "assetPurchase",
+          "refurbishment",
+          "extension",
+          "businessDevelopmentAndGrowth",
+          "otherCapitalCosts",
+          "staffCosts",
+          "workingCapital"
+        ],
+        "enum_titles": [
+          "Asset purchase",
+          "Refurbishment",
+          "Extension",
+          "Business development and growth",
+          "Other capital costs",
+          "Staff costs",
+          "Working capital"
+        ]
+      }
     }
   }
 }

@@ -102,7 +102,7 @@
         "interestRates/0/base",
         "interestRates/0/margin",
         "interestRates/0/effectiveRate",
-        "interestRates/0/isConditional",
+        "interestRates/0/hasAddedConditions",
         "interestRates/0/isVariable",
         "interestRates/0/details",
         "matchFunding/status",
@@ -174,6 +174,7 @@
             "status",
             "purpose",
             "fundingOrganization/name",
+            "fundingOrganization/alternateName",
             "fundingOrganization/id",
             "fundingOrganization/charityNumber",
             "fundingOrganization/companyNumber",
@@ -205,6 +206,7 @@
             "status",
             "purpose",
             "fundingOrganizations/0/name",
+            "fundingOrganizations/0/alternateName",
             "fundingOrganizations/0/id",
             "fundingOrganizations/0/charityNumber",
             "fundingOrganizations/0/companyNumber",
@@ -240,6 +242,7 @@
             "status",
             "purpose",
             "fundingOrganization/name",
+            "fundingOrganization/alternateName",
             "fundingOrganization/id",
             "fundingOrganization/charityNumber",
             "fundingOrganization/companyNumber",
@@ -258,7 +261,7 @@
             "interestRate/base",
             "interestRate/margin",
             "interestRate/effectiveRate",
-            "interestRate/isConditional",
+            "interestRate/hasAddedConditions",
             "interestRate/isVariable",
             "interestRate/details",
             "interestPayable",
@@ -388,7 +391,7 @@
             "margin",
             "effectiveRate",
             "base",
-            "isConditional",
+            "hasAddedConditions",
             "details",
             "isVariable"
           ],
@@ -669,6 +672,7 @@
           "rollUp": [
             "id",
             "name",
+            "alternateName",
             "department",
             "contactName",
             "charityNumber",
@@ -678,8 +682,7 @@
             "addressRegion",
             "addressCountry",
             "postalCode",
-            "telephone",
-            "alternateName",
+            "telephone",      
             "email",
             "description",
             "organizationType",
@@ -905,6 +908,11 @@
           "description": "A globally unique identifier for this Organization. This enables data on funders and recipients to be linked up across different datasets. [Org-id.guide](http://org-id.guide) links to a number of official registers that can be used to generate identifiers in a common way (e.g. using UK Company or Charity number). Alternatively, unique identifiers from the publisher's internal systems can be used.",
           "title": "Identifier"
         },
+        "alternateName": {
+          "type": "string",
+          "description": "An alternative name for this Organization (e.g. trading name)",
+          "title": "Alternate Name"
+        },
         "charityNumber": {
           "type": "string",
           "description": "Registered charity number, if applicable.",
@@ -914,16 +922,6 @@
           "type": "string",
           "description": "Registered UK company number, if applicable.",
           "title": "Company Number"
-        },
-        "department": {
-          "type": "string",
-          "description": "The department or sub-unit of this Organization making or receiving the grant.",
-          "title": "Department"
-        },
-        "contactName": {
-          "type": "string",
-          "description": "The contact person at this Organization.",
-          "title": "Contact Name"
         },
         "streetAddress": {
           "type": "string",
@@ -950,15 +948,20 @@
           "description": "Postal code (please try and provide a post code whenever possible)",
           "title": "Postal Code"
         },
+        "department": {
+          "type": "string",
+          "description": "The department or sub-unit of this Organization making or receiving the grant.",
+          "title": "Department"
+        },
+        "contactName": {
+          "type": "string",
+          "description": "The contact person at this Organization.",
+          "title": "Contact Name"
+        },
         "telephone": {
           "type": "string",
           "description": "Contact phone number.",
           "title": "Phone Number"
-        },
-        "alternateName": {
-          "type": "string",
-          "description": "An alternative name for this Organization (e.g. trading name)",
-          "title": "Alternate Name"
         },
         "email": {
           "type": "string",
@@ -977,10 +980,20 @@
           ],
           "description": "A value from the Organization Type codelist describing the nature of this organization.",
           "enum": [
-            "Registered Charity",
-            "Registered Company",
-            "Community Group",
-            "List to be updated"
+            "CIO - Charitable Incorporated Organisation",
+            "CLG - Company Limited by Guarantee",
+            "CLG - Company Limited by Guarantee",
+            "CLS - Company Limited by Shares",
+            "IPS - Industrial and Provident Society",
+            "LLP - Limited Liability Partnership",
+            "LA - Local Authority",
+            "CU - Mutual (Credit Union)",
+            "FS - Mutual (Friendly Society)",
+            "PLC - Public Listed Company",
+            "BENCOM - Registered Society (BenCom)",
+            "COOP - Registered Society (Cooperative)",
+            "UNINC - Unincorporated Organisation",
+            "OTH - Other"
           ],
           "title": "Organization Type"
         },
@@ -1487,8 +1500,8 @@
           "minimum": 0,
           "maximum": 1
         },
-        "isConditional": {
-          "title": "Is conditional?",
+        "hasAddedConditions": {
+          "title": "Has added conditions?",
           "description": "If true, the payment of interest may be subject to certain conditions. The conditions may be described in the details.",
           "type": "boolean"
         },

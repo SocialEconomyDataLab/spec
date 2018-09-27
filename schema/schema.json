@@ -129,6 +129,13 @@
         "id",
         "title",
         "description",
+        "status",
+        "startDate",
+        "endDate",
+        "editionDate",
+        "estimatedValue",
+        "raisedValue",
+        "achieved",
         "classification/0/scheme",
         "classification/0/code",
         "classification/0/title",
@@ -608,6 +615,11 @@
             "mixed"
           ]
         },
+        "platform":{
+          "title":"Platform",
+          "description":"Was this equity raised through a particular platform. This may be lisetd using the format 'Online: {name}' or 'Offline: {name}' to indicate whether this was an Internet based platform or not. Where the platform name is not known, 'Online' or 'Offline' may be entered.",
+          "type":"string"
+        },
         "numberOfInvestors": {
           "title": "Number of investors",
           "description": "Where this entry represents the total equity held by more than one party, enter the number of investors the entry describes here. In other cases, enter 1.",
@@ -682,7 +694,7 @@
             "addressRegion",
             "addressCountry",
             "postalCode",
-            "telephone",      
+            "telephone",
             "email",
             "description",
             "organizationType",
@@ -803,10 +815,55 @@
           "description": "A description of this project",
           "type": "string"
         },
-        "purposeOfFinance": {
-          "title": "Purpose of finance",
-          "description": "A description of the role of finance in this project.",
-          "$ref": "#/definitions/InvestmentPurpose"
+        "status": {
+          "title": "Status",
+          "description": "What is the current status of this project when last updated.",
+          "type": "string",
+          "enum": [
+            "planned",
+            "ongoing",
+            "completed",
+            "didNotProceed"
+          ],
+          "enum_titles": [
+            "Planned",
+            "Ongoing",
+            "Completed",
+            "Did not proceed"
+          ]
+        },
+        "startDate": {
+          "title": "Start date",
+          "description": "When was/is this project scheduled to start?",
+          "type": "string",
+          "format": "date-time"
+        },
+        "endDate": {
+          "title": "End date",
+          "description": "When was/is this project scheduled to end?",
+          "type": "string",
+          "format": "date-time"
+        },
+        "editionDate": {
+          "title": "Version date",
+          "description": "If this project has been through a number of stages, iterations or phases, which 'edition' of the project does the information presented here represent? This should be indicated using a date. For example, if a particular project worked to raise capital to buy property in 2016, and then separately raised working capital from June 2018, there may be two project entries, one with `editionDate` of 2016-01-01, and the other with an `editionDate` of 2018-06-01",
+          "type": "string",
+          "format": "date-time"
+        },
+        "estimatedValue": {
+          "title": "Estimated value",
+          "description": "The overall estimated value of this edition of the project. Given in the default currency.",
+          "type": "number"
+        },
+        "raisedValue": {
+          "title": "Project raised value",
+          "description": "The total raised for this project. This may match the sum of the deal components related to this project, but may in some cases also include investments from across a range of deals where the project was funded through more than one deal. Given in the default currency.",
+          "type": "number"
+        },
+        "achieved": {
+          "title": "Project achieved?",
+          "description": "Did this edition of the project meet its stated goals? For example, successfully raising finance and purchasing the assets specified, or delivering the services in the description. Further information can be provided in in the notes field if required.",
+          "type": "boolean"
         },
         "classification": {
           "title": "Classification",
@@ -850,24 +907,10 @@
             }
           }
         },
-        "locations": {
-          "title": "Location",
-          "description": "Information on locations associated with the project.",
-          "rollUp": [
-            "id",
-            "name",
-            "description",
-            "countryCode",
-            "postcode",
-            "latitude",
-            "longitude",
-            "geoCode",
-            "geoCodeType"
-          ],
-          "items": {
-            "$ref": "#/definitions/Location"
-          },
-          "type": "array"
+        "purposeOfFinance": {
+          "title": "Purpose of finance",
+          "description": "A description of the role of finance in this project.",
+          "$ref": "#/definitions/InvestmentPurpose"
         },
         "assets": {
           "title": "Assets",
@@ -888,6 +931,30 @@
           "items": {
             "$ref": "#/definitions/Asset"
           }
+        },
+        "locations": {
+          "title": "Location",
+          "description": "Information on locations associated with the project.",
+          "rollUp": [
+            "id",
+            "name",
+            "description",
+            "countryCode",
+            "postcode",
+            "latitude",
+            "longitude",
+            "geoCode",
+            "geoCodeType"
+          ],
+          "items": {
+            "$ref": "#/definitions/Location"
+          },
+          "type": "array"
+        },
+        "notes": {
+          "title": "Notes",
+          "description": "Notes related to this project which cannot otherwise be captured as structured data may be entered here. Any information which can be provide using a structured data field MUST NOT be included in the notes, but should instead be represented as structured data.",
+          "type": "string"
         }
       }
     },
@@ -982,7 +1049,6 @@
           "enum": [
             "CIO - Charitable Incorporated Organisation",
             "CLG - Company Limited by Guarantee",
-            "CLG - Company Limited by Guarantee",
             "CLS - Company Limited by Shares",
             "IPS - Industrial and Provident Society",
             "LLP - Limited Liability Partnership",
@@ -997,10 +1063,30 @@
           ],
           "title": "Organization Type"
         },
+        "industryClassifications":{
+          "title":"Industry classifications",
+          "description":"This field may be used to provide a list (array) of industry classifications. SIC codes are preferred, but the user may need to check and identify which codes are in use.",
+          "type":"array",
+          "items":{
+            "type":"string"
+          }
+        },
+        "startDate":{
+          "title":"Start date",
+          "description":"When was this organisation established?",
+          "type":"string",
+          "format":"date-time"
+        },
+        "endDate":{
+          "title":"End date",
+          "description":"When was this organisation dissolved? If the organization is still active this field should be blank.",
+          "type":"string",
+          "format":"date-time"
+        },
         "url": {
           "type": "string",
           "format": "uri",
-          "description": "A web address for the Organization",
+          "description": "A web address for the organization",
           "title": "Web Address"
         },
         "location": {

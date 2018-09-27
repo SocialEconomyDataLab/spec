@@ -280,6 +280,20 @@ function setupGroups(){
   }  
 }
 
+/**
+ * Takes a positive integer and returns the corresponding column name.
+ * @param {number} num  The positive integer to convert to a column name.
+ * @return {string}  The column name.
+ *
+ * Taken from http://cwestblog.com/2013/09/05/javascript-snippet-convert-number-to-column-name/ 
+ */
+function toColumnName(num) {
+  for (var ret = '', a = 1, b = 26; (num -= a) >= 0; a = b, b *= 26) {
+    ret = String.fromCharCode(parseInt((num % b) / a) + 65) + ret;
+  }
+  return ret;
+}
+
 /*
 * This function creates a lookup for any Organization fields to the Organization table
 */
@@ -292,7 +306,9 @@ function addOrganizationLookup() {
    //Get a copy of the header row without /0/ notation
    var mapHeaders = headers.map(function(item) { return item.replace(/\/[0-9]/g,"") })
   
-for(i = 0; i < mapHeaders.length -1; i++) {
+   var selectCols = []
+   
+   for(i = 0; i < mapHeaders.length -1; i++) {
     path = mapHeaders[i]
     validationRange = sheet.getRange(dataRowStartsAt, i+1, sheet.getLastRow()-(dataRowStartsAt+1),1)
 
@@ -300,28 +316,37 @@ for(i = 0; i < mapHeaders.length -1; i++) {
     if(path.indexOf('Organization/') !== -1) {
       field = path.split("Organization/").pop()
       if(field == 'name') {
-         orgNameField = i;  
+         var orgNameField = i;  
          validationRange.setDataValidation(SpreadsheetApp.newDataValidation()
             .setAllowInvalid(true)
             .requireValueInRange(sheet.getRange('Organizations!$A:$A'), true)
             .build());
       } else {
-        sheet.getRange(dataRowStartsAt,i+1).setFormula('=IFERROR(VLOOKUP(indirect("R[0]C[' + (orgNameField - i) + ']",false),Organizations!$1:$1000,'+ getOrgLookupCol(field)+ '),"")');
-        sourceRange = sheet.getRange(dataRowStartsAt,i+1)
-        validationRange = sheet.getRange(dataRowStartsAt + 1,i+1,sheet.getLastRow()-(dataRowStartsAt + 1))
-        sourceRange.copyTo(validationRange)
-
-        formatRange = sheet.getRange(dataRowStartsAt,i,sheet.getLastRow()-(dataRowStartsAt))
-        conditionalFormatRules = SpreadsheetApp.getActiveSheet().getConditionalFormatRules();
-        conditionalFormatRules.push(SpreadsheetApp.newConditionalFormatRule()
-        .setRanges([formatRange])
-        .whenFormulaSatisfied('=AND(NOT('+ formatRange.getA1Notation() + '=""),isFormula(' + formatRange.getA1Notation() + '))')
-        .setBackground('#f3f3f3')
-        .setItalic(true)
-        .build());
-        SpreadsheetApp.getActiveSheet().setConditionalFormatRules(conditionalFormatRules);
+        if(getOrgLookupCol(field)) {
+          selectCols.push(toColumnName(getOrgLookupCol(field)))
+        } else {
+          // We have hit a place where we can't find the next variable, so we need to output our query
+          sheet.getRange(dataRowStartsAt,orgNameField+2).setFormula("=Query(Organizations!A:AH,\"SELECT " + selectCols.join(", ") + " WHERE A = '\" & "+ toColumnName(orgNameField + 1) + String(dataRowStartsAt) + "& \"' LIMIT 1\",false)");
+          sourceRange = sheet.getRange(dataRowStartsAt,orgNameField+2)
+          validationRange = sheet.getRange(dataRowStartsAt + 1,orgNameField+2,sheet.getLastRow()-(dataRowStartsAt + 1))
+          sourceRange.copyTo(validationRange)
+          selectCols = []
+          delete orgNameField
+        }
       }
       
+      
+    } else {
+      if(selectCols.length > 0 && orgNameField) {
+        // We have hit a point where the top-level has changed, so time to output our query.
+        sheet.getRange(dataRowStartsAt,orgNameField+2).setFormula("=Query(Organizations!A:AH,\"SELECT " + selectCols.join(", ") + " WHERE A = '\" & "+ toColumnName(orgNameField + 1) + String(dataRowStartsAt) + "& \"' LIMIT 1\",false)");
+        sourceRange = sheet.getRange(dataRowStartsAt,orgNameField+2)
+        validationRange = sheet.getRange(dataRowStartsAt + 1,orgNameField+2,sheet.getLastRow()-(dataRowStartsAt + 1))
+        sourceRange.copyTo(validationRange)
+        selectCols = []
+        delete orgNameField
+        //Time to write our query out and reset the array 
+      }
     }
   }   
 }

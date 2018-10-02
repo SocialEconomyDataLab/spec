@@ -12,6 +12,12 @@
       "menuName": "End Variation",
       "functionName": "endVariation",
       "defaultShortcut": "Ctrl+Alt+Shift+2"
+    }, {
+      "menuName": "Draft work",
+      "functionName": "Draftwork"
+    }, {
+      "menuName": "ConditionalFormat",
+      "functionName": "ConditionalFormat"
     }]
   }
 }

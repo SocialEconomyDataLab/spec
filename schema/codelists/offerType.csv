@@ -1,0 +1,4 @@
+Code,Title,Description
+open,Open,"The offer remains open, with new participants investing at any time."
+timeBound,Time bound,The offer closes after a specified period.
+targetBound,Target bound,The offer closes after a specified target is met.

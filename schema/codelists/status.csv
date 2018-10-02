@@ -1,0 +1,5 @@
+Code,Title,Description
+pipeline,Pipeline,The deal is anticipated or under development.
+live,Live,Investments can be made into this deal.
+didNotProceed,Did not proceed,The deal did not proceed.
+closed,Closed,"No new investments can be made, but the project funded by the deal may be ongoing."

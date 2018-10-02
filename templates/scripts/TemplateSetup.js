@@ -206,9 +206,26 @@ function layoutTemplate(singleColumn) {
       if(getFieldAttribute(schemaMap,mapHeaders[m],'type') == 'boolean') {
        validationRange.setDataValidation(SpreadsheetApp.newDataValidation()
           .setAllowInvalid(true)
-          .requireCheckbox()
+          .requireValueInList(['','True', 'False'])
           .build());
+        validationRange.setNumberFormat('@');
+        
+        conditionalFormatRules = sheet.getConditionalFormatRules();
+        conditionalFormatRules.splice(conditionalFormatRules.length - 1, 0, SpreadsheetApp.newConditionalFormatRule()
+        .setRanges([validationRange])
+        .whenTextContains('True')
+        .setBold(true)
+        .build());
+        conditionalFormatRules.splice(conditionalFormatRules.length - 1, 0, SpreadsheetApp.newConditionalFormatRule()
+        .setRanges([validationRange])
+        .whenTextContains('False')
+        .setItalic(true)
+        .setFontColor('#666666')
+        .build());
+        sheet.setConditionalFormatRules(conditionalFormatRules);
+        
       } 
+    
     
     
       if(getFieldAttribute(schemaMap,mapHeaders[m],'values').indexOf('Codelist:') != -1) {
@@ -307,6 +324,8 @@ function addOrganizationLookup() {
    var mapHeaders = headers.map(function(item) { return item.replace(/\/[0-9]/g,"") })
   
    var selectCols = []
+   var lastValidationSet = ""
+   var setValidationFor = ""
    
    for(i = 0; i < mapHeaders.length -1; i++) {
     path = mapHeaders[i]
@@ -322,32 +341,33 @@ function addOrganizationLookup() {
             .requireValueInRange(sheet.getRange('Organizations!$A:$A'), true)
             .build());
       } else {
-        if(getOrgLookupCol(field)) {
+        if(getOrgLookupCol(field) > 1) {
           selectCols.push(toColumnName(getOrgLookupCol(field)))
-        } else {
-          // We have hit a place where we can't find the next variable, so we need to output our query
-          sheet.getRange(dataRowStartsAt,orgNameField+2).setFormula("=Query(Organizations!A:AH,\"SELECT " + selectCols.join(", ") + " WHERE A = '\" & "+ toColumnName(orgNameField + 1) + String(dataRowStartsAt) + "& \"' LIMIT 1\",false)");
-          sourceRange = sheet.getRange(dataRowStartsAt,orgNameField+2)
-          validationRange = sheet.getRange(dataRowStartsAt + 1,orgNameField+2,sheet.getLastRow()-(dataRowStartsAt + 1))
-          sourceRange.copyTo(validationRange)
-          selectCols = []
-          delete orgNameField
+        } else {          
+          setValidationFor = path.split("/").shift()
         }
       }
       
       
     } else {
-      if(selectCols.length > 0 && orgNameField) {
+      if(orgNameField) {
+       setValidationFor = path.split("/").shift()
+      }
+    }
+    
+     if(setValidationFor && setValidationFor != lastValidationSet) {
         // We have hit a point where the top-level has changed, so time to output our query.
+        //Time to write our query out and reset the array 
         sheet.getRange(dataRowStartsAt,orgNameField+2).setFormula("=Query(Organizations!A:AH,\"SELECT " + selectCols.join(", ") + " WHERE A = '\" & "+ toColumnName(orgNameField + 1) + String(dataRowStartsAt) + "& \"' LIMIT 1\",false)");
         sourceRange = sheet.getRange(dataRowStartsAt,orgNameField+2)
         validationRange = sheet.getRange(dataRowStartsAt + 1,orgNameField+2,sheet.getLastRow()-(dataRowStartsAt + 1))
         sourceRange.copyTo(validationRange)
         selectCols = []
         delete orgNameField
-        //Time to write our query out and reset the array 
+        lastValidationSet = setValidationFor
+       
       }
-    }
+    
   }   
 }
     

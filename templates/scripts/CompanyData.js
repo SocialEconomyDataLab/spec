@@ -289,3 +289,55 @@ function geoCodeAddress() {
   
 }
 
+
+
+
+/*
+* For padding numbers. From https://stackoverflow.com/questions/10073699/pad-a-number-with-leading-zeros-in-javascript
+*/
+function pad(n, width, z) {
+  z = z || '0';
+  n = n + '';
+  return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+}
+
+
+/*
+* A spreadsheet function provide an org-id value
+*
+* Very primitive right now.
+*/
+
+function uk_orgid(companyNumber,charityNumber,name) {
+  companyNumber = String(companyNumber) || ""
+  charityNumber = String(charityNumber) || ""
+  name = String(name) || ""
+
+  if(companyNumber) {
+     //Values staring RS, IP or with a text suffix are assumed to be Mutuals
+     if(companyNumber.substr(0,2) == 'RS' || companyNumber.substr(0,2) == 'IP' || companyNumber.slice(-1) == "R" || companyNumber.slice(-3) == "CBS" ) {
+         prefix = "GB-MPR"
+         value = companyNumber
+     } else {
+        prefix = "GB-COH"
+        value = pad(companyNumber,8)
+     }
+  } else if(charityNumber) {
+    if(charityNumber.substr(0,2) == "SC") {
+      prefix = "GB-SC"
+      value = charityNumber
+    } else if(charityNumber.substr(0,2) == "NI") {
+      prefix ="GB-NIC" 
+      value = charityNumber
+    } else {
+      prefix = "GB-CHC" 
+      value = charityNumber
+    }
+  } else {
+    prefix = "MISC"
+    value = name.replace(/ /g,"")
+  }
+  
+  return prefix + "-"+value 
+}
+

@@ -21,8 +21,10 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 import sys
-import os
+import os, sys
+import glob
 import shlex
+import shutil
 import pathlib
 import json
 from jsonschema import Draft4Validator
@@ -30,19 +32,33 @@ from jsonschema import Draft4Validator
 from recommonmark.transform import AutoStructify
 from recommonmark.parser import CommonMarkParser
 
-# -- Validating the schema -------------------------------------------
+# -- Validating and compiling the schema -------------------------------------------
 
 # This makes sure that any schemas use in the documentation are valid
 # according to JSON Schema.
+#
+# It then compiles a schema with references resolved
 
 # Paths to any schemas to be validated
 schemas = ['../schema/schema.json']
 
 # An exception will be raised if a schema is invalid
+from compiletojsonschema.compiletojsonschema import CompileToJsonSchema
+
 for schema in schemas:
     with open(schema) as schema_file:
         data = json.load(schema_file)
         Draft4Validator.check_schema(data)
+
+    compiler = CompileToJsonSchema(schema)
+
+    with open(os.path.abspath("_static/schema/"+ schema.split("/").pop()), 'w') as writeschema:
+        writeschema.write(compiler.get_as_string().replace("{url}","http://spec.socialeconomydatalab.org/en/latest/schema_reference/reference/"))
+
+    # Copy all the codelists to static directory to make accessible online
+    for codelist in glob.glob(os.path.abspath("../schema/codelists/*.csv")):
+        shutil.copy(codelist,os.path.abspath("_static/schema/codelists/"+codelist.split("/").pop()))
+
 
 # -- General configuration ------------------------------------------------
 
@@ -189,7 +205,7 @@ if not on_rtd:  # only import and set the theme if we're building docs locally
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static'] + schemas
+html_static_path = ['_static']
 
 # Add any extra paths that contain custom files (such as robots.txt or
 # .htaccess) here, relative to this directory. These files are copied
@@ -425,3 +441,4 @@ def setup(app):
         'enable_eval_rst': True
         }, True)
     app.add_transform(AutoStructify)
+

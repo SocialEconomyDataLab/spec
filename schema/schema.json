@@ -22,7 +22,7 @@
     },
     "status": {
       "title": "Status",
-      "description": "Current status of the social investment deal: in progress, an open investment, closed without funds being drawn down, closed without core funds being approved.",
+      "description": "Current status of the social investment deal: in progress, an open investment, closed without funds being drawn down, closed without core funds being approved. Use the [status](http://spec.socialeconomydatalab.org/en/latest/schema_reference/reference/#status) codelist.",
       "type": "string",
       "enum": [
         "pipeline",
@@ -320,7 +320,7 @@
         },
         "type": {
           "title": "Type",
-          "description": "What kind of offer is this. Open offers allow investment at any time. Time limited offers have a closing date, and may only be actioned if they hit their fund-raising targets during the offer period.",
+          "description": "What kind of offer is this. Open offers allow investment at any time. Time limited offers have a closing date, and may only be actioned if they hit their fund-raising targets during the offer period. Values must be from the [offerType](http://spec.socialeconomydatalab.org/en/latest/schema_reference/reference/#offerType) codelist.",
           "type": "string",
           "enum": [
             "open",
@@ -428,7 +428,7 @@
             },
             "status": {
               "title": "Status",
-              "description": "Has match funding been applied for or secured?",
+              "description": "Has match funding been applied for or secured? Values must be from the [matchFundingStatus](http://spec.socialeconomydatalab.org/en/latest/schema_reference/reference/#matchFundingStatus) codelist.",
               "type": "string",
               "enum": [
                 "appliedFor",
@@ -623,7 +623,7 @@
         },
         "type": {
           "title": "Type",
-          "description": "Does this entry describe a single equity holding by an institutional investor, or one or more equity holdings from retail investors (usually individuals)?",
+          "description": "Does this entry describe a single equity holding by an institutional investor, or one or more equity holdings from retail investors (usually individuals)? Values must be from the [equityType](http://spec.socialeconomydatalab.org/en/latest/schema_reference/reference/#equityType) codelist.",
           "type": "string",
           "enum": [
             "institutional",
@@ -850,7 +850,7 @@
         },
         "status": {
           "title": "Status",
-          "description": "What is the current status of this project when last updated.",
+          "description": "What is the current status of this project when last updated. Values must be from the [projectStatus](http://spec.socialeconomydatalab.org/en/latest/schema_reference/reference/#projectStatus) codelist.",
           "type": "string",
           "enum": [
             "planned",
@@ -916,7 +916,7 @@
             "properties": {
               "scheme": {
                 "title": "Scheme",
-                "description": "A code describing the classification scheme in use.",
+                "description": "A code describing the classification scheme in use. Values should be from the [classificationScheme](http://spec.socialeconomydatalab.org/en/latest/schema_reference/reference/#classificationScheme) codelist where applicable. Alternative codelist entries may be used by agreement between data publishers.",
                 "type": "string",
                 "enum": [
                   "ptcCommunityBusiness",
@@ -1082,7 +1082,7 @@
             "string",
             "null"
           ],
-          "description": "A value from the Organization Type codelist describing the nature of this organization.",
+          "description": "A value from the Organization Type codelist describing the nature of this organization. Values should be from the [organizationType](http://spec.socialeconomydatalab.org/en/latest/schema_reference/reference/#organizationType) codelist.",
           "enum": [
             "CIO - Charitable Incorporated Organisation",
             "CLG - Company Limited by Guarantee",
@@ -1553,7 +1553,7 @@
         },
         "type": {
           "title": "Type",
-          "description": "The type of asset.",
+          "description": "The type of asset. Values must be from the [assetType](http://spec.socialeconomydatalab.org/en/latest/schema_reference/reference/#assetType) codelist.",
           "type": "string",
           "enum": [
             "land",
@@ -1570,7 +1570,7 @@
         },
         "status": {
           "title": "Status",
-          "description": "Is the purchase of these assets planned or completed?",
+          "description": "Is the purchase of these assets planned or completed? Values must be from the [assetStatus](http://spec.socialeconomydatalab.org/en/latest/schema_reference/reference/#assetStatus) codelist.",
           "type": "string",
           "enum": [
             "planned",
@@ -1600,7 +1600,7 @@
         },
         "valuationMethod": {
           "title": "Valuation method",
-          "description": "How has the value in 'total value' been arrived at?",
+          "description": "How has the value in 'total value' been arrived at? Values should be from the [valuationMethod](http://spec.socialeconomydatalab.org/en/latest/schema_reference/reference/#valuationMethod) codelist.",
           "type": "string",
           "enum": [
             "estimated",
@@ -1635,7 +1635,7 @@
       "properties": {
         "base": {
           "title": "Base",
-          "description": "If this interest rate is based on a formula with a base rate + a percentage (e.g. Bank of England rate + 35) then a codelist entry to describe the base rate is given here. Where no recognised codelist value exists, a short clear string should be used that can be easily interpreted by a data user to identify the base rate uses. Where this is no base rate, and the margin specifies the full exchange rate, base should be left blank.",
+          "description": "If this interest rate is based on a formula with a base rate + a percentage (e.g. Bank of England rate + 35) then a codelist entry to describe the base rate is given here. Where no recognised codelist value exists, a short clear string should be used that can be easily interpreted by a data user to identify the base rate uses. Where this is no base rate, and the margin specifies the full exchange rate, base should be left blank. Values should be from the [interestRate](http://spec.socialeconomydatalab.org/en/latest/schema_reference/reference/#interestRate) codelist, or may use a recognised interest rate code.",
           "type": "string",
           "enum": [
             null,
@@ -1683,7 +1683,7 @@
       "properties": {
         "type": {
           "title": "Type",
-          "description": "A code describing the type of tax relief available",
+          "description": "A code describing the type of tax relief available. Values should be from the [taxRelief](http://spec.socialeconomydatalab.org/en/latest/schema_reference/reference/#taxRelief) codelist.",
           "type": "string",
           "enum": [
             "Other",
@@ -1704,7 +1704,7 @@
         },
         "status": {
           "title": "Status",
-          "description": "The status of this tax relief",
+          "description": "The status of this tax relief. Values should be from the [taxReliefStatus](http://spec.socialeconomydatalab.org/en/latest/schema_reference/reference/#taxReliefStatus) codelist.",
           "type": "string",
           "enum": [
             "advanceAssuranceAppliedFor",
@@ -1727,7 +1727,7 @@
     },
     "InvestmentStatus": {
       "title": "Status",
-      "description": "The status of this investment",
+      "description": "The status of this investment. Values should be from the [investmentStatus](http://spec.socialeconomydatalab.org/en/latest/schema_reference/reference/#investmentStatus) codelist.",
       "type": "string",
       "enum": [
         "requested",
@@ -1748,7 +1748,7 @@
     },
     "InvestmentPurpose": {
       "title": "Purpose",
-      "description": "The purpose(s) of this investment into the related organisation or project.",
+      "description": "The purpose(s) of this investment into the related organisation or project. Values must be from the [investmentPurpose](http://spec.socialeconomydatalab.org/en/latest/schema_reference/reference/#investmentPurpose) codelist.",
       "type": "array",
       "items": {
         "type": "string",

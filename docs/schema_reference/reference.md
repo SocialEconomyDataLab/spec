@@ -53,7 +53,7 @@ Each entry in SEDL is structured as a deal, consisting of one or more offers, pr
 ```
 
 
-### Grants
+### Grant
 
 
 ```eval_rst
@@ -184,6 +184,18 @@ A codelist consists of:
       :header-rows: 1
       :class: codelist-table
       :file: ../../schema/codelists/interestRate.csv
+
+```
+
+### InvestmentPurpose
+
+
+```eval_rst
+
+   .. csv-table::
+      :header-rows: 1
+      :class: codelist-table
+      :file: ../../schema/codelists/investmentPurpose.csv
 
 ```
 

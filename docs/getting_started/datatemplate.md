@@ -36,7 +36,9 @@ The Annual Reports tab contains a space to record the annual report details of c
 
 ### Customising the template
 
-If you would like support customising the template to add or remove columns for your use, get in touch with the Social Economy Data Lab.
+The template is designed to be flexible. If you don't need columns, you can hide them. If you need extra fields, you can add them.
+
+The Social Economy Data Lab team may be able to help you identify how to model new fields in your data, and to make sure this can be compared with others data. 
 
 ## JSON template
 

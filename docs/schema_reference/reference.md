@@ -42,6 +42,16 @@ Each entry in SEDL is structured as a deal, consisting of one or more offers, pr
    :pointer: /definitions/Offer
 ```
 
+### Project
+
+```eval_rst
+.. json-value:: ../../schema/schema.json
+   :pointer: /properties/projects/description
+
+.. jsonschema:: ../../schema/schema.json
+   :pointer: /definitions/Project
+```
+
 
 ### Grants
 

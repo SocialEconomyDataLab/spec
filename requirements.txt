@@ -20,7 +20,7 @@ livereload==2.5.2
 lxml==4.2.4
 MarkupSafe==1.0
 mccabe==0.6.1
-ocdskit==0.0.2
+-e git+https://github.com/timgdavies/ocdskit/@1eb0322ac24fd1cfdc40233a35db79060a756f7a#egg=ocdskit
 ocdsmerge==0.4
 openpyxl==2.5.5
 pathtools==0.1.2
@@ -51,3 +51,4 @@ urllib3==1.21.1
 watchdog==0.8.3
 xmltodict==0.11.0
 -e git+https://github.com/OpenDataServices/sphinxcontrib-opendataservices.git@23ce17656feaa237584af8822bd57ac39b498f93#egg=sphinxcontrib-opendataservices
+-e git+https://github.com/OpenDataServices/compile-to-json-schema.git#egg=compile-to-json-schema

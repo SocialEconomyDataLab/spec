@@ -7,6 +7,7 @@ You can use the social economy data lab schema reference to inform the design of
    :maxdepth: 2
    :glob:
 
+   viewer
    reference
    identifiers
 

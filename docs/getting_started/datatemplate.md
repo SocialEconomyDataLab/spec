@@ -4,7 +4,7 @@
 
 We have prepared a Google Sheets template to support data entry according to the Social Economy Data Lab Specification. 
 
-You can [find the sheet to view here](https://docs.google.com/spreadsheets/d/1__2XkyLydzgtUkV6rppItx-ixREkuha9DzObmIUXlwk/view#gid=1380427983) or [make your own copy from this link](https://docs.google.com/spreadsheets/d/1__2XkyLydzgtUkV6rppItx-ixREkuha9DzObmIUXlwk/copy).
+You can [find the sheet to view here](https://docs.google.com/spreadsheets/d/1PTu0ziNEmSzDC2oUBtVBP1AXvsW9eLUkX0GfUU5XDqU/edit#gid=968406055) or [make your own copy from this link](https://docs.google.com/spreadsheets/d/1PTu0ziNEmSzDC2oUBtVBP1AXvsW9eLUkX0GfUU5XDqU/copy).
 
 ![](../_assets/SEDL-Template.png)
 

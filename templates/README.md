@@ -18,6 +18,10 @@ The `#,HeaderRows 6` directive at the top tells flatten-tool and other software 
 
 `cat ../schema/schema.json | ocdskit mapping-sheet | sed 's/section,path/#,ignore/g' > mapping.csv` 
 
+Then generate and append organization mapping data with:
+
+`csvgrep -c 2 -m "recipientOrganization" mapping.csv | sed "s/recipientOrganization\///g" | sed "s/recipientOrganization//g" | tail -n +4 | sed '$ d' >> mapping.csv`
+
 We use `sed` in this command to replace the first two cells of the sheet with `#,ignore` so that flatten-tool will ignore this sheet in future. 
 
 > Note: In an ideal set-up we would read information direct from JSON Schema, but as this would require writing scripts to handle ref resolution etc., we use the mapping output of ocdskit as an intermediate format. 
@@ -51,15 +55,15 @@ Set the group +/- to appear on the left.
 
 ### Setting up organisation lookups (DRAFT)
 
-(1) Take one of the Organisation sections (e.g. recipientOrganization/) and paste into a sheet named 'Organization'
+(1) Run the command below to create Organizations.csv (from the mapping template) and upload this into the sheet. 
+
+`csvgrep -c 2 -m "recipientOrganization" mapping.csv | csvcut -c 2 | sed "s/recipientOrganization\///g" | uniq | sed -e :a -e '$!N; s/\n/,/; ta' | csvcut -C ignore,recipientOrganization > Organizations.csv`
 
 (2) Run `layoutTemplate` on this sheet
 
-(3) Run a replace of 'recipientOrganization/' on this sheet with an empty string so the headers are now 'name','id' etc. instead of 'recipientOrganization/name', 'recipientOrganization/id' etc.
-
 (4) Return to the deals sheet and run 'addOrganizationLookup' 
 
-This will turn all organization name columns into a lookup list, and will set up Vlookup formual to automatically populate the deals sheet with data from the organizations sheet. 
+This will turn all organization name columns into a lookup list, and will set up Vlookup formula to automatically populate the deal organisation identifier from the Organization sheet. 
 
 ## Script development
 
